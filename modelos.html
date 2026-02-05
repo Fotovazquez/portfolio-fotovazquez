@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos | Fotovazquez</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#D0BB95', 'bg-dark': '#131313' },
+                    fontFamily: { sans: ['Comfortaa', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #131313; color: white; font-family: 'Comfortaa', sans-serif; }
+        
+        .model-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Hace que las fotos sean cuadradas y más pequeñas */
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.5s ease;
+        }
+
+        .model-card:hover img {
+            transform: scale(1.05);
+            border-color: #D0BB95;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-black">
+
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+            <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span> 
+            <span>Volver</span>
+        </a>
+        <h1 class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
+            <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain">
+            FOTOVAZQUEZ
+        </h1>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-light">Mis mejores <span class="font-bold text-primary">Modelos</span></h2>
+        <p class="text-slate-400 mt-4 max-w-xl">El talento y la esencia detrás de cada fotografía. Conoce a las personas que dan vida a mi trabajo.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-8 pb-20">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="model-card group">
+                <img src="modelos/modelo1.jpg" alt="Ángeles Céspedes">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Ángeles Céspedes</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/angelescespedes1988/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@angelescespedes1988</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Decidida. Aceptó mi reto de fotografía siendo su primera vez posando</p>
+                </div>
+            </div>
+
+            <div class="model-card group">
+                <img src="modelos/modelo2.jpg" alt="Anne Mette">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Anne Mette</h3>
+                   <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/amoj_98/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@amoj_98</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">La elegancia danesa que brilló en la Plaza de España de Sevilla.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo3.jpg" alt="Arturo Pareja">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Arturo Pareja</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/arturo_sntos/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@arturo_sntos</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Fuerza y constancia, energía infinita.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo4.jpg" alt="Bianca Sace">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Bianca Sace</h3>
+					<p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/marinasacee/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@marinasacee</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">La profunda mirada del estudio que te atrapa.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo5.jpg" alt="Celia Pérez">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Celia Pérez</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/ohceliamaria/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@ohceliamaria</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Valiente, artista y con ganas de comerse el mundo. La auténtica garra felina de la escena.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo6.jpg" alt="Gloria Gaviño">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Gloria Gaviño</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/gloriagavv/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@gloriagavv</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Una naturalidad abrumadora de posturas imposibles, hace que todo parezca fácil de hacer.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo7.jpg" alt="Lucía Martín">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Lucía Martín</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/luucia.maartiin/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@luucia.maartiin</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Mirada, posado, juego de manos... lo tiene todo para ser Miss Grand Sevilla.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo11.jpg" alt="María José Carretero">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">María José Carretero</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/mariajosecrrcds/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@mariajosecrrcds</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">La mirada más evocadora que una flamenca pueda tener, arte y poderío en toda regla.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo8.jpg" alt="Mery Casmen">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Mery Casmen</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/merycasmen/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@merycasmen</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Su valentía y determinación hacen de ella ser una de las modelos más versátiles con las que he trabajado.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo9.jpg" alt="Sanaida Vicario">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Sanaida Vicario</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/sanaidavicario/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@sanaidavicario</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Un completo dominio de las artes escénicas y la interpretación.</p>
+                </div>
+            </div>
+            <div class="model-card group">
+                <img src="modelos/modelo10.jpg" alt="Serafín Jiménez">
+                <div class="mt-4">
+                    <h3 class="text-primary font-bold">Serafín Jiménez</h3>
+                    <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/serafinjimenezz/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@serafinjimenezz</a></p>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">Su mirada a cámara posiblemente sea de las más fascinantes con las que me he cruzado.</p>
+                </div>
+            </div>
+            
+
+            </div>
+    </main>
+
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="mt-3 pt-5 pb-5">
+            <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+                <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span> 
+                <span>Volver</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="text-center py-10 border-t border-white/5 text-slate-600 text-sm">
+        &copy; 2026 Fotovazquez
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    <title>Fotovazquez | Portfolio</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#D0BB95', 'bg-dark': '#131313' },
+                    fontFamily: { sans: ['Comfortaa', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #131313; color: white; scroll-behavior: smooth; }
+        /* Efecto dorado suave personalizado */
+        .category-card { transition: all 0.2s ease-in-out; }
+        .category-card:hover { 
+            box-shadow: 0 0 30px rgba(208, 187, 149, 0.3);
+            border-color: rgba(208, 187, 149, 0.6);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-black">
+
+    <nav class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
+    <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain">
+    FOTOVAZQUEZ
+</h1>
+            <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+                <a href="#portfolio" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="modelos.html" class="hover:text-primary transition-colors">Modelos</a>
+                <a href="#colaboraciones" class="hover:text-primary transition-colors">Colaboraciones y contacto</a>
+                
+            </div>
+            <div class="md:hidden text-primary font-bold"><a href="#colaboraciones" class="hover:text-primary transition-colors">Pide tu sesión</a><br>
+<a href="modelos.html" class="hover:text-primary transition-colors">Mis modelos</a></div>
+
+         
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-10 px-5 text-center">
+        <h2 class="text-3xl md:text-5xl font-light mb-4">Capturo <span class="text-primary font-bold">lo que el tiempo intenta borrar</span></h2>
+    </header>
+
+    <section id="portfolio" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-6">
+        
+        <a href="retrato.html" class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" style="background-image: url('img/retrato.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8">
+                <p class="text-2xl font-bold">Retrato</p>
+                <p class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">Ver galería →</p>
+            </div>
+        </a>
+
+        <a href="estudio.html" class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" style="background-image: url('img/estudio.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8">
+                <p class="text-2xl font-bold">Sesiones en estudio</p>
+                <p class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">Ver galería →</p>
+            </div>
+        </a>
+
+        <a href="exterior.html" class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" style="background-image: url('img/exterior.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8">
+                <p class="text-2xl font-bold">Sesiones en exterior</p>
+                <p class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">Ver galería →</p>
+            </div>
+        </a>
+
+    </section>
+
+    
+    <section id="colaboraciones" class="py-24 px-4 md:px-20 lg:px-40">
+        <div class="flex flex-col lg:flex-row rounded-3xl overflow-hidden border border-white/5 bg-dark-gray">
+            <div class="lg:w-1/3 p-12 text-center bg-[#1a1a1a] flex flex-col justify-center items-center">
+                <span class="material-symbols-outlined text-4xl text-primary mb-6">Reserva tu sesión</span>
+                   <span class="text-primary">-Sevilla-</span><br>
+                <h2 class="text-1xl font-bold mb-6 tracking-widest uppercase">Sesiones colaborativas a 0€ <br><span class="text-primary">Máximo 5 fotos/sesión</span></h2>
+
+                
+                <p class="text-slate-400 mb-3">¿Te gustaría hacer una sesión de muchas <strong>más fotos</strong>?<br>¡La haremos!</p>
+                <p class="text-slate-400 mb-3">·</p>
+                <p class="text-slate-400 mb-3">¿Tienes una idea y quieres llevarla a cabo?<br>Tu opinión siempre cuenta</p>
+                <p class="text-slate-400 mb-3">·</p>
+                <p class="text-slate-400 mb-3">Recuerda que también puedes encontrarme en Instagram como: <a href="https://instagram.com/fotovazquez" target="_blank" class="text-xl font-bold hover:text-primary transition-colors">@fotovazquez</a></p>                
+            </div>
+            
+        
+            <div id="contacto" class="lg:w-2/3 p-12 bg-zinc-900">
+                <h3 class="text-2xl font-bold mb-8 text-center">Ponte en contacto y reserva tu sesión</h3>
+                <form action="https://formspree.io/f/xojlzbvl" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input name="nombre" type="text" placeholder="¿Cómo te llamas?" required class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary">
+                        <input name="email" type="email" placeholder="¿Cuál es tu email?" required class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary">
+                    </div>
+                    <textarea name="mensaje" placeholder="Dime qué tienes en mente para tu sesión y te responderé lo antes posible." rows="6" required class="w-full bg-[#121212] border border-white/10 rounded-xl p-5 outline-none focus:border-primary"></textarea>
+                    <div class="flex justify-center">
+    <button type="submit" class="w-max h-12 px-10 bg-primary text-black font-bold rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all uppercase tracking-widest text-sm">
+        Enviar Mensaje
+    </button>
+</div>
+                </form>
+            </div>
+              
+        </div>
+         
+    </section>
+
+    </body>
+    
+    <footer class="text-center py-10 border-t border-white/5 text-slate-600 text-sm">
+        &copy; 2026 Fotovazquez
+    </footer>
+</html>

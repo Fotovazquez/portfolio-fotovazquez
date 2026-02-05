@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotovazquez | Retrato</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#D0BB95', 'bg-dark': '#131313' },
+                    fontFamily: { sans: ['Comfortaa', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #131313; color: white; font-family: 'Comfortaa', sans-serif; }
+        
+        /* Estilo Mosaico (Masonry) nativo con CSS Columns */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.02);
+            border-color: rgba(208, 187, 149, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-black">
+
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+            <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span> 
+            <span>Volver</span>
+        </a>
+        <h1 class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
+    <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain">
+    FOTOVAZQUEZ
+</h1>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-4xl font-light">Galería de <span class="font-bold text-primary">Retratos</span></h2>
+        <p class="text-slate-400 mt-4 max-w-xl">Una mirada íntima y sincera a través del estudio de la luz y la expresión humana.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-8 pb-20">
+        <div class="masonry-grid">
+            
+            <div class="masonry-item">
+                <img src="retrato/retrato_1.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_2.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_3.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_4.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_5.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_6.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_7.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_8.jpg" alt="Retrato">
+            </div>
+            
+            <div class="masonry-item">
+                <img src="retrato/retrato_9.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_10.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_11.jpg" alt="Retrato">
+            </div>
+
+            <div class="masonry-item">
+                <img src="retrato/retrato_12.jpg" alt="Retrato">
+            </div>
+             <div class="masonry-item">
+                <img src="retrato/retrato_13.jpg" alt="Retrato">
+            </div>
+             <div class="masonry-item">
+                <img src="retrato/retrato_14.jpg" alt="Retrato">
+            </div>
+            <div class="masonry-item">
+                <img src="retrato/retrato_15.jpg" alt="Retrato">
+            </div>
+                      
+
+        </div>
+            
+   </main>
+
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="mt-3 pt-5 pb-5">
+            <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+                <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span> 
+                <span>Volver</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="text-center py-10 border-t border-white/5 text-slate-600 text-sm">
+        &copy; 2026 Fotovazquez
+    </footer>
+
+</body>
+</html>
