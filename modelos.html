@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelos | Fotovazquez</title>
+    <title>Fotovazquez | Mis modelos</title>
+   
+    <meta name="description" content="Mis mejores modelos. El talento y la esencia que hay detrás de cada fotografía. Conoce a las personas que dan vida a mi trabajo.">
+<meta name="keywords" content="fotógrafo Sevilla, retratos Sevilla, sesiones de fotos, Fotovazquez, fotografía profesional, colaboraciones fotografía, colaboraciones Sevilla, boudoir sevilla, fotógrafo boudoir Sevilla, fotógrafo de retrato Sevilla, fotógrafos de Sevilla, fotografo profesional Sevilla, sesiones de fotos Sevilla, colaboración de fotos Sevilla">
+<meta name="author" content="Juan Vázquez (Fotovazquez)">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Fotovazquez | Mis modelos">
+<meta property="og:description" content="Sesiones profesionales de fotografía en Sevilla. Reserva tu sesión colaborativa.">
+<meta property="og:image" content="img/Juan_Vazquez.jpg"> <meta property="og:url" content="https://www.fotovazquez.com">
+    
     <link rel="icon" type="image/png" href="img/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+	<script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -43,8 +54,10 @@
             <span>Volver</span>
         </a>
         <h1 class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
-            <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain">
-            FOTOVAZQUEZ
+            <a href="index.html" class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
+    <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain">
+    FOTOVAZQUEZ
+</a>
         </h1>
     </nav>
 
@@ -130,7 +143,7 @@
                 </div>
             </div>
             <div class="model-card group">
-                <img src="modelos/modelo9.jpg" alt="Sanaida Vicario">
+                <img src="modelos/modelo9.jpg" loading="lazy" alt="Sanaida Vicario">
                 <div class="mt-4">
                     <h3 class="text-primary font-bold">Sanaida Vicario</h3>
                     <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/sanaidavicario/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@sanaidavicario</a></p>
@@ -138,7 +151,7 @@
                 </div>
             </div>
             <div class="model-card group">
-                <img src="modelos/modelo10.jpg" alt="Serafín Jiménez">
+                <img src="modelos/modelo10.jpg" loading="lazy" alt="Serafín Jiménez">
                 <div class="mt-4">
                     <h3 class="text-primary font-bold">Serafín Jiménez</h3>
                     <p class="text-xs text-slate-500 tracking-widest mt-1"><a href="https://www.instagram.com/serafinjimenezz/" target="_blank" class="text-xs font-bold hover:text-primary transition-colors">@serafinjimenezz</a></p>
@@ -159,6 +172,20 @@
         </div>
     </div>
 
+<div class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+    <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">Sígueme en redes</p>
+    
+    <a href="https://instagram.com/fotovazquez" target="_blank" class="relative inline-block w-6 h-6 group active:scale-90 transition-transform">
+        <img src="img/ig_fotovazquez_normal.png" alt="Instagram" 
+             class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+        
+        <img src="img/ig_fotovazquez_over.png" alt="Instagram Hover" 
+             class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+    </a>
+</div>
+
+    
+    
     <footer class="text-center py-6 border-t border-white/5 text-slate-600 text-sm">
         &copy; 2026 Fotovazquez
     </footer>
