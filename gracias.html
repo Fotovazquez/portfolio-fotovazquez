@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>¡Gracias! | Fotovazquez</title>
+
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#D0BB95", "bg-dark": "#131313" },
+            fontFamily: { sans: ["Comfortaa", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+      }
+      .bg-thankyou {
+        background:
+          linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.8)),
+          url("img/fondo_gracias.webp");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body class="selection:bg-primary selection:text-black">
+    <nav
+      class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-center items-center">
+        <h1 class="text-xl font-bold tracking-tighter text-primary">
+          <a href="/" class="flex items-center gap-2">
+            <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
+            <span>FOTOVAZQUEZ</span>
+          </a>
+        </h1>
+      </div>
+    </nav>
+
+    <main class="h-screen flex items-center justify-center bg-thankyou px-6">
+      <div
+        class="max-w-2xl w-full bg-bg-dark/60 backdrop-blur-xl border border-white/10 p-12 rounded-[2rem] text-center shadow-2xl">
+        <div class="mb-6 flex justify-center">
+          <div
+            class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¡Mensaje enviado con éxito!
+        </h2>
+        <p class="text-slate-300 text-lg mb-10 leading-relaxed">
+          Gracias por ponerte en contacto conmigo. He recibido tus detalles
+          correctamente y te responderé lo antes posible para empezar a trabajar
+          en tu sesión.
+        </p>
+
+        <a
+          href="/"
+          class="inline-block bg-primary text-black font-bold py-4 px-10 rounded-xl hover:scale-105 transition-all shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
+          Volver al Portfolio
+        </a>
+      </div>
+    </main>
+
+    <footer
+      class="fixed bottom-0 w-full text-center py-6 text-slate-600 text-sm bg-gradient-to-t from-bg-dark to-transparent">
+      &copy; 2026 Fotovazquez
+    </footer>
+  </body>
+</html>
