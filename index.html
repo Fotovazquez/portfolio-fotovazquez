@@ -100,20 +100,21 @@
 
   <body class="selection:bg-primary selection:text-black">
     <nav
-      class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-6 py-4">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
+      class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-4 md:px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center gap-x-4">
         <h1
-          class="text-base md:text-xl font-bold tracking-tighter text-primary">
+          class="text-base md:text-xl font-bold tracking-tighter text-primary flex-shrink-0">
           <a href="/" class="flex items-center gap-2">
             <img
               src="img/icon.png"
               alt="Logo Fotovazquez"
-              class="w-8 h-8 object-contain" />
+              class="w-7 h-7 md:w-8 md:h-8 object-contain" />
             <span>FOTOVAZQUEZ</span>
           </a>
         </h1>
 
-        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+        <div
+          class="hidden md:flex gap-8 text-sm uppercase tracking-widest items-center">
           <a href="#portfolio" class="hover:text-primary transition-colors"
             >Portfolio</a
           >
@@ -132,7 +133,6 @@
               src="img/ig_fotovazquez_normal.png"
               alt="Instagram"
               class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" />
-
             <img
               src="img/ig_fotovazquez_over.png"
               alt="Instagram Hover"
@@ -141,15 +141,15 @@
         </div>
 
         <div
-          class="md:hidden flex flex-col items-end gap-1.5 text-[11px] uppercase tracking-wider font-bold">
+          class="md:hidden flex flex-col items-end gap-1.5 text-[10px] uppercase tracking-wider font-bold flex-shrink-0">
           <a
             href="#colaboraciones"
-            class="w-32 py-1 text-center border border-primary/40 rounded-lg bg-bg-dark/50 text-primary active:scale-95 transition-all">
+            class="w-28 py-1 text-center border border-primary/40 rounded-lg bg-bg-dark/50 text-primary active:scale-95 transition-all">
             Pide tu sesión
           </a>
           <a
             href="/modelos"
-            class="w-32 py-1 text-center border border-primary/40 rounded-lg bg-bg-dark/50 text-primary active:scale-95 transition-all">
+            class="w-28 py-1 text-center border border-primary/40 rounded-lg bg-bg-dark/50 text-primary active:scale-95 transition-all">
             Mis modelos
           </a>
         </div>
