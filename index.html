@@ -281,8 +281,15 @@
           <h3 class="text-2xl font-bold mb-8 text-center">
             Ponte en contacto y reserva tu sesión
           </h3>
+
+          <div
+            id="mensaje-error"
+            class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">
+            Por favor, rellena todos los campos para poder contactar.
+          </div>
           <form
             id="miFormulario"
+            novalidate
             action="https://formspree.io/f/xojlzbvl"
             method="POST"
             class="space-y-6">
@@ -297,7 +304,7 @@
                 class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
               <input
                 name="email"
-                type="email"
+                type="text"
                 placeholder="¿Cuál es tu email?"
                 required
                 class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
@@ -352,9 +359,29 @@
       document.addEventListener("DOMContentLoaded", () => {
         const $form = document.querySelector("#miFormulario");
         const $button = document.querySelector("#botonEnvio");
+        const $errorMsg = document.querySelector("#mensaje-error"); // Nueva referencia
 
         $form.addEventListener("submit", function (event) {
           event.preventDefault(); // Detenemos el envío normal
+
+          // Bloque de validación personalizada
+          // Verificación manual de campos vacíos y formato de email
+          $errorMsg.classList.add("hidden");
+          const nombre = $form.nombre.value.trim();
+          const email = $form.email.value.trim();
+          const mensaje = $form.mensaje.value.trim();
+
+          // Filtro para validar formato de email
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!nombre || !email || !mensaje || !emailRegex.test(email)) {
+            $errorMsg.innerText =
+              !emailRegex.test(email) && email
+                ? "Por favor, introduce un email válido."
+                : "Por favor, rellena todos los campos para poder contactar.";
+            $errorMsg.classList.remove("hidden");
+            return;
+          }
 
           $button.innerText = "Enviando...";
           $button.disabled = true;
