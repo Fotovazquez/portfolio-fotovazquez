@@ -22,10 +22,10 @@
    </url>
    <url>
       <loc>https://www.fotovazquez.com/condiciones.html</loc>
-      <priority>0.70</priority>
+      <priority>0.50</priority>
    </url>
       <url>
       <loc>https://www.fotovazquez.com/autor.html</loc>
-      <priority>0.70</priority>
+      <priority>0.80</priority>
    </url>
 </urlset>
