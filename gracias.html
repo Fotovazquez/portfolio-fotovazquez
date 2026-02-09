@@ -25,6 +25,7 @@
       body {
         background-color: #131313;
         color: white;
+        overflow: hidden; /* Evita scrolls raros durante la animación */
       }
       .bg-thankyou {
         background:
@@ -32,6 +33,22 @@
           url("img/fondo_gracias.webp");
         background-size: cover;
         background-position: center;
+      }
+
+      /* Animación personalizada de entrada */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-custom {
+        animation: fadeInUp 1s ease-out forwards;
       }
     </style>
   </head>
@@ -50,13 +67,13 @@
 
     <main class="h-screen flex items-center justify-center bg-thankyou px-6">
       <div
-        class="max-w-2xl w-full bg-bg-dark/60 backdrop-blur-xl border border-white/10 p-12 rounded-[2rem] text-center shadow-2xl">
+        class="max-w-2xl w-full bg-bg-dark/60 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[1.5rem] md:rounded-[2rem] text-center shadow-2xl animate-fade-custom">
         <div class="mb-6 flex justify-center">
           <div
-            class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+            class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-primary"
+              class="h-8 w-8 md:h-10 md:w-10 text-primary"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
@@ -69,18 +86,18 @@
           </div>
         </div>
 
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <h2 class="text-2xl md:text-4xl font-bold mb-4">
           ¡Mensaje enviado con éxito!
         </h2>
-        <p class="text-slate-300 text-lg mb-10 leading-relaxed">
+        <p
+          class="text-slate-300 text-sm md:text-lg mb-8 md:mb-10 leading-relaxed max-w-md mx-auto">
           Gracias por ponerte en contacto conmigo. He recibido tus detalles
-          correctamente y te responderé lo antes posible para empezar a trabajar
-          en tu sesión.
+          correctamente y te responderé lo antes posible.
         </p>
 
         <a
           href="/"
-          class="inline-block bg-primary text-black font-bold py-4 px-10 rounded-xl hover:scale-105 transition-all shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
+          class="inline-block bg-primary text-black font-bold py-3 px-8 md:py-4 md:px-10 rounded-xl hover:scale-105 transition-all shadow-lg shadow-primary/20 uppercase tracking-widest text-xs md:text-sm">
           Volver al Portfolio
         </a>
       </div>
