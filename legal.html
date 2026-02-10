@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Fotovazquez | Aviso Legal y Privacidad</title>
+
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#D0BB95", "bg-dark": "#131313" },
+            fontFamily: { sans: ["Comfortaa", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        scroll-behavior: smooth;
+      }
+      .legal-content h2 {
+        color: #d0bb95;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 1.1rem;
+      }
+      .legal-content p {
+        color: #a1a1aa;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+      .legal-content ul {
+        list-style-type: none;
+        margin-bottom: 1.5rem;
+      }
+      .legal-content li {
+        position: relative;
+        padding-left: 1.5rem;
+        color: #a1a1aa;
+        margin-bottom: 0.75rem;
+      }
+      .legal-content li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #d0bb95;
+      }
+    </style>
+  </head>
+
+  <body class="selection:bg-primary selection:text-black">
+    <nav
+      class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-tighter text-primary">
+          <a href="/" class="flex items-center gap-2">
+            <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
+            <span>FOTOVAZQUEZ</span>
+          </a>
+        </h1>
+        <a
+          href="/"
+          class="text-xs uppercase tracking-widest hover:text-primary transition-colors"
+          >Volver</a
+        >
+      </div>
+    </nav>
+
+    <header
+      class="pt-20 pb-16 px-6 text-center bg-gradient-to-b from-primary/5 to-transparent">
+      <h1 class="text-3xl font-light mb-4">
+        Información <span class="text-primary font-bold">Legal</span>
+      </h1>
+      <p
+        class="text-slate-500 max-w-2xl mx-auto uppercase tracking-[0.2em] text-xs">
+        Transparencia y Protección de Datos
+      </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pb-32 animate-[fadeIn_1s_ease-out]">
+      <div
+        class="legal-content bg-white/5 border border-white/10 p-8 md:p-16 rounded-[2rem] backdrop-blur-sm">
+        <h2>1. Identificación del Titular</h2>
+        <p>
+          En cumplimiento con la Ley 34/2002 (LSSI-CE), se informa que el
+          titular de esta web es **Juan Vázquez Fernández**. Puedes contactar
+          conmigo directamente para cualquier duda legal en:
+          <a
+            href="mailto:contacto@fotovazquez.com"
+            class="text-primary hover:underline"
+            >contacto@fotovazquez.com</a
+          >.
+        </p>
+
+        <h2>2. Propiedad Intelectual</h2>
+        <p>
+          Todas las fotografías, logotipos y contenidos de esta web son
+          propiedad exclusiva de **Fotovazquez**, salvo que se indique lo
+          contrario. Queda prohibida la reproducción, distribución o uso
+          comercial de cualquier material sin autorización previa por escrito.
+        </p>
+
+        <h2>3. Protección de Datos (RGPD)</h2>
+        <p>
+          Al utilizar mi formulario de contacto o enviarme un email, tratas tus
+          datos bajo estas premisas:
+        </p>
+        <ul>
+          <li>
+            **Finalidad:** Solo usaré tu nombre y correo para responder a tu
+            solicitud de información sobre sesiones de fotografía.
+          </li>
+          <li>**Legitimación:** Tu consentimiento expreso al escribirme.</li>
+          <li>
+            **Conservación:** Los datos se guardarán el tiempo necesario para
+            gestionar la colaboración entre ambas partes.
+          </li>
+          <li>
+            **Derechos:** Puedes solicitar la rectificación o borrado de los
+            datos facilitados escribiendo a mi email.
+          </li>
+        </ul>
+
+        <h2>4. Seguridad y Cookies</h2>
+        <p>
+          Esta web utiliza tecnología de **Cloudflare** y **Vercel** para
+          garantizar una navegación segura y cifrada mediante SSL. No se
+          utilizan cookies de rastreo ni publicidad de terceros. Al ser un
+          portfolio estático, priorizamos tu privacidad desactivando sensores
+          del dispositivo mediante políticas de seguridad avanzadas.
+        </p>
+
+        <h2>5. Limitación de Responsabilidad</h2>
+        <p>
+          Aunque trabajo para que la web esté siempre disponible, no me hago
+          responsable de interrupciones temporales por causas ajenas (como
+          bloqueos de operadoras durante eventos deportivos).
+        </p>
+      </div>
+    </main>
+
+    <footer class="text-center py-6 border-t border-white/5 tracking-wide">
+      <div class="max-w-7xl mx-auto flex flex-col gap-2">
+        <p
+          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+          &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
+        </p>
+
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
+          <a href="/condiciones" class="hover:text-primary transition-colors"
+            >Condiciones</a
+          >
+
+          <span class="text-white/5">|</span>
+
+          <a href="/autor" class="hover:text-primary transition-colors"
+            >Sobre el autor</a
+          >
+
+          <span class="text-white/5">|</span>
+
+          <a href="/legal" class="hover:text-primary transition-colors"
+            >Legal y Privacidad</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
