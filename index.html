@@ -156,22 +156,27 @@
       </div>
     </nav>
 
-    <header class="pt-32 pb-10 px-5 text-center">
-      <h1 class="text-3xl md:text-5xl font-light mb-4">
+    <header class="pt-32 pb-10 px-5 text-center flex flex-col items-center">
+      <h1 class="text-3xl md:text-5xl font-light mb-2">
         Capturo
         <span class="text-primary font-bold"
           >lo que el tiempo intenta borrar</span
         >
       </h1>
 
-      <div class="animate-[fadeIn_1.5s_ease-out]">
+      <div
+        class="animate-[fadeIn_1.5s_ease-out] flex flex-col items-center group">
+        <div
+          class="w-16 border-t border-white/20 mb-3 transition-all duration-700 group-hover:w-24 group-hover:border-primary/50"></div>
+
         <a
-          href="/autor"
-          class="text-xs uppercase tracking-[0.3em] text-slate-500 hover:text-primary transition-all duration-500 group">
+          href="sobre-mi.html"
+          class="text-[10px] md:text-xs uppercase tracking-[0.4em] text-slate-500 hover:text-primary transition-colors duration-500">
           Por
-          <span class="group-hover:text-white transition-colors"
-            >Juan Vázquez</span
-          >
+          <span
+            class="group-hover:text-white transition-colors duration-500 font-medium">
+            Juan Vázquez
+          </span>
         </a>
       </div>
     </header>
