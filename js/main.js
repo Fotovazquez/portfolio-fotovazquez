@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 2. LÓGICA DEL FORMULARIO (Tu código original) ---
+  // --- 2. LÓGICA DEL FORMULARIO ---
   const $form = document.querySelector("#miFormulario");
   const $button = document.querySelector("#botonEnvio");
   const $errorMsg = document.querySelector("#mensaje-error");
@@ -111,7 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
         !emailRegex.test(email) && email
           ? "Por favor, introduce un email válido."
           : "Por favor, rellena todos los campos para poder contactar.";
+
       $errorMsg.classList.remove("hidden");
+
       return;
     }
 

@@ -319,11 +319,6 @@
             Ponte en contacto y reserva tu sesión
           </h3>
 
-          <div
-            id="mensaje-error"
-            class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">
-            Por favor, rellena todos los campos para poder contactar.
-          </div>
           <form
             id="miFormulario"
             novalidate
@@ -415,6 +410,11 @@
               rows="6"
               required
               class="w-full bg-[#121212] border border-white/10 rounded-xl p-5 outline-none focus:border-primary"></textarea>
+            <div
+              id="mensaje-error"
+              class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">
+              Por favor, rellena todos los campos para poder contactar.
+            </div>
             <div class="flex justify-center">
               <button
                 id="botonEnvio"
