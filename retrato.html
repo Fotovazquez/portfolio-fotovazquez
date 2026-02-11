@@ -64,6 +64,7 @@
     </script>
 
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body class="selection:bg-primary selection:text-black">
     <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
@@ -312,27 +313,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Inicializamos la galería
-        var lightbox = new SimpleLightbox(".gallery a", {
-          overlayOpacity: 0.9,
-          disableScroll: true,
-          fadeSpeed: 250,
-          close: true,
-          scrollZoom: false,
-          nav: true,
-        });
-
-        // Eventos para el efecto de desenfoque
-        lightbox.on("show.simplelightbox", function () {
-          document.body.classList.add("sl-open");
-        });
-
-        lightbox.on("close.simplelightbox", function () {
-          document.body.classList.remove("sl-open");
-        });
-      });
-    </script>
+    <div id="guia-galeria" class="guia-invisible">
+      <div class="guia-item">
+        <span class="tecla">←</span><span class="tecla">→</span> Navegar
+      </div>
+      <div class="guia-item"><span class="tecla">ESC</span> Cerrar</div>
+    </div>
   </body>
 </html>
