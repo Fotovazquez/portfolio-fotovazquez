@@ -263,170 +263,94 @@
           </p>
         </div>
       </a>
+
+      
     </section>
 
     <section id="colaboraciones" class="py-24 px-4 md:px-20 lg:px-40">
-      <div
-        class="flex flex-col lg:flex-row rounded-3xl overflow-hidden border border-white/5 bg-dark-gray">
-        <div
-          class="lg:w-1/3 p-12 text-center bg-[#1a1a1a] flex flex-col justify-center items-center">
-          <span class="material-symbols-outlined text-4xl text-primary mb-6"
-            >Reserva tu sesión</span
-          >
-          <span class="text-primary text-xs uppercase tracking-widest"
-            >- Sevilla -</span
-          >
+  <div class="max-w-7xl mx-auto"> 
+    
+    <div class="flex flex-col lg:flex-row rounded-3xl overflow-hidden border border-white/5 bg-dark-gray">
+      <div class="lg:w-1/3 p-12 text-center bg-[#1a1a1a] flex flex-col justify-center items-center">
+        <span class="material-symbols-outlined text-4xl text-primary mb-6">Reserva tu sesión</span>
+        <span class="text-primary text-xs uppercase tracking-widest">- Sevilla -</span>
 
-          <h2
-            class="text-xl font-bold mt-4 mb-6 tracking-widest uppercase leading-tight">
-            Sesiones colaborativas a 0€ <br />
-            <span class="text-primary text-sm">Máximo 5 fotos/sesión</span>
-          </h2>
+        <h2 class="text-xl font-bold mt-4 mb-6 tracking-widest uppercase leading-tight">
+          Sesiones colaborativas a 0€ <br />
+          <span class="text-primary text-sm">Máximo 5 fotos/sesión</span>
+        </h2>
 
-          <p class="text-slate-400 mb-6 text-sm">
-            ¿Te gustaría hacer una sesión de muchas
-            <strong>más fotos</strong>?<br />¡La haremos!
-          </p>
+        <p class="text-slate-400 mb-6 text-sm">
+          ¿Te gustaría hacer una sesión de muchas <strong>más fotos</strong>?<br />¡La haremos!
+        </p>
 
-          <div class="w-8 border-t border-white/10 mb-6"></div>
+        <div class="w-8 border-t border-white/10 mb-6"></div>
 
-          <p class="text-slate-400 mb-6 text-sm">
-            ¿Tienes una idea y quieres llevarla a cabo?<br />Tu opinión siempre
-            cuenta
-          </p>
+        <p class="text-slate-400 mb-6 text-sm">
+          ¿Tienes una idea y quieres llevarla a cabo?<br />Tu opinión siempre cuenta
+        </p>
 
-          <div class="w-8 border-t border-white/10 mb-6"></div>
+        <div class="w-8 border-t border-white/10 mb-6"></div>
 
-          <p class="text-slate-400 text-sm">
-            Recuerda que también puedes encontrarme en Instagram como<br />
-            <a
-              href="https://instagram.com/fotovazquez"
-              target="_blank"
-              class="text-lg font-bold hover:text-primary transition-colors block mt-2"
-              >@fotovazquez</a
-            >
-            <span class="block my-1 opacity-50">o escribirme a</span>
-            <a
-              href="mailto:contacto@fotovazquez.com"
-              class="text-lg font-bold hover:text-primary transition-colors"
-              >contacto@fotovazquez.com</a
-            >
-          </p>
-        </div>
-
-        <div id="contacto" class="lg:w-2/3 p-12 bg-zinc-900">
-          <h3 class="text-2xl font-bold mb-8 text-center">
-            Ponte en contacto y reserva tu sesión
-          </h3>
-
-          <form
-            id="miFormulario"
-            novalidate
-            action="https://formspree.io/f/xojlzbvl"
-            method="POST"
-            class="space-y-6">
-            <input
-              type="hidden"
-              name="_next"
-              value="https://www.fotovazquez.com/gracias" />
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                name="nombre"
-                type="text"
-                placeholder="¿Cómo te llamas?"
-                required
-                class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
-              <input
-                name="email"
-                type="text"
-                placeholder="¿Cuál es tu email?"
-                required
-                class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
-            </div>
-            <div class="space-y-4">
-              <p class="text-sm text-slate-500 tracking-[0.1em] ml-1">
-                Selecciona el tipo de sesión que te gustaría hacer:
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label class="relative cursor-pointer">
-                  <input
-                    type="radio"
-                    name="tipo_sesion"
-                    value="colaboracion_5_fotos"
-                    class="peer hidden"
-                    checked />
-                  <div
-                    class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
-                    <div
-                      class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
-                      <div
-                        class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
-                    </div>
-                    <div class="ml-4">
-                      <span
-                        class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors"
-                        >Experiencia colaborativa (0€)</span
-                      >
-                      <span
-                        class="block text-[11px] text-slate-400 uppercase tracking-tight"
-                        >Máximo 5 fotos</span
-                      >
-                    </div>
-                  </div>
-                </label>
-
-                <label class="relative cursor-pointer">
-                  <input
-                    type="radio"
-                    name="tipo_sesion"
-                    value="sesion_completa"
-                    class="peer hidden" />
-                  <div
-                    class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
-                    <div
-                      class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
-                      <div
-                        class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
-                    </div>
-                    <div class="ml-4">
-                      <span
-                        class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors"
-                        >Experiencia completa</span
-                      >
-                      <span
-                        class="block text-[11px] text-slate-400 uppercase tracking-tight"
-                        >Más fotos y variedad</span
-                      >
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-            <textarea
-              name="mensaje"
-              placeholder="Dime qué tienes en mente para tu sesión y te responderé lo antes posible."
-              rows="6"
-              required
-              class="w-full bg-[#121212] border border-white/10 rounded-xl p-5 outline-none focus:border-primary"></textarea>
-            <div
-              id="mensaje-error"
-              class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">
-              Por favor, rellena todos los campos para poder contactar.
-            </div>
-            <div class="flex justify-center">
-              <button
-                id="botonEnvio"
-                type="submit"
-                class="w-max h-12 px-10 bg-primary text-black font-bold rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all uppercase tracking-widest text-sm">
-                Enviar Mensaje
-              </button>
-            </div>
-          </form>
-        </div>
+        <p class="text-slate-400 text-sm">
+          Recuerda que también puedes encontrarme en Instagram como<br />
+          <a href="https://instagram.com/fotovazquez" target="_blank" class="text-lg font-bold hover:text-primary transition-colors block mt-2">@fotovazquez</a>
+          <span class="block my-1 opacity-50">o escribirme a</span>
+          <a href="mailto:contacto@fotovazquez.com" class="text-lg font-bold hover:text-primary transition-colors">contacto@fotovazquez.com</a>
+        </p>
       </div>
-    </section>
+
+      <div id="contacto" class="lg:w-2/3 p-12 bg-zinc-900">
+        <h3 class="text-2xl font-bold mb-8 text-center">Ponte en contacto y reserva tu sesión</h3>
+
+        <form id="miFormulario" novalidate action="https://formspree.io/f/xojlzbvl" method="POST" class="space-y-6">
+          <input type="hidden" name="_next" value="https://www.fotovazquez.com/gracias" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input name="nombre" type="text" placeholder="¿Cómo te llamas?" required class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
+            <input name="email" type="text" placeholder="¿Cuál es tu email?" required class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
+          </div>
+          <div class="space-y-4">
+            <p class="text-sm text-slate-500 tracking-[0.1em] ml-1">Selecciona el tipo de sesión que te gustaría hacer:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label class="relative cursor-pointer">
+                <input type="radio" name="tipo_sesion" value="colaboracion_5_fotos" class="peer hidden" checked />
+                <div class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
+                  <div class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
+                    <div class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div class="ml-4">
+                    <span class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors">Experiencia colaborativa (0€)</span>
+                    <span class="block text-[11px] text-slate-400 uppercase tracking-tight">Máximo 5 fotos</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="relative cursor-pointer">
+                <input type="radio" name="tipo_sesion" value="sesion_completa" class="peer hidden" />
+                <div class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
+                  <div class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
+                    <div class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div class="ml-4">
+                    <span class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors">Experiencia completa</span>
+                    <span class="block text-[11px] text-slate-400 uppercase tracking-tight">Más fotos y variedad</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <textarea name="mensaje" placeholder="Dime qué tienes en mente para tu sesión y te responderé lo antes posible." rows="6" required class="w-full bg-[#121212] border border-white/10 rounded-xl p-5 outline-none focus:border-primary"></textarea>
+          <div id="mensaje-error" class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">Por favor, rellena todos los campos para poder contactar.</div>
+          <div class="flex justify-center">
+            <button id="botonEnvio" type="submit" class="w-max h-12 px-10 bg-primary text-black font-bold rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all uppercase tracking-widest text-sm">Enviar Mensaje</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div> </section>
 
     <div
       class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
