@@ -81,3 +81,64 @@ body.sl-open footer {
   filter: blur(8px);
   transition: filter 0.3s ease;
 }
+
+/* FORMATO CINE */
+/* --- CONTENEDOR DE LA GALERÍA  --- */
+.galeria-cine-contenedor {
+  display: grid; 
+  grid-template-columns: 1fr; /* Por defecto: 1 columna (Móvil) */
+  gap: 20px; /* Espacio entre fotos en móvil */
+  width: 100%;
+}
+
+/* Tablets y pantallas medianas (768px hacia arriba) */
+@media (min-width: 768px) {
+  .galeria-cine-contenedor {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en Tablet/PC */
+    gap: 20px; /* Espacio entre columnas y filas */
+  }
+}
+
+/* Pantallas muy grandes (opcional: volver a 1 columna para máximo impacto) */
+@media (min-width: 1440px) {
+  .galeria-cine-contenedor {
+    gap: 40px;
+  }
+}
+
+/* --- AJUSTES DE LAS SECCIONES --- */
+.galeria-cine {
+  width: 100%;
+  display: block; 
+}
+
+.frame {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+  background-color: #000; /* Asegura fondo negro tras la imagen */
+}
+
+.frame a {
+  display: block;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto; /* Mantiene tu proporción 1920x804 intacta */
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* --- EFECTO HOVER --- */
+.frame:hover {
+  border-color: rgba(208, 187, 149, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.frame:hover img {
+  transform: scale(1.05);
+}
