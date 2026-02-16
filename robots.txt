@@ -3,6 +3,7 @@ Allow: /
 
 # Bloquear archivos y carpetas que no aportan valor SEO
 Disallow: /gracias.html
+Disallow: /seleccion.html
 
 # Indica dónde está tu mapa del sitio
 Sitemap: https://www.fotovazquez.com/sitemap.xml
