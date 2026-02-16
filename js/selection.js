@@ -66,7 +66,7 @@ async function ejecutarCargaSeleccion() {
         grid.appendChild(contenedor);
     }
 
-    // Actualizamos el contador "X" en el HTML
+    // Actualizamos el contador en el HTML
     if (contadorHTML) {
         // Restamos 1 porque el bucle se detiene cuando 'i' apunta a una foto que NO existe
         contadorHTML.innerText = i - 1;
