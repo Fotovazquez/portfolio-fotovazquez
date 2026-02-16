@@ -2,22 +2,14 @@
 <html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <title>Fotovazquez | Selecciona tus fotos</title>
-
     <meta name="author" content="Juan Vázquez (Fotovazquez)" />
-    
-
-    
-    
     <link rel="icon" type="image/png" href="img/icon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
-      rel="stylesheet" />
+    <script src="js/main.js" defer></script>
+    <script src="js/selection.js" defer></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -30,164 +22,74 @@
       };
     </script>
 
-    
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js" defer></script>
+    <style>
+      body { background-color: #131313; color: white; }
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out both;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* Prevenir selección de imágenes */
+      img { -webkit-user-drag: none; user-select: none; }
+    </style>
   </head>
-  <body class="selection:bg-primary selection:text-black">
-<nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
-  
-  <div class="text-xl font-bold tracking-tighter text-primary">
-    <a href="/" class="flex items-center gap-2">
-      <img src="img/icon.png" alt="Inicio Fotovazquez" class="w-8 h-8 object-contain" />
-      <span>FOTOVAZQUEZ</span>
-    </a>
-  </div>
-</nav>
 
-<header class="max-w-6xl mx-auto px-8 py-12">
+  <body class="selection:bg-primary selection:text-black font-sans">
+    
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+      <div class="text-xl font-bold tracking-tighter text-primary">
+        <a href="/" class="flex items-center gap-2">
+          <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
+          <span>FOTOVAZQUEZ</span>
+        </a>
+      </div>
+    </nav>
+
+   <header class="max-w-6xl mx-auto px-8 py-12 text-center md:text-left">
   <h1 class="text-3xl font-light">
-    Selección de fotos <span class="font-bold text-primary">Colaboración TFP</span>
+    Selección de fotos 
   </h1>
-  <p class="text-slate-400 mt-4 max-w-2xl leading-relaxed">
-    Recuerda que en la modalidad TFP puedes elegir hasta 5 fotos editadas en alta calidad.
-  </p>
+  <div class="text-slate-400 mt-4 max-w-7xl leading-relaxed">
+    <p><strong>¡Tus <span id="total-fotos" class="font-bold text-primary">...</span> fotos ya están listas!</strong></p>
+    <p class="mt-4">
+      Cada foto tiene una referencia única. Por favor, <strong>anota los números de las fotos</strong> que más te gusten. 
+      Recuerda que si se trata de una colaboración TFP puedes seleccionar como <strong>máximo 5 fotos</strong>.
+    </p>
+  </div>
 </header>
-
-   <main class="max-w-4xl mx-auto px-8 pb-20">
-  <div id="seleccion-grid" class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-8 justify-items-center gallery">
-    </div>
-</main>
-
-<script>
-  const CONFIG = {
-    carpeta: 'img/seleccion/', 
-    prefijo: 'foto-',          
-    extension: '.jpg',         
-    maxPosible: 500            
-  };
-
-  const grid = document.getElementById('seleccion-grid');
-
-  async function cargarGaleria() {
-    for (let i = 1; i <= CONFIG.maxPosible; i++) {
-      const rutaFoto = `${CONFIG.carpeta}${CONFIG.prefijo}${i}${CONFIG.extension}`;
-      const existe = await comprobarImagen(rutaFoto);
-      
-      if (!existe) break;
-
-      const contenedor = document.createElement('div');
-      contenedor.className = "group relative w-full max-w-[200px] animate-fade-in";
-      contenedor.innerHTML = `
-        <div class="absolute -top-3 -left-3 z-10 bg-primary text-black font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-bg-dark text-xs">
-          ${i}
+    <main class="max-w-7xl mx-auto px-8 pb-32">
+      <div id="seleccion-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16 items-end justify-items-center">
         </div>
-        <div class="overflow-hidden rounded-lg bg-white/5 border border-white/10 shadow-xl">
-          <img 
-            src="${rutaFoto}" 
-            alt="Foto ${i}" 
-            class="w-full aspect-[2/3] object-cover pointer-events-none" 
-            loading="lazy"
-          />
-        </div>
-        <p class="text-[10px] text-slate-500 mt-2 text-center uppercase tracking-widest font-medium">
-          Ref: ${i.toString().padStart(3, '0')}
-        </p>
-      `;
-      grid.appendChild(contenedor);
-    }
-    // SimpleLightbox ya no se inicializa aquí
-  }
-
-  function comprobarImagen(url) {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = url;
-    });
-  }
-
-  cargarGaleria();
-</script>
-
-<style>
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in both;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
-
-
-
     </main>
 
-
-
-    <div
-      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
-      <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
-        Sígueme en redes
-      </p>
-
-      <a
-        href="https://instagram.com/fotovazquez"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
-        aria-label="Instagram de Juan Vázquez">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="transition-all duration-300 group-hover:scale-110">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-    </div>
-
-    <footer class="text-center py-6 border-t border-white/5 tracking-wide">
-      <div class="max-w-7xl mx-auto flex flex-col gap-2">
-        <p
-          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
-          &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
+<div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-4 z-50">
+    <div class="max-w-xl mx-auto flex flex-col gap-3">
+        
+        <p class="text-[12px] text-slate-400 tracking-widest text-center sm:text-left">
+            Puedes ir anotando los números de las fotos que quieres:
         </p>
 
-        <div
-          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
-          <a href="/condiciones" class="hover:text-primary transition-colors"
-            >Condiciones</a
-          >
-
-          <span class="text-white/5">|</span>
-
-          <a href="/autor" class="hover:text-primary transition-colors"
-            >Sobre el autor</a
-          >
-
-          <span class="text-white/5">|</span>
-
-          <a href="/legal" class="hover:text-primary transition-colors"
-            >Legal y Privacidad</a
-          >
+        <div class="flex flex-col sm:flex-row gap-2 w-full">
+            <input type="text" id="lista-seleccion" placeholder="(ej: 1, 5, 12...)" 
+                   class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-primary transition-colors text-sm">
+            
+            <button onclick="copiarLista()" class="whitespace-nowrap bg-primary text-black font-bold px-6 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[12px] tracking-widest shadow-lg">
+                Copiar Lista
+            </button>
         </div>
-      </div>
+
+    </div>
+</div>
+
+
+
+    <footer class="text-center py-20 border-t border-white/5 tracking-wide opacity-50">
+      <p class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+        &copy; 2026 FOTOVAZQUEZ
+      </p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
-
-   
   </body>
 </html>
