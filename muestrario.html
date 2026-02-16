@@ -48,12 +48,21 @@
       </div>
     </nav>
 
-   <header class="max-w-6xl mx-auto px-8 py-12 text-center md:text-left">
-  <h1 class="text-3xl font-light">
-    Selección de fotos <span class="font-bold text-primary">| Muestrario</span>
+<header class="max-w-6xl mx-auto px-8 py-12 text-center md:text-left">
+  <h1 class="font-light leading-tight">
+    <span class="text-lg block md:hidden">
+      Selección <span class="font-bold text-primary">| Muestrario</span>
+    </span>
+    
+    <span class="text-3xl hidden md:block">
+      Selección de fotos <span class="font-bold text-primary">| Muestrario</span>
+    </span>
   </h1>
-  <div class="text-slate-400 mt-4 max-w-7xl leading-relaxed">
-    <p><strong>¡Tus <span id="total-fotos" class="font-bold text-primary">...</span> fotos ya están listas!</strong></p>
+
+  <div class="text-slate-400 mt-4 max-w-7xl leading-relaxed text-sm md:text-base">
+    <p>
+      <strong>¡Tus <span id="total-fotos" class="font-bold text-primary">...</span> fotos ya están listas!</strong>
+    </p>
     <p class="mt-4">
       Cada foto tiene una referencia única. Puedes anotar los números de las fotos que más te gusten y enviarme la lista. 
       Recuerda que si se trata de una colaboración TFP puedes seleccionar hasta <strong>5 fotos</strong> como máximo.
