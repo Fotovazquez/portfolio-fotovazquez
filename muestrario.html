@@ -99,37 +99,32 @@
 
     </div>
 </div>-->
-<div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-4 z-50">
-    <div class="max-w-xl mx-auto flex flex-col gap-3">
+<div class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-white/10 p-3 pb-6 sm:p-4 z-50">
+    <div class="max-w-xl mx-auto flex flex-col gap-2">
         
-        <div class="flex items-center justify-between gap-4">
-            <span id="contador-fotos" class="text-primary font-bold text-xs tracking-widest uppercase">
-                0 seleccionadas
-            </span>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span id="contador-fotos" class="text-primary font-bold text-[12px] uppercase tracking-wider">
+                    0 seleccionadas
+                </span>
+            </div>
             
             <button onclick="toggleFiltroSeleccionadas(this)" id="btn-filtro" 
-    class="flex items-center justify-center gap-2 w-48 text-[12px] font-bold border border-white/20 py-2.5 rounded-lg hover:border-primary transition-all text-slate-400 uppercase tracking-widest shrink-0">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-    </svg>
-
-    <span id="btn-filtro-texto">Ver seleccionadas</span>
-</button>
+                class="flex items-center justify-center gap-1.5 w-36 text-[9px] font-bold border border-white/20 py-2 rounded-lg text-slate-400 uppercase tracking-wide hover:border-primary transition-all shrink-0">
+                <span id="btn-filtro-icono" class="opacity-70 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                </span>
+                <span id="btn-filtro-texto">Ver seleccionadas</span>
+            </button>
         </div>
-        
-        <hr class="border-white/5">
 
-        <p class="text-[11px] text-slate-500 tracking-[0.2em] uppercase text-center sm:text-left">
-            Lista de fotos seleccionadas:
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-2 w-full">
-            <input type="text" readonly id="lista-seleccion" placeholder="(ej: 1, 5, 12...)" 
-                   class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-primary transition-colors text-sm cursor-default">
+        <div class="flex gap-1.5">
+            <input type="text" readonly id="lista-seleccion" placeholder="Seleccionadas..." 
+                   class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-primary focus:outline-none text-[12px] cursor-default min-w-0">
             
-            <button onclick="copiarLista()" class="whitespace-nowrap bg-primary text-black font-bold px-6 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[12px] tracking-widest shadow-lg">
-                Copiar Lista
+            <button onclick="copiarLista()" class="bg-primary text-black font-bold w-36 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[10px] tracking-widest shadow-lg flex items-center justify-center shrink-0">
+                Copiar lista
             </button>
         </div>
 
