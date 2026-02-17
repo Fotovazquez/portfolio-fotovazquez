@@ -14,7 +14,7 @@ async function ejecutarCargaSeleccion() {
     const CONFIG = {
         carpeta: 'img/seleccion/',
         prefijo: 'foto-',
-        extension: '.jpg',
+        extension: '.webp',
         maxPosible: 500
     };
 
@@ -45,7 +45,7 @@ async function ejecutarCargaSeleccion() {
             <div class="relative rounded-lg bg-white/5 border border-white/10 shadow-xl overflow-hidden flex items-center justify-center group-hover:border-primary/40 transition-all duration-300">
               
               <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span class="text-[14px] font-bold text-white/[0.08] uppercase tracking-[0.4em] -rotate-45 whitespace-nowrap mix-blend-overlay">
+                <span class="text-[14px] font-bold text-white/[0.09] uppercase tracking-[0.4em] -rotate-45 whitespace-nowrap mix-blend-overlay">
                   FOTOVAZQUEZ FOTOVAZQUEZ FOTOVAZQUEZ
                 </span>
               </div>
