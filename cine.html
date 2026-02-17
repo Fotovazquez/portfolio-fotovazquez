@@ -43,332 +43,382 @@
     </script>
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Fotovazquez | Fotografía Cinematográfica",
-  "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
-  "url": "https://www.fotovazquez.com/cine",
-  "description": "Especialista en fotografía con estética de cine en Sevilla. Sesiones con narrativa visual, iluminación dramática y formato CinemaScope.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sevilla",
-    "addressRegion": "Andalucía",
-    "addressCountry": "ES"
-  },
-  "priceRange": "€€",
-  "areaServed": "Sevilla",
-  "knowsAbout": [
-    "Fotografía cinematográfica",
-    "Narrativa visual",
-    "Dirección de fotografía",
-    "Cinematic Portrait",
-    "CinemaScope Photography",
-    "Iluminación dramática"
-  ],
-  "email": "contacto@fotovazquez.com",
-  "sameAs": [
-    "https://www.instagram.com/fotovazquez"
-  ]
-}
-</script>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Fotovazquez | Fotografía Cinematográfica",
+        "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
+        "url": "https://www.fotovazquez.com/cine",
+        "description": "Especialista en fotografía con estética de cine en Sevilla. Sesiones con narrativa visual, iluminación dramática y formato CinemaScope.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sevilla",
+          "addressRegion": "Andalucía",
+          "addressCountry": "ES"
+        },
+        "priceRange": "€€",
+        "areaServed": "Sevilla",
+        "knowsAbout": [
+          "Fotografía cinematográfica",
+          "Narrativa visual",
+          "Dirección de fotografía",
+          "Cinematic Portrait",
+          "CinemaScope Photography",
+          "Iluminación dramática"
+        ],
+        "email": "contacto@fotovazquez.com",
+        "sameAs": ["https://www.instagram.com/fotovazquez"]
+      }
+    </script>
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body class="selection:bg-primary selection:text-black">
-<nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
-  <a href="/#portfolio" aria-label="Volver al portfolio de Fotovazquez" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
-    <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
-    <span>Volver</span>
-  </a>
-  <div class="text-xl font-bold tracking-tighter text-primary">
-    <a href="/" class="flex items-center gap-2">
-      <img src="img/icon.png" alt="Inicio Fotovazquez" class="w-8 h-8 object-contain" />
-      <span>FOTOVAZQUEZ</span>
-    </a>
-  </div>
-</nav>
+  <body class="selection:bg-primary selection:text-black bg-bg-dark text-white font-sans">
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+      <a
+        href="/#portfolio"
+        aria-label="Volver al portfolio de Fotovazquez"
+        class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+        <span class="text-xl group-hover:-translate-x-1 transition-transform"
+          >←</span
+        >
+        <span>Volver</span>
+      </a>
+      <div class="text-xl font-bold tracking-tighter text-primary">
+        <a href="/" class="flex items-center gap-2">
+          <img
+            src="img/icon.png"
+            alt="Inicio Fotovazquez"
+            class="w-8 h-8 object-contain" />
+          <span>FOTOVAZQUEZ</span>
+        </a>
+      </div>
+    </nav>
 
-<header class="max-w-7xl mx-auto px-8 py-12">
-  <h1 class="text-3xl font-light">
-    Galería de <span class="font-bold text-primary">Formato cine</span>
-  </h1>
-  <p class="text-slate-400 mt-4 max-w-2xl leading-relaxed">
-    La estética del séptimo arte aplicada a la fotografía. Exploración visual en formato CinemaScope de fotogramas 
-    que cuentan historias en proporciones de gran pantalla.
-  </p>
-</header>
+    <header class="max-w-7xl mx-auto px-8 py-12">
+      <h1 class="text-3xl font-light">
+        Galería de <span class="font-bold text-primary">Formato cine</span>
+      </h1>
+      <p class="text-slate-400 mt-4 max-w-2xl leading-relaxed">
+        La estética del séptimo arte aplicada a la fotografía. Exploración
+        visual en formato CinemaScope de fotogramas que cuentan historias en
+        proporciones de gran pantalla.
+      </p>
+    </header>
 
     <main class="max-w-7xl mx-auto px-8 pb-20">
-      <div class="galeria-cine-contenedor gallery">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gallery">
+        
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_1_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_1.webp" type="image/webp" />
+                <img src="cine/cine_1_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico boudoir con Gloria en la facultad de Bellas Artes de Sevilla. Desnudo artístico."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>    
+            <div class="caption"></div>
+          </div>
+        </section>
 
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_2_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_2.webp" type="image/webp" />
+                <img src="cine/cine_2_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico blanco y negro en la facultad de Bellas Artes de Sevilla. Escena de pareja Celia y Serafín."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_1_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_1.webp" type="image/webp" />
-        <img src="cine/cine_1_HQ.jpg" loading="eager" alt="Retrato cinematográfico boudoir con Gloria en la facultad de Bellas Artes de Sevilla. Desnudo artístico.">
-      </picture>
-    </a>    
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_3_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_3.webp" type="image/webp" />
+                <img src="cine/cine_3_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico primerísimo primer plano a Bianca en la facultad de Bellas Artes de Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_2_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_2.webp" type="image/webp" />
-        <img src="cine/cine_2_HQ.jpg" loading="eager" alt="Retrato cinematográfico blanco y negro en la facultad de Bellas Artes de Sevilla. Escena de pareja Celia y Serafín.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_4_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_4.webp" type="image/webp" />
+                <img src="cine/cine_4_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico primer plano a Lucía Martín con sombrero en Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_3_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_3.webp" type="image/webp" />
-        <img src="cine/cine_3_HQ.jpg" loading="eager" alt="Retrato cinematográfico primerísimo primer plano a Bianca en la facultad de Bellas Artes de Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_5_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_5.webp" type="image/webp" />
+                <img src="cine/cine_5_HQ.jpg" loading="lazy" 
+                     alt="Escena cinematográfica al atardecer con Maria José vestida de flamenca en Sevilla con luz natural al atardecer y luz cálida."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_4_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_4.webp" type="image/webp" />
-        <img src="cine/cine_4_HQ.jpg" loading="lazy" alt="Retrato cinematográfico primer plano a Lucía Martín con sombrero en Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_6_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_6.webp" type="image/webp" />
+                <img src="cine/cine_6_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de flamenca en Sevilla con luz natural. Foto exposición II Bienal de flamenco 2025."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_5_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_5.webp" type="image/webp" />
-        <img src="cine/cine_5_HQ.jpg" loading="lazy" alt="Escena cinematográfica al atardecer con Maria José vestida de flamenca en Sevilla con luz natural al atardecer y luz cálida.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_7_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_7.webp" type="image/webp" />
+                <img src="cine/cine_7_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de flamenca en Sevilla con luz natural."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_6_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_6.webp" type="image/webp" />
-        <img src="cine/cine_6_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de flamenca en Sevilla con luz natural. Foto exposición II Bienal de flamenco 2025.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_8_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_8.webp" type="image/webp" />
+                <img src="cine/cine_8_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de flamenca en Sevilla en la Plaza de España de Sevilla al atardecer con luz natural."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_7_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_7.webp" type="image/webp" />
-        <img src="cine/cine_7_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de flamenca en Sevilla con luz natural.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_9_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_9.webp" type="image/webp" />
+                <img src="cine/cine_9_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de flamenca en Sevilla en la Plaza de España de Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_8_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_8.webp" type="image/webp" />
-        <img src="cine/cine_8_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de flamenca en Sevilla en la Plaza de España de Sevilla al atardecer con luz natural.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_10_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_10.webp" type="image/webp" />
+                <img src="cine/cine_10_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico primer plano de flamenca en Sevilla en la Plaza de España de Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_9_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_9.webp" type="image/webp" />
-        <img src="cine/cine_9_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de flamenca en Sevilla en la Plaza de España de Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_11_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_11.webp" type="image/webp" />
+                <img src="cine/cine_11_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_10_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_10.webp" type="image/webp" />
-        <img src="cine/cine_10_HQ.jpg" loading="lazy" alt="Retrato cinematográfico primer plano de flamenca en Sevilla en la Plaza de España de Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_12_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_12.webp" type="image/webp" />
+                <img src="cine/cine_12_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de primerísimo primer plano a Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_11_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_11.webp" type="image/webp" />
-        <img src="cine/cine_11_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_13_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_13.webp" type="image/webp" />
+                <img src="cine/cine_13_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de primerísimo primer plano a Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural al atardecer, luz cálida."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_12_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_12.webp" type="image/webp" />
-        <img src="cine/cine_12_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de primerísimo primer plano a Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_14_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_14.webp" type="image/webp" />
+                <img src="cine/cine_14_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Lucía Martín en el barrio de Santa Cruz en Sevilla con luz natural."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_13_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_13.webp" type="image/webp" />
-        <img src="cine/cine_13_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de primerísimo primer plano a Anne Mette en Sevilla en la Plaza de España de Sevilla con luz natural al atardecer, luz cálida.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_15_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_15.webp" type="image/webp" />
+                <img src="cine/cine_15_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Lucía Martín en el interior del Hotel Casa 1800 de Sevilla. Sesión moda elegante."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_14_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_14.webp" type="image/webp" />
-        <img src="cine/cine_14_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Lucía Martín en el barrio de Santa Cruz en Sevilla con luz natural.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_16_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_16.webp" type="image/webp" />
+                <img src="cine/cine_16_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Lucía Martín en la terraza del Hotel Casa 1800 de Sevilla con La Catedral de Sevilla al fondo."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_15_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_15.webp" type="image/webp" />
-        <img src="cine/cine_15_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Lucía Martín en el interior del Hotel Casa 1800 de Sevilla. Sesión moda elegante.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_17_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_17.webp" type="image/webp" />
+                <img src="cine/cine_17_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Arturo en la facultad de Bellas Artes de Sevilla. Desnudo artístico."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_16_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_16.webp" type="image/webp" />
-        <img src="cine/cine_16_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Lucía Martín en la terraza del Hotel Casa 1800 de Sevilla con La Catedral de Sevilla al fondo.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_18_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_18.webp" type="image/webp" />
+                <img src="cine/cine_18_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Arturo primerísimo primer plano en la facultad de Bellas Artes de Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_17_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_17.webp" type="image/webp" />
-        <img src="cine/cine_17_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Arturo en la facultad de Bellas Artes de Sevilla. Desnudo artístico.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_19_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_19.webp" type="image/webp" />
+                <img src="cine/cine_19_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Angeles sonriendo con luz natural en Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_18_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_18.webp" type="image/webp" />
-        <img src="cine/cine_18_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Arturo primerísimo primer plano en la facultad de Bellas Artes de Sevilla. ">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_20_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_20.webp" type="image/webp" />
+                <img src="cine/cine_20_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Mery Casmen con luz natural en Sevilla. colaboración"
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_19_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_19.webp" type="image/webp" />
-        <img src="cine/cine_19_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Angeles sonriendo con luz natural en Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_21_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_21.webp" type="image/webp" />
+                <img src="cine/cine_21_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Maria Jose en primerísimo primer plano con luz natural en Sevilla."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_20_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_20.webp" type="image/webp" />
-        <img src="cine/cine_20_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Mery Casmen con luz natural en Sevilla. colaboración">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
+        <section class="galeria-cine">
+          <div class="frame">
+            <a href="cine/cine_22_HQ.jpg" class="block">
+              <picture class="img-loading-effect">
+                <source srcset="cine/cine_22.webp" type="image/webp" />
+                <img src="cine/cine_22_HQ.jpg" loading="lazy" 
+                     alt="Retrato cinematográfico de Celia y Estrella en blanco y negro con luz de modificador snoot."
+                     onload="this.classList.add('loaded'); this.parentElement.classList.remove('img-loading-effect')">
+              </picture>
+            </a>
+            <div class="caption"></div>
+          </div>
+        </section>
 
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_21_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_21.webp" type="image/webp" />
-        <img src="cine/cine_21_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Maria Jose en primerísimo primer plano con luz natural en Sevilla.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
-
-<section class="galeria-cine">
-  <div class="frame">
-    <a href="cine/cine_22_HQ.jpg" class="block">
-      <picture>
-        <source srcset="cine/cine_22.webp" type="image/webp" />
-        <img src="cine/cine_22_HQ.jpg" loading="lazy" alt="Retrato cinematográfico de Celia y Estrella en blanco y negro con luz de modificador snoot.">
-      </picture>
-    </a>
-    <div class="caption"></div>
-  </div>
-</section>
-
-
+      </div>
     </main>
 
     <div class="max-w-7xl mx-auto px-8">
@@ -385,66 +435,21 @@
       </div>
     </div>
 
-    <div
-      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
-      <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
-        Sígueme en redes
-      </p>
-
-      <a
-        href="https://instagram.com/fotovazquez"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
-        aria-label="Instagram de Juan Vázquez">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="transition-all duration-300 group-hover:scale-110">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-    </div>
-
     <footer class="text-center py-6 border-t border-white/5 tracking-wide">
       <div class="max-w-7xl mx-auto flex flex-col gap-2">
-        <p
-          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+        <p class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
           &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
         </p>
-
-        <div
-          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
-          <a href="/condiciones" class="hover:text-primary transition-colors"
-            >Condiciones</a
-          >
-
+        <div class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
+          <a href="/condiciones" class="hover:text-primary transition-colors">Condiciones</a>
           <span class="text-white/5">|</span>
-
-          <a href="/autor" class="hover:text-primary transition-colors"
-            >Sobre el autor</a
-          >
-
+          <a href="/autor" class="hover:text-primary transition-colors">Sobre el autor</a>
           <span class="text-white/5">|</span>
-
-          <a href="/legal" class="hover:text-primary transition-colors"
-            >Legal y Privacidad</a
-          >
+          <a href="/legal" class="hover:text-primary transition-colors">Legal y Privacidad</a>
         </div>
       </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
-
-   
   </body>
 </html>

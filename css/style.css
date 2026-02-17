@@ -3,53 +3,109 @@ body {
   background-color: #131313;
   color: white;
   font-family: "Comfortaa", sans-serif;
+  margin: 0;
 }
 
-/* --- GRILLA MASONRY --- */
+/* --- ANIMACIONES DE CARGA --- */
+@keyframes pulse-gold {
+  0% { background-color: rgba(208, 187, 149, 0.05); }
+  50% { background-color: rgba(208, 187, 149, 0.12); }
+  100% { background-color: rgba(208, 187, 149, 0.05); }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* --- LÓGICA DE SKELETONS (CARGA) --- */
+.skeleton, .img-loading-effect {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
+/* Proporción fija para Cine mientras carga */
+.img-loading-effect { 
+  aspect-ratio: 21 / 9; 
+}
+
+.img-loading-effect::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(208, 187, 149, 0.08), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* --- MASONRY GRID (PARA RETRATO/EXTERIOR) --- */
 .masonry-grid {
   column-count: 1;
   column-gap: 1.5rem;
 }
-@media (min-width: 768px) {
-  .masonry-grid {
-    column-count: 2;
-  }
-}
-@media (min-width: 1024px) {
-  .masonry-grid {
-    column-count: 3;
-  }
-}
+@media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+@media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
 
 .masonry-item {
   break-inside: avoid;
   margin-bottom: 1.5rem;
-  transition: all 0.5s ease;
 }
 
-.masonry-item img {
+/* --- FORMATO CINE (GRID DE 2 COLUMNAS) --- */
+/* El grid se define en el HTML con Tailwind: grid-cols-1 md:grid-cols-2 */
+.galeria-cine {
+  width: 100%;
+}
+
+.frame {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: border-color 0.5s ease;
+}
+
+/* --- EL SECRETO DE LA FLUIDEZ (TRANSICIÓN UNIFICADA) --- */
+/* Aplicamos la misma suavidad a todas las imágenes de todas las galerías */
+.masonry-item img, 
+.galeria-cine img {
   width: 100%;
   display: block;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  will-change: transform, opacity;
+  /* Unificamos tiempos para que el zoom y la aparición no den tirones */
+  transition: opacity 0.8s ease-in-out, 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.6s ease,
+              box-shadow 0.6s ease !important;
 }
 
-.masonry-item:hover img {
-  transform: scale(1.02);
-  border-color: rgba(208, 187, 149, 0.5);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+/* Clase que se activa cuando la imagen carga */
+.masonry-item img.loaded, 
+.galeria-cine img.loaded {
+  opacity: 1 !important;
 }
+
+/* --- EFECTO HOVER (ZOOM SUAVE) --- */
+.masonry-item:hover img.loaded,
+.frame:hover img.loaded {
+  transform: scale(1.05);
+  border-color: rgba(208, 187, 149, 0.5);
+}
+
+.masonry-item img { border-radius: 1rem; } /* Solo para retratos */
 
 /* --- SIMPLELIGHTBOX CUSTOM --- */
-
-/* Fondo oscuro y desenfoque detrás de la foto */
 .sl-overlay {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: blur(5px);
 }
 
-/* Botones (Cruceta y Flechas) en Blanco */
 .sl-wrapper .sl-navigation button,
 .sl-wrapper .sl-close {
   color: #ffffff !important;
@@ -57,94 +113,12 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.sl-wrapper .sl-navigation button:hover,
-.sl-wrapper .sl-close:hover {
-  opacity: 1;
-}
-
-/* Contador 1/15 */
 .sl-wrapper .sl-counter {
   color: #ffffff !important;
   opacity: 0.5;
 }
 
-/* Evitar cursor de lupa (ya que quitamos el zoom) */
-.sl-wrapper .sl-image img {
-  cursor: default !important;
-}
-
-/* --- EFECTO INMERSIVO (Blur en la web al abrir foto) --- */
+/* Efecto Blur al abrir galería */
 body.sl-open main,
 body.sl-open nav,
-body.sl-open header,
-body.sl-open footer {
-  filter: blur(8px);
-  transition: filter 0.3s ease;
-}
-
-/* FORMATO CINE */
-/* --- CONTENEDOR DE LA GALERÍA  --- */
-.galeria-cine-contenedor {
-  display: grid; 
-  grid-template-columns: 1fr; /* Por defecto: 1 columna (Móvil) */
-  gap: 20px; /* Espacio entre fotos en móvil */
-  width: 100%;
-}
-
-/* Tablets y pantallas medianas (768px hacia arriba) */
-@media (min-width: 768px) {
-  .galeria-cine-contenedor {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en Tablet/PC */
-    gap: 20px; /* Espacio entre columnas y filas */
-  }
-}
-
-/* Pantallas muy grandes (opcional: volver a 1 columna para máximo impacto) */
-@media (min-width: 1440px) {
-  .galeria-cine-contenedor {
-    gap: 40px;
-  }
-}
-
-/* --- AJUSTES DE LAS SECCIONES --- */
-.galeria-cine {
-  width: 100%;
-  display: block; 
-}
-
-.frame {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.5s ease;
-  background-color: #000; /* Asegura fondo negro tras la imagen */
-}
-
-.frame a {
-  display: block;
-}
-
-.frame img {
-  display: block;
-  width: 100%;
-  height: auto; /* Mantiene tu proporción 1920x804 intacta */
-  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-/* --- EFECTO HOVER --- */
-.frame:hover {
-  border-color: rgba(208, 187, 149, 0.8);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-
-.frame:hover img {
-  transform: scale(1.05);
-}
-
-/*Selección de fotos del muestrario*/
-.foto-seleccionable img {
-    aspect-ratio: auto; /* O el ratio que suelas usar en tus sesiones, ej: 2/3 */
-    background-color: #1a1a1a; /* Fondo oscuro mientras carga */
-}
+body.sl-open header
