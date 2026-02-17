@@ -196,12 +196,12 @@ window.toggleFiltroSeleccionadas = function(boton) {
     const textoBoton = document.getElementById('btn-filtro-texto');
     const iconoContenedor = document.getElementById('btn-filtro-icono');
     
-    // SVGs ligeramente más pequeños (14px)
     const iconoOjoCerrado = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
     const iconoOjoAbierto = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
 
+    // Si intenta filtrar y no hay nada: NOTIFICACIÓN ERROR
     if (!filtradoActivo && favoritas.length === 0) {
-        alert("Aún no has seleccionado ninguna foto como favorita.");
+        mostrarNotificacion("Aún no has seleccionado ninguna foto", "error");
         return;
     }
 
@@ -216,6 +216,8 @@ window.toggleFiltroSeleccionadas = function(boton) {
             iconoContenedor.innerHTML = iconoOjoAbierto;
             boton.classList.add('bg-primary', 'text-black', 'border-primary');
             boton.classList.remove('text-slate-400');
+            // Notificación de éxito al filtrar
+            mostrarNotificacion("Mostrando solo las fotos que has seleccionado");
         } else {
             card.style.display = 'flex';
             textoBoton.innerText = "Ver seleccionadas";
@@ -227,3 +229,56 @@ window.toggleFiltroSeleccionadas = function(boton) {
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+window.copiarLista = function() {
+    const input = document.getElementById('lista-seleccion');
+    
+    if (!input || input.value.trim() === "") {
+        mostrarNotificacion("Aún no has seleccionado ninguna foto", "error");
+        return;
+    }
+
+    // Copiar al portapapeles
+    navigator.clipboard.writeText(input.value).then(() => {
+        // Mensaje personalizado
+        mostrarNotificacion("¡Lista copiada! Ya puedes enviármela.");
+    }).catch(err => {
+        // Fallback por si falla el portapapeles
+        input.select();
+        document.execCommand("copy");
+        mostrarNotificacion("¡Lista copiada! Ya puedes enviármela por correo.");
+    });
+};
+
+// Función para crear la notificación visual
+function mostrarNotificacion(mensaje, tipo = "success") {
+    // Eliminar si ya hay una notificación previa
+    const previa = document.getElementById('toast-fotovazquez');
+    if (previa) previa.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'toast-fotovazquez';
+    
+    // Estilos de la notificación (Elegante y minimalista)
+    toast.className = `fixed top-10 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 rounded-xl border backdrop-blur-md shadow-2xl transition-all duration-500 transform translate-y-2 opacity-0 font-bold text-[11px] uppercase tracking-widest text-center min-w-[280px]`;
+    
+    if (tipo === "success") {
+        toast.classList.add('bg-primary/90', 'text-black', 'border-primary/20');
+    } else {
+        toast.classList.add('bg-red-900/90', 'text-white', 'border-red-500/50');
+    }
+
+    toast.innerText = mensaje;
+    document.body.appendChild(toast);
+
+    // Animación de entrada
+    setTimeout(() => {
+        toast.classList.remove('opacity-0', 'translate-y-2');
+    }, 100);
+
+    // Desvanecer y eliminar después de 3.5 segundos
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 500);
+    }, 3500);
+}
