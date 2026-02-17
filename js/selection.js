@@ -37,31 +37,38 @@ async function ejecutarCargaSeleccion() {
         contenedor.className = "group relative w-full max-w-[200px] animate-fade-in self-end";
         contenedor.style.animationDelay = `${i * 0.05}s`;
         
-        contenedor.innerHTML = `
-            <div class="absolute -top-3 -left-3 z-20 bg-primary text-black font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-bg-dark text-xs">
-              ${i}
-            </div>
+contenedor.innerHTML = `
+    <div class="absolute -top-3 -left-3 z-30 bg-primary text-black font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-bg-dark text-xs pointer-events-none">
+      ${i}
+    </div>
 
-            <div class="relative rounded-lg bg-white/5 border border-white/10 shadow-xl overflow-hidden flex items-center justify-center group-hover:border-primary/40 transition-all duration-300">
-              
-              <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <span class="text-[14px] font-bold text-white/[0.09] uppercase tracking-[0.4em] -rotate-45 whitespace-nowrap mix-blend-overlay">
-                  FOTOVAZQUEZ FOTOVAZQUEZ FOTOVAZQUEZ
-                </span>
-              </div>
+    <div onclick="seleccionarFoto(this, ${i})" 
+         class="foto-seleccionable cursor-pointer relative rounded-lg bg-white/5 border-2 border-transparent shadow-xl overflow-hidden transition-all duration-300 hover:border-primary/40 group inline-block">
+      
+      <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <span class="text-[14px] font-bold text-white/[0.09] uppercase tracking-[0.4em] -rotate-45 whitespace-nowrap mix-blend-overlay">
+          FOTOVAZQUEZ FOTOVAZQUEZ FOTOVAZQUEZ
+        </span>
+      </div>
 
-              <img 
-                src="${rutaFoto}" 
-                alt="Foto de selección ${i}" 
-                class="w-full h-auto max-h-[300px] object-contain pointer-events-none select-none" 
-                loading="lazy"
-              />
-            </div>
+      <div class="capa-check absolute inset-0 z-20 bg-primary/25 opacity-0 transition-opacity flex items-center justify-center pointer-events-none">
+         <div class="bg-bg-dark/90 text-primary border border-primary/50 rounded-full w-10 h-10 flex items-center justify-center shadow-2xl scale-50 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+         </div>
+      </div>
 
-            <p class="text-[10px] text-slate-500 mt-4 text-center uppercase tracking-[0.2em] font-medium">
-              REF: ${i.toString().padStart(3, '0')}
-            </p>
-        `;
+      <img 
+        src="${rutaFoto}" 
+        alt="Foto de selección ${i}" 
+        class="block w-full h-auto max-h-[400px] object-contain pointer-events-none select-none" 
+        loading="lazy"
+      />
+    </div>
+
+    <p class="text-[10px] text-slate-500 mt-4 text-center uppercase tracking-[0.2em] font-medium">
+      REF: ${i.toString().padStart(3, '0')}
+    </p>
+`;
         
         grid.appendChild(contenedor);
     }
@@ -106,3 +113,30 @@ window.copiarLista = function() {
         alert("Error al copiar. Por favor, selecciona el texto manualmente.");
     }
 };
+
+/** Seleccionar fotos */
+function seleccionarFoto(elemento, numero) {
+    const input = document.getElementById('lista-seleccion');
+    const capaCheck = elemento.querySelector('.capa-check');
+    const iconoCheck = capaCheck.querySelector('div'); // El circulito del check
+    
+    let numeros = input.value.trim() ? input.value.split(',').map(n => n.trim()) : [];
+    const numStr = numero.toString();
+    const indice = numeros.indexOf(numStr);
+
+    if (indice === -1) {
+        // SELECCIONAR
+        numeros.push(numStr);
+        elemento.classList.replace('border-transparent', 'border-primary');
+        capaCheck.style.opacity = "1";
+        iconoCheck.style.transform = "scale(1)"; // Efecto pop
+    } else {
+        // DESELECCIONAR
+        numeros.splice(indice, 1);
+        elemento.classList.replace('border-primary', 'border-transparent');
+        capaCheck.style.opacity = "0";
+        iconoCheck.style.transform = "scale(0.5)";
+    }
+
+    input.value = numeros.sort((a, b) => a - b).join(', ');
+}
