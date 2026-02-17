@@ -99,7 +99,7 @@ window.copiarLista = function() {
     const input = document.getElementById('lista-seleccion');
     
     if (!input || input.value.trim() === "") {
-        alert("Por favor, escribe primero los números de las fotos que has elegido.");
+        alert("Aún no has seleccionado ninguna foto del muestrario.");
         return;
     }
 
@@ -110,7 +110,7 @@ window.copiarLista = function() {
         document.execCommand("copy");
         alert("¡Lista copiada correctamente! Ya puedes enviármela.");
     } catch (err) {
-        alert("Error al copiar. Por favor, selecciona el texto manualmente.");
+        alert("Error al copiar.");
     }
 };
 
