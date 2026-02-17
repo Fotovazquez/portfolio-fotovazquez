@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-/* --- ANIMACIONES DE CARGA --- */
+/* --- 1. ANIMACIONES (CARGA Y BRILLO) --- */
 @keyframes pulse-gold {
   0% { background-color: rgba(208, 187, 149, 0.05); }
   50% { background-color: rgba(208, 187, 149, 0.12); }
@@ -17,7 +17,7 @@ body {
   100% { transform: translateX(100%); }
 }
 
-/* --- LÓGICA DE SKELETONS (CARGA) --- */
+/* --- 2. LÓGICA DE SKELETONS (ESTADO DE CARGA) --- */
 .skeleton, .img-loading-effect {
   display: block;
   width: 100%;
@@ -27,11 +27,12 @@ body {
   animation: pulse-gold 2s infinite ease-in-out;
 }
 
-/* Proporción fija para Cine mientras carga */
+/* Proporción fija exclusiva para Cine durante la carga */
 .img-loading-effect { 
   aspect-ratio: 21 / 9; 
 }
 
+/* El brillo que recorre la imagen de izquierda a derecha */
 .img-loading-effect::after {
   content: "";
   position: absolute;
@@ -41,7 +42,7 @@ body {
   animation: shimmer 1.5s infinite;
 }
 
-/* --- MASONRY GRID (PARA RETRATO/EXTERIOR) --- */
+/* --- 3. ESTRUCTURAS DE GALERÍA (MANTENER MASONRY) --- */
 .masonry-grid {
   column-count: 1;
   column-gap: 1.5rem;
@@ -54,53 +55,54 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* --- FORMATO CINE (GRID DE 2 COLUMNAS) --- */
-/* El grid se define en el HTML con Tailwind: grid-cols-1 md:grid-cols-2 */
-.galeria-cine {
-  width: 100%;
-}
-
-.frame {
-  width: 100%;
+/* --- 4. CONTENEDORES DE IMAGEN (EL FILO DORADO) --- */
+.frame, .masonry-item {
   position: relative;
   overflow: hidden;
   background-color: #000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  transition: border-color 0.5s ease;
+  /* Borde inicial sutil */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  /* Transición suave para el color del borde y la sombra */
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* --- EL SECRETO DE LA FLUIDEZ (TRANSICIÓN UNIFICADA) --- */
-/* Aplicamos la misma suavidad a todas las imágenes de todas las galerías */
+.frame { border-radius: 4px; } /* Estética Cine */
+.masonry-item { border-radius: 1rem; } /* Estética Retrato */
+
+/* --- 5. LA IMAGEN (EL SECRETO DE LA FLUIDEZ) --- */
 .masonry-item img, 
 .galeria-cine img {
   width: 100%;
   display: block;
-  opacity: 0;
+  opacity: 0; /* Invisible hasta que cargue */
   will-change: transform, opacity;
-  /* Unificamos tiempos para que el zoom y la aparición no den tirones */
+  /* Unificamos tiempos para que el zoom y la aparición sean perfectos */
   transition: opacity 0.8s ease-in-out, 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.6s ease,
-              box-shadow 0.6s ease !important;
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Clase que se activa cuando la imagen carga */
+/* Cuando el JS detecta carga, activa la visibilidad */
 .masonry-item img.loaded, 
 .galeria-cine img.loaded {
   opacity: 1 !important;
 }
 
-/* --- EFECTO HOVER (ZOOM SUAVE) --- */
+/* --- 6. EFECTO HOVER (ZOOM + LUZ AMARILLA) --- */
+/* Al pasar el ratón, el contenedor ilumina el borde */
+.masonry-item:hover, 
+.frame:hover {
+  border-color: rgba(208, 187, 149, 0.6); /* El amarillo/dorado suave */
+  box-shadow: 0 0 20px rgba(208, 187, 149, 0.15); /* Resplandor */
+  z-index: 10;
+}
+
+/* Y la imagen interna hace el zoom suave */
 .masonry-item:hover img.loaded,
 .frame:hover img.loaded {
   transform: scale(1.05);
-  border-color: rgba(208, 187, 149, 0.5);
 }
 
-.masonry-item img { border-radius: 1rem; } /* Solo para retratos */
-
-/* --- SIMPLELIGHTBOX CUSTOM --- */
+/* --- 7. SIMPLELIGHTBOX CUSTOM --- */
 .sl-overlay {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: blur(5px);
@@ -113,12 +115,11 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.sl-wrapper .sl-counter {
-  color: #ffffff !important;
-  opacity: 0.5;
-}
-
-/* Efecto Blur al abrir galería */
+/* Desenfoque de la web al abrir una foto */
 body.sl-open main,
 body.sl-open nav,
-body.sl-open header
+body.sl-open header,
+body.sl-open footer {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+}
