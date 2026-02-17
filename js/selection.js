@@ -140,3 +140,4 @@ function seleccionarFoto(elemento, numero) {
 
     input.value = numeros.sort((a, b) => a - b).join(', ');
 }
+

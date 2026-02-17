@@ -142,3 +142,9 @@ body.sl-open footer {
 .frame:hover img {
   transform: scale(1.05);
 }
+
+/*Selección de fotos del muestrario*/
+.foto-seleccionable img {
+    aspect-ratio: auto; /* O el ratio que suelas usar en tus sesiones, ej: 2/3 */
+    background-color: #1a1a1a; /* Fondo oscuro mientras carga */
+}
