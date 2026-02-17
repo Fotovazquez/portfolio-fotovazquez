@@ -73,9 +73,16 @@
       <div id="seleccion-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16 items-end justify-items-center">
         </div>
     </main>
-
+<!--
 <div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-4 z-50">
     <div class="max-w-xl mx-auto flex flex-col gap-3">
+      <span id="contador-fotos" class="text-primary font-bold text-xs tracking-widest uppercase">
+        0 seleccionadas
+    </span>
+    <button onclick="toggleFiltroSeleccionadas(this)" id="btn-filtro" 
+        class="text-[10px] border border-white/20 px-2 py-1 rounded hover:border-primary transition-colors text-slate-400 uppercase tracking-tighter">
+    Ver favoritas
+</button>
         
         <p class="text-[13px] text-slate-400 tracking-widest text-center sm:text-left">
             Lista de fotos seleccionadas:
@@ -84,6 +91,42 @@
         <div class="flex flex-col sm:flex-row gap-2 w-full">
             <input type="text" readonly id="lista-seleccion" placeholder="(ej: 1, 5, 12...)" 
                    class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-primary transition-colors text-sm">
+            
+            <button onclick="copiarLista()" class="whitespace-nowrap bg-primary text-black font-bold px-6 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[12px] tracking-widest shadow-lg">
+                Copiar Lista
+            </button>
+        </div>
+
+    </div>
+</div>-->
+<div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-4 z-50">
+    <div class="max-w-xl mx-auto flex flex-col gap-3">
+        
+        <div class="flex items-center justify-between gap-4">
+            <span id="contador-fotos" class="text-primary font-bold text-xs tracking-widest uppercase">
+                0 seleccionadas
+            </span>
+            
+            <button onclick="toggleFiltroSeleccionadas(this)" id="btn-filtro" 
+    class="flex items-center justify-center gap-2 w-48 text-[12px] font-bold border border-white/20 py-2.5 rounded-lg hover:border-primary transition-all text-slate-400 uppercase tracking-widest shrink-0">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+
+    <span id="btn-filtro-texto">Ver seleccionadas</span>
+</button>
+        </div>
+        
+        <hr class="border-white/5">
+
+        <p class="text-[11px] text-slate-500 tracking-[0.2em] uppercase text-center sm:text-left">
+            Lista de fotos seleccionadas:
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-2 w-full">
+            <input type="text" readonly id="lista-seleccion" placeholder="(ej: 1, 5, 12...)" 
+                   class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-primary transition-colors text-sm cursor-default">
             
             <button onclick="copiarLista()" class="whitespace-nowrap bg-primary text-black font-bold px-6 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[12px] tracking-widest shadow-lg">
                 Copiar Lista
