@@ -116,6 +116,8 @@
   </head>
 
   <body class="selection:bg-primary selection:text-black">
+
+    <!-- TITULO NAVEGACION -->
     <nav
       class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-4 md:px-6 py-4">
       <div class="max-w-7xl mx-auto flex justify-between items-center gap-x-4">
@@ -132,18 +134,18 @@
           </a>
         </h1>
 
+<!-- MENU DE BOTONES SUPEIORES PARA PC -->
         <div
           class="hidden md:flex gap-8 text-sm uppercase tracking-widest items-center">
           <a href="#portfolio" class="hover:text-primary transition-colors"
             >Portfolio</a
-          >
+          >          
           <a href="/modelos" class="hover:text-primary transition-colors"
             >Modelos</a
           >
           <a href="#colaboraciones" class="hover:text-primary transition-colors"
             >Colaboraciones y contacto</a
           >
-
           <a
             href="https://instagram.com/fotovazquez"
             target="_blank"
@@ -168,6 +170,7 @@
           </a>
         </div>
 
+<!-- BOTONES SUPERIORES EN MOVILES -->
         <div
           class="md:hidden flex flex-col items-end gap-1.5 text-[10px] uppercase tracking-wider font-bold flex-shrink-0">
           <a
@@ -175,15 +178,16 @@
             class="w-28 h-7 flex items-center justify-center text-center border border-primary/40 rounded-lg bg-primary text-black active:scale-95 transition-all">
             Pide tu sesión
           </a>
-          <a
+          <!--<a
             href="/modelos"
             class="w-28 h-7 flex items-center justify-center text-center border border-primary/40 rounded-lg bg-bg-dark/50 text-primary active:scale-95 transition-all">
             Mis modelos
-          </a>
+          </a>-->
         </div>
       </div>
     </nav>
 
+<!-- TITULO Y AUTOR -->
     <header class="pt-32 pb-10 px-5 text-center flex flex-col items-center">
       <h1 class="text-3xl md:text-5xl font-light mb-2">
         Capturo
@@ -209,6 +213,7 @@
       </div>
     </header>
 
+    <!-- CARTAS -->
     <section
       id="portfolio"
       class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-6">
@@ -316,11 +321,32 @@
       <p class="text-2xl font-bold">Lifestyle</p>
       <p class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">PRÓXIMAMENTE</p>
     </div>
-  </a>
+  </a>  
       
     </section>
 
+    
+
+<!-- RESERVA CON FORMULARIO -->
     <section id="colaboraciones" class="py-24 px-4 md:px-20 lg:px-40">
+
+        <!-- CREDITOS DE COLABORACIONES/MODELOS -->
+
+<div
+      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+<div class="py-12 text-center">
+  <p class="text-[11px] uppercase tracking-[0.3em] text-gray-500 mb-3 font-light">
+    Gratitud y Colaboración
+  </p>
+  <a href="/modelos" class="text-s uppercase tracking-[0.4em] text-primary hover:text-white transition-colors duration-500 font-extralight">
+    Protagonistas de mis sesiones
+  </a>  
+  <div class="mt-4 w-20 h-[1px] bg-primary/30 mx-auto"></div>
+</div>
+</div>
+
+<!---->
+
   <div class="max-w-7xl mx-auto"> 
     
     <div class="flex flex-col lg:flex-row rounded-3xl overflow-hidden border border-white/5 bg-dark-gray">
@@ -405,6 +431,9 @@
 
   </div> </section>
 
+
+
+  <!-- PIE PARA MOVILES -->
     <div
       class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
       <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
@@ -435,6 +464,8 @@
       </a>
     </div>
 
+
+    <!-- PIE GENERAL -->
     <footer class="text-center py-6 border-t border-white/5 tracking-wide">
       <div class="max-w-7xl mx-auto flex flex-col gap-2">
         <p
