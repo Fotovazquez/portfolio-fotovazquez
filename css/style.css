@@ -108,18 +108,32 @@ body {
   backdrop-filter: blur(5px);
 }
 
+/* Aseguramos que los botones sigan siendo blancos y visibles por defecto */
 .sl-wrapper .sl-navigation button,
 .sl-wrapper .sl-close {
-  color: #ffffff !important;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  color: #cfcfcf !important;
+  transition: opacity 0.3s ease !important;
 }
 
-/* Desenfoque de la web al abrir una foto */
-body.sl-open main,
-body.sl-open nav,
-body.sl-open header,
-body.sl-open footer {
-  filter: blur(8px);
-  transition: filter 0.3s ease;
+/* El contador: oculto de base pero preparado para la transición */
+.sl-wrapper .sl-counter {
+  color: #cfcfcf !important;
+  top: 30px;
+  font-family: "Comfortaa", sans-serif;   
+  transition: opacity 0.3s ease !important;
+}
+
+/* Cuando el wrapper NO tiene la clase 'sl-navigation-visible', ocultamos todo.
+   Cuando la tiene (o cuando el ratón se mueve), mostramos todo. */
+.sl-wrapper.show-controls .sl-counter,
+.sl-wrapper.show-controls .sl-navigation button,
+.sl-wrapper.show-controls .sl-close {
+  opacity: 0.7 !important;
+}
+
+/* Hover para que resalten al tocarlos */
+.sl-wrapper .sl-navigation button:hover,
+.sl-wrapper .sl-close:hover {
+  opacity: 1 !important;
+  color: #D0BB95 !important;
 }
