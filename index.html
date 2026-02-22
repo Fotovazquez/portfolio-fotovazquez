@@ -110,6 +110,11 @@
       .category-card:hover .card-img-container img {
         transform: scale(1.1);
       }
+        @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
     </style>
   </head>
 
@@ -356,10 +361,10 @@
             class="lg:w-1/3 p-12 text-center bg-[#1a1a1a] flex flex-col justify-center items-center">
             <div class="mb-6 flex justify-center">
               <svg
-                class="w-6 h-6 text-primary/40 group-hover:text-primary transition-colors duration-700"
+                class="w-10 h-10 text-primary/50 group-hover:text-primary transition-colors duration-700"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.2"
+                stroke-width="1"
                 stroke="currentColor">
                 <path
                   stroke-linecap="round"
@@ -531,7 +536,7 @@
       </div>
     </section>
 
-    <!--GRATITUD MODELOS -->  
+    <!--GRATITUD MODELOS   
 <section id="modelos" class="md:hidden pt-4 pb-12 px-6">
   <a href="/modelos" class="block group relative">
     <div class="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] py-12 px-8 shadow-2xl transition-all duration-500 group-active:scale-[0.98]">
@@ -561,8 +566,36 @@
     </div>
   </a>
 </section>
+-->
+<section id="modelos" class="md:hidden pt-4 pb-12 px-6">
+  <a href="/modelos" class="block group relative">
+    <div class="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] py-8 px-8 shadow-2xl transition-all duration-500 group-active:scale-[0.98]">
+      
+      <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40 group-hover:animate-[shine_1s_ease-in-out] group-active:animate-[shine_1s_auto]"></div>
+
+      <div class="absolute inset-0 border border-primary/0 rounded-xl transition-all duration-700 group-hover:border-primary/30 group-hover:shadow-[inset_0_0_20px_rgba(208,187,149,0.05)]"></div>
+
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+      
+      <div class="text-center relative z-10">
 
 
+        <p class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-medium">
+          Gratitud y Colaboración
+        </p>
+        
+        <div class="mt-5 mb-5 w-12 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto"></div>
+        
+        <h2 class="text-[11px] uppercase tracking-[0.25em] text-gray-400 font-light leading-loose">
+          Descubre a los <span class="text-primary font-normal">protagonistas</span><br>
+          <span class="text-gray-400">que dan vida a mis sesiones</span>
+        </h2>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl -ml-12 -mb-12"></div>
+    </div>
+  </a>
+</section>
 
   </div>
 </section>
