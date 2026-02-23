@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotovazquez | Sobre el Autor</title>
+    <title>Fotovazquez | Sobre el autor</title>
     <link rel="icon" type="image/png" href="img/icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
@@ -13,9 +13,7 @@
       name="description"
       content="Conoce a Juan Vázquez, el fotógrafo detrás de Fotovazquez. Trayectoria, premios y visión personal de la fotografía en Sevilla." />
     <link rel="canonical" href="https://www.fotovazquez.com/autor" />
-    <meta
-      property="og:title"
-      content="Juan Vázquez | El ojo detrás de Fotovazquez" />
+    <meta property="og:title" content="Juan Vázquez | Sobre el autor" />
     <meta
       property="og:description"
       content="Trayectoria, premios y visión personal de la fotografía." />
@@ -42,6 +40,36 @@
         border: 1px solid rgba(208, 187, 149, 0.2);
       }
     </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Juan Vázquez",
+        "alternateName": "Fotovazquez",
+        "url": "https://www.fotovazquez.com/autor",
+        "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
+        "jobTitle": "Fotógrafo Profesional",
+        "worksFor": {
+          "@type": "ProfessionalService",
+          "name": "Fotovazquez",
+          "url": "https://www.fotovazquez.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sevilla",
+          "addressRegion": "Andalucía",
+          "addressCountry": "ES"
+        },
+        "award": [
+          "Premio Concurso decoración navideña Amenabar 2026",
+          "Premio Serie fotográfica Photourban Sevilla 2025",
+          "Exposición II Bienal de flamenco 2025",
+          "Premio Serie fotográfica Photourban Sevilla 2019"
+        ],
+        "sameAs": ["https://instagram.com/fotovazquez"]
+      }
+    </script>
   </head>
   <body class="selection:bg-primary selection:text-black">
     <nav
@@ -90,30 +118,38 @@
             ¿Quién está detrás de la cámara?
           </h2>
 
-          <h1 class="text-3xl md:text-3xl font-light mb-6">
-            <span class="text-white font-bold">Juan Vázquez</span>
-            <br class="hidden md:block" />
-            <span class="text-xl text-primary/80"
-              >Fotógrafo entusiasta en Sevilla</span
-            >
-          </h1>
+          <section class="max-w-3xl mx-auto px-6 py-12" itemprop="description">
+            <h1 class="text-3xl md:text-3xl font-light mb-1 text-center">
+              <span
+                class="text-white font-bold text-xl uppercase tracking-tighter"
+                >Juan Vázquez</span
+              >
+            </h1>
 
-          <p class="text-slate-300 leading-relaxed mb-4">
-            Natural del norte pero disfrutando del sur, mi camino en la
-            fotografía ha sido un viaje personal y autodidacta.
-          </p>
+            <h2
+              class="text-[10px] uppercase tracking-[0.4em] text-primary/70 mb-8 font-medium text-center">
+              Fotógrafo entusiasta en Sevilla
+            </h2>
 
-          <p class="text-slate-300 leading-relaxed mb-4">
-            Mi trabajo se centra en las personas y su entorno, desde la
-            intimidad de un retrato en un estudio hasta la espontaneidad de la
-            fotografía de calle.
-          </p>
-
-          <p class="text-slate-300 leading-relaxed mb-4">
-            Disfruto encontrando la belleza en paisajes y rincones que pasan
-            desapercibidos, capturando esos momentos que el tiempo intentará
-            borrar.
-          </p>
+            <p
+              class="text-slate-300 leading-relaxed mb-4 text-center md:text-left">
+              Natural del norte pero disfrutando del sur, mi camino en la
+              fotografía ha sido un viaje personal y autodidacta.
+            </p>
+            <p
+              class="text-slate-300 leading-relaxed mb-4 text-center md:text-left">
+              Mi trabajo se centra en las personas y su entorno, desde la
+              intimidad de un retrato en un estudio hasta la espontaneidad de la
+              fotografía de calle.
+            </p>
+            <p
+              class="text-slate-300 leading-relaxed mb-4 text-center md:text-left">
+              Disfruto encontrando la belleza en paisajes y rincones que pasan
+              desapercibidos, capturando esos momentos que el tiempo intentará
+              borrar.
+            </p>
+          </section>
+          <p class="text-slate-300 leading-relaxed mb-4"></p>
 
           <p
             class="text-slate-400 text-sm italic border-l-2 border-primary/30 pl-4 mt-6">
