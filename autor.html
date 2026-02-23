@@ -44,30 +44,72 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Juan Vázquez",
-        "alternateName": "Fotovazquez",
-        "url": "https://www.fotovazquez.com/autor",
-        "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
-        "jobTitle": "Fotógrafo Profesional",
-        "worksFor": {
-          "@type": "ProfessionalService",
-          "name": "Fotovazquez",
-          "url": "https://www.fotovazquez.com"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Sevilla",
-          "addressRegion": "Andalucía",
-          "addressCountry": "ES"
-        },
-        "award": [
-          "Premio Concurso decoración navideña Amenabar 2026",
-          "Premio Serie fotográfica Photourban Sevilla 2025",
-          "Exposición II Bienal de flamenco 2025",
-          "Premio Serie fotográfica Photourban Sevilla 2019"
-        ],
-        "sameAs": ["https://instagram.com/fotovazquez"]
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.fotovazquez.com/autor#person",
+            "name": "Juan Vázquez",
+            "alternateName": "Fotovazquez",
+            "url": "https://www.fotovazquez.com/autor",
+            "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
+            "jobTitle": "Fotógrafo Profesional",
+            "worksFor": {
+              "@type": "ProfessionalService",
+              "name": "Fotovazquez",
+              "url": "https://www.fotovazquez.com"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sevilla",
+              "addressRegion": "Andalucía",
+              "addressCountry": "ES"
+            },
+            "award": [
+              "Premio Concurso decoración navideña Amenabar 2026",
+              "Premio Serie fotográfica Photourban Sevilla 2025",
+              "Exposición II Bienal de flamenco 2025",
+              "Premio Serie fotográfica Photourban Sevilla 2019"
+            ],
+            "sameAs": ["https://instagram.com/fotovazquez"]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Realizas sesiones fuera de Sevilla?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Principalmente trabajo en Sevilla y alrededores pero podría darse algún caso de ampliar horizontes si la propuesta resulta interesante."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo sueles plantear una sesión de fotos y cómo las entregas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cada proyecto es único. Las fotografías se entregan editadas y en alta resolución mediante galería privada en la nube, con un tiempo medio de entrega de 7 a 10 días laborables. Ofrezco sesiones personalizadas y colaboraciones TFP."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajas en estudio o en exteriores?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Me adapto a la narrativa. Puedo gestionar sesiones en estudio para retratos controlados o aprovechar la luz natural en exteriores para un estilo más libre y urbano."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ofreces fotos a 0€ ¿Por qué regalas tu trabajo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No regalo mi trabajo, ofrezco Sesiones Colaborativas TFP donde ambas partes obtienen un beneficio mutuo para sus portfolios y redes sociales."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -161,11 +203,11 @@
 
       <section class="animate-[fadeIn_1s_ease-out]">
         <h2
-          class="text-xl font-bold mb-8 border-l-4 border-primary pl-4 uppercase tracking-tighter">
+          class="text-primary uppercase tracking-widest text-xs mb-2 font-bold">
           Reconocimientos
         </h2>
 
-        <div class="grid gap-3">
+        <div class="grid gap-3 py-4">
           <div
             class="award-card p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
             <div>
@@ -251,6 +293,110 @@
           </div>
         </div>
       </section>
+
+      <section class="animate-[fadeIn_1s_ease-out] mt-16">
+        <h2
+          class="text-primary uppercase tracking-widest text-xs mb-2 font-bold">
+          Preguntas Frecuentes
+        </h2>
+
+        <div class="grid gap-4 py-4">
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              ¿Realizas sesiones fuera de Sevilla?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Principalmente trabajo en Sevilla y alrededores pero podría darse
+              algún caso de ampliar horizontes si la propuesta resulta
+              interesante.
+            </p>
+          </div>
+
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              ¿Cómo sueles plantear una sesión de fotos y cómo las entregas?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Cada proyecto es único al igual que cada persona, llevar a cabo
+              una sesión personalizada requiere de un diálogo previo donde nos
+              enfocamos en llegar al mejor resultado. Escuchar con atención y
+              entender qué se pretende lograr es quizá una de las partes más
+              importantes de una sesión de fotos fructífera. Las fotografías se
+              entregan editadas y en alta resolución mediante galería privada y
+              encriptada en la nube, con un tiempo medio de entrega de 7 a 10
+              días laborables. Si decides optar por una sesión TFP tendrás
+              acceso a un muestrario con todas las fotos donde podrás
+              seleccionar las que más te gusten.
+            </p>
+          </div>
+
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              ¿Trabajas en estudio o en exteriores?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Me adapto a la narrativa que busquemos. Puedo gestionar sesiones
+              en estudio para retratos controlados o aprovechar la luz natural
+              en exteriores para un estilo más libre o urbano donde se puede
+              jugar con multitud de elementos ya que suelen ser sesiones más
+              dinámicas.
+            </p>
+          </div>
+
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              ¿Se pueden hacer sesiones de varias personas a la vez?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Es habitual hacer fotos de amigos y familiares, así que claro que
+              es posible siempre que se avise con tiempo para poder planificar
+              las fotografías.
+            </p>
+          </div>
+
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              Ofreces fotos a 0€ ¿Por qué regalas tu trabajo?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              No regalo mi trabajo, ofrezco Sesiones Colaborativas "TFP" donde
+              ninguna de las partes recibe una compensación económica pero sí un
+              beneficio mutuo: Aumento de nuestro portfolio, Redes Sociales,
+              etc. Puedes encontrar más información consultando las
+              <a
+                href="/condiciones"
+                class="text-primary hover:underline underline-offset-4 transition-all">
+                condiciones
+              </a>
+              con las que trabajo.
+            </p>
+          </div>
+
+          <div class="award-card p-5 rounded-xl">
+            <h3
+              class="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+              ¿Podríamos trabajar con otros estilos de fotorafía?
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              ¡Claro! Siempre estoy abierto a trabajar con nuevas ideas. ¿Qué me
+              propones?.
+            </p>
+          </div>
+        </div>
+      </section>
+      <p class="text-[15px] md:text-left text-gray-500">
+        Puede que aún te quede alguna duda, en ese caso me puedes escribir a
+        <a
+          href="mailto:contacto@fotovazquez.com"
+          class="text-slate-200 font-bold hover:text-primary transition-colors">
+          contacto@fotovazquez.com
+        </a>
+      </p>
     </main>
 
     <div
