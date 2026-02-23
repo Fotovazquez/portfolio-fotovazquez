@@ -50,36 +50,47 @@
       };
     </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Fotovazquez",
-        "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
-        "url": "https://www.fotovazquez.com",
-        "description": "Fotógrafo profesional en Sevilla especializado en retratos, sesiones de estudio y fotografía en exterior.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Sevilla",
-          "addressRegion": "Andalucía",
-          "addressCountry": "ES"
-        },
-        "priceRange": "€€",
-        "areaServed": "Sevilla",
-        "email": "contacto@fotovazquez.com",
-        "sameAs": ["https://www.instagram.com/fotovazquez"],
-        "founder": {
-          "@type": "Person",
-          "name": "Juan Vázquez Fernández",
-          "jobTitle": "Fotógrafo Profesional",
-          "sameAs": ["https://www.instagram.com/fotovazquez"]
-        },
-        "brand": {
-          "@type": "Brand",
-          "name": "Fotovazquez"
-        }
-      }
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Fotovazquez",
+  "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
+  "url": "https://www.fotovazquez.com",
+  "description": "Fotógrafo profesional en Sevilla especializado en retratos, sesiones de estudio y fotografía en exterior.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sevilla",
+    "addressRegion": "Andalucía",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.3891",
+    "longitude": "-5.9845"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Sevilla",
+      "sameAs": "https://www.wikidata.org/wiki/Q8717"
+    }
+  ],
+  "priceRange": "€€",
+  "email": "contacto@fotovazquez.com",
+  "sameAs": ["https://www.instagram.com/fotovazquez"],
+  "founder": {
+    "@type": "Person",
+    "name": "Juan Vázquez Fernández",
+    "jobTitle": "Fotógrafo Profesional",
+    "sameAs": ["https://www.instagram.com/fotovazquez"]
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Fotovazquez"
+  }
+}
+</script>
 
     <style>
       body {
@@ -591,6 +602,64 @@
   </a>
 </section>
 
+  </div>
+</section>
+
+<!-- GEO CARD v1 -->
+<section class="max-w-3xl mx-auto px-5 mb-8" itemscope itemtype="https://schema.org/LocalBusiness">
+  <meta itemprop="name" content="Fotovazquez">
+  <meta itemprop="address" content="Sevilla, España">
+  
+  <div class="relative group overflow-hidden rounded-xl border border-white/5 bg-gradient-to-r from-[#1a1a1a] to-[#0f0f0f] p-6 md:p-8 shadow-2xl">
+    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl transition-all duration-700 group-hover:bg-primary/10"></div>
+
+    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="flex-1">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-6 h-[1px] bg-primary/30"></span>
+          <span class="text-[8px] uppercase tracking-[0.4em] text-primary/70 font-medium">Localización</span>
+        </div>
+        
+        <h3 class="text-xs md:text-lg font-light text-gray-300 mb-2">
+          <a href="https://www.google.com/maps?q=Sevilla" target="_blank" class="hover:text-primary transition-colors duration-500">
+            Sevilla
+          </a>
+          <span class="text-gray-600 font-extralight">&</span> Alrededores
+        </h3>
+        
+        <p class="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-[0.15em] leading-relaxed">
+          Triana • Centro Histórico • María Luisa <br />
+          La Cartuja • Plaza de España • Feria de Abril • Estudios 
+        </p>
+      </div>
+
+      <div class="hidden md:block w-[1px] h-12 bg-white/5"></div>
+
+      <div class="flex-1 md:text-right">
+        <div class="flex items-center md:justify-end gap-2 mb-3">
+          <span class="text-[8px] uppercase tracking-[0.4em] text-primary/70 font-medium">Servicios</span>
+          <span class="w-6 h-[1px] bg-primary/30"></span>
+        </div>
+        <p class="text-[11px] md:text-xs text-gray-400 font-light leading-snug">
+          Especializado en
+          <span class="text-primary/90">Retrato Editorial</span>,
+          <br class="hidden md:block" />
+          Moda y Estética Cinematográfica.
+        </p>
+        
+        <div class="mt-4 flex md:justify-end items-center gap-2">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-40"></span>
+              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary/80"></span>
+            </span>
+            <span class="text-[8px] uppercase tracking-widest text-gray-500 font-medium">Agenda 2026 abierta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-20 group-hover:animate-[shine_1.5s_ease-in-out]"></div>
   </div>
 </section>
 
