@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectorGaleria = ".category-card, .gallery a, .galeria-seleccion a";
   const existeGaleria = document.querySelector(selectorGaleria);
 
-  if (existeGaleria && typeof SimpleLightbox !== 'undefined') {
+  if (existeGaleria && typeof SimpleLightbox !== "undefined") {
     const gallery = new SimpleLightbox(selectorGaleria, {
       enableKeyboard: true,
       fadeSpeed: 250,
       scrollZoom: false,
       overlayOpacity: 0.9,
       close: true,
-      nav: true
+      nav: true,
     });
 
     // Control de la leyenda de ayuda (si existe el elemento #sl-ayuda)
@@ -19,14 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if ($ayuda) {
       gallery.on("show.simplelightbox", () => {
         $ayuda.style.opacity = "1";
-        setTimeout(() => { $ayuda.style.opacity = "0"; }, 3000);
+        setTimeout(() => {
+          $ayuda.style.opacity = "0";
+        }, 3000);
       });
-      gallery.on("close.simplelightbox", () => { $ayuda.style.opacity = "0"; });
+      gallery.on("close.simplelightbox", () => {
+        $ayuda.style.opacity = "0";
+      });
     }
 
     // Efecto de desenfoque en el fondo al abrir la foto
-    gallery.on("show.simplelightbox", () => document.body.classList.add("sl-open"));
-    gallery.on("close.simplelightbox", () => document.body.classList.remove("sl-open"));
+    gallery.on("show.simplelightbox", () =>
+      document.body.classList.add("sl-open"),
+    );
+    gallery.on("close.simplelightbox", () =>
+      document.body.classList.remove("sl-open"),
+    );
   }
 
   // --- 2. LÓGICA DEL FORMULARIO DE CONTACTO ---
@@ -46,9 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!nombre || !email || !mensaje || !emailRegex.test(email)) {
         if ($errorMsg) {
-          $errorMsg.innerText = !emailRegex.test(email) && email 
-            ? "Por favor, introduce un email válido." 
-            : "Por favor, rellena todos los campos.";
+          $errorMsg.innerText =
+            !emailRegex.test(email) && email
+              ? "Por favor, introduce un email válido."
+              : "Por favor, rellena todos los campos.";
           $errorMsg.classList.remove("hidden");
         }
         return;
@@ -60,24 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch($form.action, {
         method: "POST",
         body: new FormData($form),
-        headers: { 'Accept': 'application/json' }
+        headers: { Accept: "application/json" },
       })
-      .then(response => {
-        if (response.ok) {
-          window.location.href = "/gracias";
-        } else {
-          alert("¡Oops! Hubo un problema al enviar tu mensaje.");
+        .then((response) => {
+          if (response.ok) {
+            window.location.href = "/gracias";
+          } else {
+            alert("¡Oops! Hubo un problema al enviar tu mensaje.");
+            $button.innerText = "Enviar Mensaje";
+            $button.disabled = false;
+          }
+        })
+        .catch(() => {
+          alert("Error de conexión. Inténtalo de nuevo.");
           $button.innerText = "Enviar Mensaje";
           $button.disabled = false;
-        }
-      })
-      .catch(() => {
-        alert("Error de conexión. Inténtalo de nuevo.");
-        $button.innerText = "Enviar Mensaje";
-        $button.disabled = false;
-      });
+        });
     });
   }
 });
-
-
