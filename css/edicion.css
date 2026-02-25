@@ -139,3 +139,8 @@
     opacity: 0;
   }
 }
+
+/* Decoración para los números del proceso */
+.tracking-widest {
+  letter-spacing: 0.3em;
+}
