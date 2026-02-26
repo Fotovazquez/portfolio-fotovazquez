@@ -1,9 +1,10 @@
 /* --- 1. APARICIÓN SUAVE (REVEAL) --- */
+/* Modificado para que el cálculo de posición sea preciso */
 .fv-reveal {
   opacity: 0 !important;
   transform: translateY(30px) !important;
   visibility: hidden !important;
-  transition:
+  transition: 
     opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
     transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
     visibility 1.2s !important;
@@ -12,11 +13,12 @@
 
 .fv-reveal.active {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  /* Usamos 'none' para que el navegador asiente el elemento en su posición real */
+  transform: none !important; 
   visibility: visible !important;
 }
 
-/* --- 2. CONTENEDOR DEL SLIDER (Cambiado de ID a Clase) --- */
+/* --- 2. CONTENEDOR DEL SLIDER --- */
 .before-after-container {
   position: relative;
   width: 100%;
@@ -24,13 +26,12 @@
   overflow: hidden !important;
   isolation: isolate;
   user-select: none;
-  touch-action: none;
+  /* Cambiado a pan-y para permitir scroll vertical con el dedo */
+  touch-action: pan-y; 
   cursor: col-resize;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
 
 .before-after-container img {
   pointer-events: none;
@@ -40,7 +41,7 @@
   object-fit: cover;
 }
 
-/* Imagen que se recorta */
+/* Imagen que se recorta (Antes) */
 .before-image {
   position: absolute;
   top: 0;
@@ -48,7 +49,7 @@
   width: 100%;
   height: 100%;
   z-index: 10;
-  clip-path: inset(0 50% 0 0); /* Estado inicial */
+  clip-path: inset(0 50% 0 0);
   border-right: 1px solid rgba(208, 187, 149, 0.4);
 }
 
@@ -103,6 +104,7 @@
   }
 }
 
+/* Animación de pulso para el manejador central */
 .handle-circle::after {
   content: "";
   position: absolute;
@@ -116,4 +118,10 @@
 @keyframes fv-pulse {
   0% { transform: scale(1); opacity: 0.8; }
   100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* --- 5. SUAVIZADO DE SCROLL GLOBAL --- */
+html {
+  /* Asegura que cualquier salto sea detectado como suave por el motor del navegador */
+  scroll-behavior: smooth !important;
 }

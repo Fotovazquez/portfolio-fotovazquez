@@ -61,3 +61,25 @@
 
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", initPage) : initPage();
 })();
+
+document.querySelectorAll('a[href^="#revelado-"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = this.getAttribute('href');
+        const target = document.querySelector(id);
+        
+        if (target) {
+            // Calculamos la posición exacta
+            const offset = 100; // Ajusta este valor según el alto de tu menú (header)
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = target.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
