@@ -1,104 +1,63 @@
 (function () {
-  const initSlider = () => {
-    // --- 1. APARICIÓN SUAVE (REVEAL) ---
+  const initPage = () => {
+    // Reveal para header y sliders
     const revealElements = document.querySelectorAll(".fv-reveal");
-
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-
-          const sliderInEntry =
-            entry.target.querySelector("#beforeAfterSlider");
-          if (sliderInEntry) {
-            // Amago orgánico para invitar al usuario a interactuar
-            setTimeout(() => {
-              updateSliderPosition(46);
-              setTimeout(() => updateSliderPosition(50), 350);
-            }, 800);
+          // Si es un slider, enviamos evento para el "amago" inicial
+          if (entry.target.querySelector('.before-image')) {
+            entry.target.dispatchEvent(new CustomEvent('start-hint'));
           }
           revealObserver.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
     revealElements.forEach((el) => revealObserver.observe(el));
 
-    // --- 2. LÓGICA DEL SLIDER ---
-    const slider = document.getElementById("beforeAfterSlider");
-    const beforeImage = document.getElementById("beforeImage");
-    const handle = document.getElementById("sliderHandle");
+    // Lógica independiente para cada slider
+    const containers = document.querySelectorAll(".before-after-container");
+    containers.forEach((container) => {
+      const beforeImg = container.querySelector(".before-image");
+      const handle = container.querySelector(".slider-handle");
+      let isDragging = false;
 
-    if (!slider || !beforeImage || !handle) return;
+      function update(percent) {
+        const p = Math.max(0, Math.min(100, percent));
+        window.requestAnimationFrame(() => {
+          if (beforeImg) beforeImg.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+          if (handle) handle.style.left = `${p}%`;
+        });
+      }
 
-    let isDragging = false;
-
-    // Función de actualización optimizada con requestAnimationFrame
-    function updateSliderPosition(percent) {
-      const clampedPercent = Math.max(0, Math.min(100, percent));
-
-      window.requestAnimationFrame(() => {
-        beforeImage.style.clipPath = `inset(0 ${100 - clampedPercent}% 0 0)`;
-        handle.style.left = `${clampedPercent}%`;
+      // Amago orgánico cuando entra en pantalla
+      container.addEventListener('start-hint', () => {
+        setTimeout(() => {
+          update(46);
+          setTimeout(() => update(50), 350);
+        }, 800);
       });
-    }
 
-    const handleMove = (e) => {
-      if (!isDragging) return;
+      const onMove = (e) => {
+        if (!isDragging) return;
+        if (e.cancelable) e.preventDefault();
+        const rect = container.getBoundingClientRect();
+        const pageX = e.pageX || (e.touches && e.touches[0].pageX);
+        const percent = ((pageX - rect.left) / rect.width) * 100;
+        update(percent);
+      };
 
-      // Evita el scroll vertical en móviles mientras se desliza el slider
-      if (e.cancelable) e.preventDefault();
+      container.addEventListener("mousedown", (e) => { isDragging = true; onMove(e); });
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", () => isDragging = false);
 
-      const rect = slider.getBoundingClientRect();
-
-      // Obtener posición X (soporta ratón y múltiples dedos en táctil)
-      const pageX = e.pageX || (e.touches && e.touches[0].pageX);
-
-      // Cálculo de porcentaje relativo al contenedor
-      const x = pageX - rect.left;
-      const percent = (x / rect.width) * 100;
-
-      updateSliderPosition(percent);
-    };
-
-    const startDragging = (e) => {
-      isDragging = true;
-      handleMove(e);
-      slider.style.cursor = "grabbing";
-    };
-
-    const stopDragging = () => {
-      isDragging = false;
-      slider.style.cursor = "col-resize";
-    };
-
-    // --- 3. EVENTOS ---
-
-    // Ratón
-    slider.addEventListener("mousedown", startDragging);
-    window.addEventListener("mousemove", handleMove);
-    window.addEventListener("mouseup", stopDragging);
-
-    // Táctil (Móvil) - passive: false es vital para que preventDefault funcione
-    slider.addEventListener("touchstart", startDragging, { passive: false });
-    window.addEventListener("touchmove", handleMove, { passive: false });
-    window.addEventListener("touchend", stopDragging);
-
-    // Seguridad: Bloqueo de arrastre nativo de imágenes del navegador
-    slider.querySelectorAll("img").forEach((img) => {
-      img.addEventListener("dragstart", (e) => e.preventDefault());
+      container.addEventListener("touchstart", (e) => { isDragging = true; onMove(e); }, { passive: false });
+      window.addEventListener("touchmove", onMove, { passive: false });
+      window.addEventListener("touchend", () => isDragging = false);
     });
   };
 
-  // Inicialización cuando el DOM esté listo
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSlider);
-  } else {
-    initSlider();
-  }
+  document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", initPage) : initPage();
 })();

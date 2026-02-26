@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Orden de ejecución js-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="z5Xe7qpadYv1TjwfBDNwNnrV-KXHYOUKMuc3oDcH7CY" />
+
+    <link rel="canonical" href="https://www.fotovazquez.com/" />
+    <title>Fotovazquez | Portfolio</title>
+
+    <meta
+      name="description"
+      content="Portfolio de Fotovazquez. Fotógrafo en Sevilla especializado en retratos, sesiones de fotografía en estudio y en exterior. Capturo lo que el tiempo intenta borrar." />
+    <meta
+      name="keywords"
+      content="fotógrafo Sevilla, retratos Sevilla, sesiones de fotos, Fotovazquez, fotografía profesional, colaboraciones fotografía, colaboraciones Sevilla, boudoir sevilla, fotógrafo boudoir Sevilla, fotógrafo de retrato Sevilla, fotógrafos de Sevilla, fotografo profesional Sevilla, sesiones de fotos Sevilla, colaboración de fotos Sevilla, mejores fotógrafos en Sevilla fotógrafos moda retrato Sevilla, top photographers in Seville Spain portrait fashion, fotógrafos moda Sevilla retrato fotógrafos, fotógrafos de Sevilla fotografía profesional Sevilla fotógrafos recomendados, fotógrafo Sevilla Instagram fotógrafos en Sevilla Instagram, photographers in Seville Spain Instagram Seville professional photographers Instagram, fotógrafos Sevilla Instagram fotógrafos Sevilla, colaboraciones instagram Sevilla, TFP Sevilla" />
+    <meta name="author" content="Juan Vázquez (Fotovazquez)" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="Fotovazquez | Portfolio de Fotografía" />
+    <meta
+      property="og:description"
+      content="Sesiones profesionales de fotografía en Sevilla. Reserva tu sesión colaborativa." />
+    <meta property="og:image" content="img/Juan_Vazquez.jpg" />
+    <meta property="og:url" content="https://www.fotovazquez.com" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#D0BB95", "bg-dark": "#131313" },
+            fontFamily: { sans: ["Comfortaa", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Fotovazquez",
+  "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
+  "url": "https://www.fotovazquez.com",
+  "description": "Fotógrafo profesional en Sevilla especializado en retratos, sesiones de estudio y fotografía en exterior.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sevilla",
+    "addressRegion": "Andalucía",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.3891",
+    "longitude": "-5.9845"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Sevilla",
+      "sameAs": "https://www.wikidata.org/wiki/Q8717"
+    }
+  ],
+  "priceRange": "€€",
+  "email": "contacto@fotovazquez.com",
+  "sameAs": ["https://www.instagram.com/fotovazquez"],
+  "founder": {
+    "@type": "Person",
+    "name": "Juan Vázquez Fernández",
+    "jobTitle": "Fotógrafo Profesional",
+    "sameAs": ["https://www.instagram.com/fotovazquez"]
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Fotovazquez"
+  }
+}
+</script>
+
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        scroll-behavior: smooth;
+      }
+      /* Efecto dorado suave */
+      .category-card {
+        transition: all 0.2s ease-in-out;
+      }
+      .category-card:hover {
+        box-shadow: 0 0 30px rgba(208, 187, 149, 0.3);
+        border-color: rgba(208, 187, 149, 0.6);
+      }
+      /* Optimizacion para las imagenes de fondo */
+      .card-img-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s ease;
+      }
+      .category-card:hover .card-img-container img {
+        transform: scale(1.1);
+      }
+        @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+    </style>
+  </head>
+
+  <body class="selection:bg-primary selection:text-black">
+    <!-- TITULO NAVEGACION -->
+    <nav
+      class="fixed w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-4 md:px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center gap-x-4">
+        <h1
+          class="text-base md:text-xl font-bold tracking-tighter text-primary flex-shrink-0">
+          <a href="/" class="flex items-center gap-2">
+            <img
+              alt="Inicio Fotovazquez"
+              src="img/icon.svg"
+              alt="Logo Fotovazquez"
+              title="Fotovazquez - Fotografía Profesional y colaboraciones"
+              class="w-7 h-7 md:w-8 md:h-8 object-contain" />
+            <span>FOTOVAZQUEZ</span>
+          </a>
+        </h1>
+
+        <!-- MENU DE BOTONES SUPEIORES PARA PC -->
+        <div
+          class="hidden md:flex gap-8 text-sm uppercase tracking-widest items-center">
+          <a href="#portfolio" class="hover:text-primary transition-colors"
+            >Portfolio</a
+          >
+          <a href="/edicion-profesional" class="hover:text-primary transition-colors"
+            >Revelado</a
+          >
+          <a href="/modelos" class="hover:text-primary transition-colors"
+            >Modelos</a
+          >
+          <a href="#colaboraciones" class="hover:text-primary transition-colors"
+            >Colaboraciones y contacto</a
+          >
+          <a
+            href="https://instagram.com/fotovazquez"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
+            aria-label="Instagram de Juan Vázquez">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-all duration-300 group-hover:scale-110">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+
+        <!-- BOTONES SUPERIORES EN MOVILES -->
+       <div class="md:hidden flex flex-col items-end gap-1.5 text-[10px] uppercase tracking-wider font-bold flex-shrink-0">
+  <a
+    href="#contacto"
+    class="px-4 h-7 flex items-center justify-center text-center border border-primary/40 rounded-lg bg-primary text-black active:scale-95 transition-all">
+    Pide tu sesión
+  </a>
+</div>
+      </div>
+    </nav>
+
+    <!-- TITULO Y AUTOR -->
+    <header class="pt-32 pb-10 px-5 text-center flex flex-col items-center">
+      <h1 class="text-3xl md:text-5xl font-light mb-2">
+        Capturo
+        <span class="text-primary font-bold"
+          >lo que el tiempo intenta borrar</span
+        >
+      </h1>
+
+      <div
+        class="animate-[fadeIn_1.5s_ease-out] flex flex-col items-center group">
+        <div
+          class="w-16 border-t border-white/20 mb-3 transition-all duration-700 group-hover:w-24 group-hover:border-primary/50"></div>
+
+        <a
+          href="/autor"
+          class="text-[10px] md:text-xs uppercase tracking-[0.4em] text-slate-500 hover:text-primary transition-colors duration-500">
+          Por
+          <span
+            class="group-hover:text-white transition-colors duration-500 font-medium">
+            Juan Vázquez
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <!-- CARTAS -->
+    <section
+      id="portfolio"
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-6">
+      <a
+        href="/retrato"
+        class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <picture>
+            <source srcset="img/retrato.webp" type="image/webp" />
+            <img src="img/retrato.jpg" alt="Retrato" loading="eager" />
+          </picture>
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-2xl font-bold">Retrato</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            Ver galería →
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="/estudio"
+        class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <picture>
+            <source srcset="img/estudio.webp" type="image/webp" />
+            <img
+              src="img/estudio.jpg"
+              alt="Sesiones en estudio"
+              loading="eager" />
+          </picture>
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-2xl font-bold">Sesiones en estudio</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            Ver galería →
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="/exterior"
+        class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <picture>
+            <source srcset="img/exterior.webp" type="image/webp" />
+            <img
+              src="img/exterior.jpg"
+              alt="Sesiones en exterior"
+              loading="eager" />
+          </picture>
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-2xl font-bold">Sesiones en exterior</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            Ver galería →
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="/cine"
+        class="category-card cine-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <img
+            src="img/cine.jpg"
+            alt="Fotografía formato cine"
+            class="transition-transform duration-700 group-hover:scale-110" />
+        </div>
+
+        <div class="absolute inset-0 pointer-events-none">
+          <div
+            class="absolute top-0 left-0 w-full h-0 bg-black transition-all duration-500 ease-in-out group-hover:h-[15%] z-10"></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-0 bg-black transition-all duration-500 ease-in-out group-hover:h-[15%] z-10"></div>
+        </div>
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-20"></div>
+
+        <div class="absolute bottom-8 left-8 z-30">
+          <p class="text-2xl font-bold">Formato Cine</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            Ver galería →
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="/blanco-y-negro"
+        class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <img src="img/bn.webp" alt="Fotografía en blanco y negro" />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-2xl font-bold">Blanco y Negro</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            Ver galería →
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="/#"
+        class="category-card group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <div class="card-img-container">
+          <img
+            src="img/lifestyle.webp"
+            alt="Fotografía de marca personal"
+            loading="lazy" />
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-2xl font-bold">Lifestyle</p>
+          <p
+            class="text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            PRÓXIMAMENTE
+          </p>
+        </div>
+      </a>
+    </section>
+
+    <!--RESERVAR SESIONES-->
+    <section id="colaboraciones" class="pt-4 pb-12 px-4 md:px-20 lg:px-40">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-white/5 bg-dark-gray">
+          <div
+            class="lg:w-1/3 p-12 text-center bg-[#1a1a1a] flex flex-col justify-center items-center">
+            <div class="mb-6 flex justify-center">
+              <svg
+                class="w-10 h-10 text-primary/50 group-hover:text-primary transition-colors duration-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+              </svg>
+            </div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6"
+              >Reserva tu sesión</span
+            >
+
+            <span class="text-primary text-xs uppercase tracking-widest"
+              >- Sevilla -</span
+            >
+
+            <h2
+              class="text-xl font-bold mt-4 mb-6 tracking-widest uppercase leading-tight">
+              Sesiones colaborativas a 0€ <br />
+              <span class="text-primary text-sm">Máximo 5 fotos/sesión</span>
+            </h2>
+
+            <p class="text-slate-400 mb-6 text-sm">
+              ¿Te gustaría hacer una sesión de muchas
+              <strong>más fotos</strong>?<br />¡La haremos!
+            </p>
+
+            <div class="w-8 border-t border-white/10 mb-6"></div>
+
+            <p class="text-slate-400 mb-6 text-sm">
+              ¿Tienes una idea y quieres llevarla a cabo?<br />Tu opinión
+              siempre cuenta
+            </p>
+
+            <div class="w-8 border-t border-white/10 mb-6"></div>
+
+            <p class="text-slate-400 text-sm">
+              Recuerda que también puedes encontrarme en Instagram como<br />
+              <a
+                href="https://instagram.com/fotovazquez"
+                target="_blank"
+                class="text-lg font-bold hover:text-primary transition-colors block mt-2"
+                >@fotovazquez</a
+              >
+              <span class="block my-1 opacity-50">o escribirme a</span>
+              <a
+                href="mailto:contacto@fotovazquez.com"
+                class="text-lg font-bold hover:text-primary transition-colors"
+                >contacto@fotovazquez.com</a
+              >
+            </p>
+          </div>
+
+          <div id="contacto" class="lg:w-2/3 p-12 bg-zinc-900">
+            <h3 class="text-2xl font-bold mb-8 text-center">
+              Ponte en contacto y reserva tu sesión
+            </h3>
+
+            <form
+              id="miFormulario"
+              novalidate
+              action="https://formspree.io/f/xojlzbvl"
+              method="POST"
+              class="space-y-6">
+              <input
+                type="hidden"
+                name="_next"
+                value="https://www.fotovazquez.com/gracias" />
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  name="nombre"
+                  type="text"
+                  placeholder="¿Cómo te llamas?"
+                  required
+                  class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="¿Cuál es tu email?"
+                  required
+                  class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
+              </div>
+              <div class="space-y-4">
+                <p class="text-sm text-slate-500 tracking-[0.1em] ml-1">
+                  Selecciona el tipo de sesión que te gustaría hacer:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <label class="relative cursor-pointer">
+                    <input
+                      type="radio"
+                      name="tipo_sesion"
+                      value="colaboracion_5_fotos"
+                      class="peer hidden"
+                      checked />
+                    <div
+                      class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
+                      <div
+                        class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
+                        <div
+                          class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                      </div>
+                      <div class="ml-4">
+                        <span
+                          class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors"
+                          >Experiencia colaborativa (0€)</span
+                        >
+                        <span
+                          class="block text-[11px] text-slate-400 uppercase tracking-tight"
+                          >Máximo 5 fotos</span
+                        >
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="relative cursor-pointer">
+                    <input
+                      type="radio"
+                      name="tipo_sesion"
+                      value="sesion_completa"
+                      class="peer hidden" />
+                    <div
+                      class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)] transition-all duration-300">
+                      <div
+                        class="w-4 h-4 border border-primary/40 rounded-full flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-all duration-300">
+                        <div
+                          class="w-1.5 h-1.5 bg-black rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                      </div>
+                      <div class="ml-4">
+                        <span
+                          class="block text-sm font-medium text-slate-200 peer-checked:text-white transition-colors"
+                          >Experiencia completa</span
+                        >
+                        <span
+                          class="block text-[11px] text-slate-400 uppercase tracking-tight"
+                          >Más fotos y variedad</span
+                        >
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <textarea
+                name="mensaje"
+                placeholder="Dime qué tienes en mente para tu sesión y te responderé lo antes posible."
+                rows="6"
+                required
+                class="w-full bg-[#121212] border border-white/10 rounded-xl p-5 outline-none focus:border-primary"></textarea>
+              <div
+                id="mensaje-error"
+                class="hidden mb-6 p-4 bg-red-900/25 border border-primary/50 text-primary rounded-xl text-center text-sm animate-pulse">
+                Por favor, rellena todos los campos para poder contactar.
+              </div>
+              <div class="flex justify-center">
+                <button
+                  id="botonEnvio"
+                  type="submit"
+                  class="w-max h-12 px-10 bg-primary text-black font-bold rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all uppercase tracking-widest text-sm">
+                  Enviar Mensaje
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--GRATITUD MODELOS   
+<section id="modelos" class="md:hidden pt-4 pb-12 px-6">
+  <a href="/modelos" class="block group relative">
+    <div class="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] py-12 px-8 shadow-2xl transition-all duration-500 group-active:scale-[0.98]">
+      
+      <div class="absolute inset-0 border border-primary/0 rounded-xl transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[inset_0_0_20px_rgba(208,187,149,0.1)]"></div>
+
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+      
+      <div class="text-center relative z-10">
+     
+
+        <p class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-medium">
+          Gratitud y Colaboración
+        </p>
+        
+        <div class="mt-6 mb-6 w-16 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mx-auto"></div>
+        
+        <h2 class="text-[11px] uppercase tracking-[0.25em] text-gray-400 font-light leading-loose">
+          Descubre a los <span class="text-primary font-normal">protagonistas</span><br>
+          <span class="text-gray-400">que dan vida a mis sesiones</span>
+        </h2>
+
+
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl -ml-12 -mb-12"></div>
+    </div>
+  </a>
+</section>
+-->
+<section id="modelos" class="md:hidden pt-4 pb-12 px-6">
+  <a href="/modelos" class="block group relative">
+    <div class="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] py-8 px-8 shadow-2xl transition-all duration-500 group-active:scale-[0.98]">
+      
+      <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40 group-hover:animate-[shine_1s_ease-in-out] group-active:animate-[shine_1s_auto]"></div>
+
+      <div class="absolute inset-0 border border-primary/0 rounded-xl transition-all duration-700 group-hover:border-primary/30 group-hover:shadow-[inset_0_0_20px_rgba(208,187,149,0.05)]"></div>
+
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+      
+      <div class="text-center relative z-10">
+
+
+        <p class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-medium">
+          Gratitud y Colaboración
+        </p>
+        
+        <div class="mt-5 mb-5 w-12 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto"></div>
+        
+        <h2 class="text-[11px] uppercase tracking-[0.25em] text-gray-400 font-light leading-loose">
+          Descubre a los <span class="text-primary font-normal">protagonistas</span><br>
+          <span class="text-gray-400">que dan vida a mis sesiones</span>
+        </h2>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl -ml-12 -mb-12"></div>
+    </div>
+  </a>
+</section>
+
+  </div>
+</section>
+
+<!-- GEO CARD -->
+<section class="max-w-4xl mx-auto px-6 mb-12" itemscope itemtype="https://schema.org/LocalBusiness">
+  <meta itemprop="name" content="Fotovazquez">
+  <meta itemprop="address" content="Sevilla, España">
+  
+  <div class="relative group overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-r from-[#1a1a1a] to-[#0f0f0f] p-8 md:p-10 shadow-2xl">
+    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl transition-all duration-700 group-hover:bg-primary/10"></div>
+
+    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-[1px] bg-primary/30"></span>
+          <span class="text-[9px] uppercase tracking-[0.4em] text-primary/70 font-medium">Localización</span>
+        </div>
+        
+        <h3 class="text-sm md:text-xl font-light text-gray-300 mb-3">
+          <a href="https://www.google.com/maps/place/Sevilla" target="_blank" class="hover:text-primary transition-colors duration-500">
+            Sevilla
+          </a>
+          <span class="text-gray-600 font-extralight">&</span> Alrededores
+        </h3>
+        
+        <p class="text-[9px] md:text-xs text-gray-500 uppercase tracking-widest leading-loose">
+          Triana • Centro Histórico • María Luisa <br />
+          La Cartuja • Plaza de España • Especial Feria de Abril • Sesiones en Estudios 
+        </p>
+      </div>
+
+      <div class="hidden md:block w-[1px] h-16 bg-white/5"></div>
+
+      <div class="flex-1 md:text-right">
+        <div class="flex items-center md:justify-end gap-3 mb-4">
+          <span class="text-[9px] uppercase tracking-[0.4em] text-primary/70 font-medium">Servicios</span>
+          <span class="w-8 h-[1px] bg-primary/30"></span>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 font-light leading-relaxed">
+          Especializado en
+          <span class="text-primary/90">Retrato Editorial</span>,
+          <br class="hidden md:block" />
+          Lifestyle y Estética Cinematográfica.
+        </p>
+        <p class="text-xs md:text-sm text-gray-400 font-light leading-relaxed">
+          <span class="text-primary/90">Shooting</span> y <span class="text-primary/90">Colaboraciones</span> TFP.
+        </p>
+        
+        <div class="mt-4 flex md:justify-end items-center gap-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary/80"></span>
+          </span>
+          <span class="text-[9px] uppercase tracking-widest text-gray-500">Agenda 2026 abierta</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-20 group-hover:animate-[shine_1.5s_ease-in-out]"></div>
+  </div>
+</section>
+
+  <!-- PIE PARA MOVILES -->
+    <div
+      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+      <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
+        Sígueme en redes
+      </p>
+
+      <a
+        href="https://instagram.com/fotovazquez"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
+        aria-label="Instagram de Juan Vázquez">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="transition-all duration-300 group-hover:scale-110">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
+
+    <!-- PIE GENERAL -->
+    <footer class="text-center py-6 border-t border-white/5 tracking-wide">
+      <div class="max-w-7xl mx-auto flex flex-col gap-2">
+        <p
+          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+          &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
+        </p>
+
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
+          <a href="/condiciones" class="hover:text-primary transition-colors"
+            >Condiciones</a
+          >
+
+          <span class="text-white/5">|</span>
+
+          <a href="/autor" class="hover:text-primary transition-colors"
+            >Sobre el autor</a
+          >
+
+          <span class="text-white/5">|</span>
+
+          <a href="/legal" class="hover:text-primary transition-colors"
+            >Legal y Privacidad</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

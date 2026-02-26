@@ -16,8 +16,8 @@
   visibility: visible !important;
 }
 
-/* --- 2. CONTENEDOR DEL SLIDER (21/9) --- */
-#beforeAfterSlider {
+/* --- 2. CONTENEDOR DEL SLIDER (Cambiado de ID a Clase) --- */
+.before-after-container {
   position: relative;
   width: 100%;
   background-color: #0a0a0a;
@@ -26,18 +26,13 @@
   user-select: none;
   touch-action: none;
   cursor: col-resize;
-  border-radius: 24px; /* Ajusta este valor si quieres menos radio */
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
-  #beforeAfterSlider {
-    aspect-ratio: 16 / 9 !important; /* Proporción más cómoda en móvil */
-    border-radius: 16px;
-  }
-}
 
-#beforeAfterSlider img {
+
+.before-after-container img {
   pointer-events: none;
   display: block;
   width: 100%;
@@ -45,14 +40,15 @@
   object-fit: cover;
 }
 
-#beforeImage {
+/* Imagen que se recorta */
+.before-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 10;
-  clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0); /* Estado inicial */
   border-right: 1px solid rgba(208, 187, 149, 0.4);
 }
 
@@ -63,28 +59,16 @@
   white-space: nowrap;
 }
 
-/* Ajuste específico para móviles (pantallas menores a 640px) */
 @media (max-width: 640px) {
   .label-tag {
     font-size: 8px !important;
     padding: 4px 10px !important;
     letter-spacing: 0.1em !important;
   }
-
-  /* Ajustamos la posición de los contenedores de las etiquetas */
-  .absolute.top-6 {
-    top: 1rem !important;
-  }
-  .absolute.right-6 {
-    right: 1rem !important;
-  }
-  .absolute.left-6 {
-    left: 1rem !important;
-  }
 }
 
 /* --- 4. MANEJADOR (HANDLE) --- */
-#sliderHandle {
+.slider-handle {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -130,17 +114,6 @@
 }
 
 @keyframes fv-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-
-/* Decoración para los números del proceso */
-.tracking-widest {
-  letter-spacing: 0.3em;
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
