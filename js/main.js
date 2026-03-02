@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- 1. LÓGICA DE LA GALERÍA (SimpleLightbox) ---
-  // Combinamos todos tus selectores posibles para que funcione en todas las páginas
   const selectorGaleria = ".category-card, .gallery a, .galeria-seleccion a";
   const existeGaleria = document.querySelector(selectorGaleria);
 
@@ -14,27 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
       nav: true,
     });
 
-    // Control de la leyenda de ayuda (si existe el elemento #sl-ayuda)
     const $ayuda = document.querySelector("#sl-ayuda");
     if ($ayuda) {
       gallery.on("show.simplelightbox", () => {
         $ayuda.style.opacity = "1";
-        setTimeout(() => {
-          $ayuda.style.opacity = "0";
-        }, 3000);
+        setTimeout(() => { $ayuda.style.opacity = "0"; }, 3000);
       });
-      gallery.on("close.simplelightbox", () => {
-        $ayuda.style.opacity = "0";
-      });
+      gallery.on("close.simplelightbox", () => { $ayuda.style.opacity = "0"; });
     }
 
-    // Efecto de desenfoque en el fondo al abrir la foto
-    gallery.on("show.simplelightbox", () =>
-      document.body.classList.add("sl-open"),
-    );
-    gallery.on("close.simplelightbox", () =>
-      document.body.classList.remove("sl-open"),
-    );
+    gallery.on("show.simplelightbox", () => document.body.classList.add("sl-open"));
+    gallery.on("close.simplelightbox", () => document.body.classList.remove("sl-open"));
   }
 
   // --- 2. LÓGICA DEL FORMULARIO DE CONTACTO ---
@@ -45,19 +34,28 @@ document.addEventListener("DOMContentLoaded", () => {
   if ($form && $button) {
     $form.addEventListener("submit", function (event) {
       event.preventDefault();
+
       if ($errorMsg) $errorMsg.classList.add("hidden");
 
-      const nombre = $form.nombre.value.trim();
-      const email = $form.email.value.trim();
-      const mensaje = $form.mensaje.value.trim();
+      // Selectores seguros
+      const nombre = $form.querySelector('input[name="nombre"]')?.value.trim();
+      const email = $form.querySelector('input[name="email"]')?.value.trim();
+      const mensaje = $form.querySelector('textarea[name="mensaje"]')?.value.trim();
+      const $check = $form.querySelector('input[name="privacidad"]');
+      const privacidad = $check ? $check.checked : false;
+
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!nombre || !email || !mensaje || !emailRegex.test(email)) {
+      // VALIDACIÓN
+      if (!nombre || !email || !mensaje || !emailRegex.test(email) || !privacidad) {
         if ($errorMsg) {
-          $errorMsg.innerText =
-            !emailRegex.test(email) && email
-              ? "Por favor, introduce un email válido."
-              : "Por favor, rellena todos los campos.";
+          if (!privacidad) {
+            $errorMsg.innerText = "Debes aceptar la política de privacidad para continuar.";
+          } else if (!emailRegex.test(email) && email) {
+            $errorMsg.innerText = "Por favor, introduce un email válido.";
+          } else {
+            $errorMsg.innerText = "Por favor, rellena todos los campos.";
+          }
           $errorMsg.classList.remove("hidden");
         }
         return;
@@ -69,22 +67,20 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch($form.action, {
         method: "POST",
         body: new FormData($form),
-        headers: { Accept: "application/json" },
+        headers: { 'Accept': 'application/json' }
       })
-        .then((response) => {
-          if (response.ok) {
-            window.location.href = "/gracias";
-          } else {
-            alert("¡Oops! Hubo un problema al enviar tu mensaje.");
-            $button.innerText = "Enviar Mensaje";
-            $button.disabled = false;
-          }
-        })
-        .catch(() => {
-          alert("Error de conexión. Inténtalo de nuevo.");
-          $button.innerText = "Enviar Mensaje";
-          $button.disabled = false;
-        });
+      .then(response => {
+        if (response.ok) {
+          window.location.href = "/gracias";
+        } else {
+          throw new Error();
+        }
+      })
+      .catch(() => {
+        alert("¡Oops! Hubo un problema al enviar tu mensaje.");
+        $button.innerText = "Enviar Mensaje";
+        $button.disabled = false;
+      });
     });
   }
-});
+}); 
