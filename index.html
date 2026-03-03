@@ -532,7 +532,7 @@
                   required
                   class="w-full h-14 bg-[#121212] border border-white/10 rounded-xl px-5 outline-none focus:border-primary" />
               </div>
-              <div class="space-y-4">
+              <!--<div class="space-y-4">
                 <p class="text-sm text-slate-500 tracking-[0.1em] ml-1">
                   Selecciona el tipo de sesión que te gustaría hacer:
                 </p>
@@ -591,7 +591,71 @@
                     </div>
                   </label>
                 </div>
-              </div>
+              </div>-->
+<div class="space-y-4">
+  <p class="text-sm text-slate-500 tracking-[0.1em] ml-1">
+    Selecciona el tipo de sesión que te gustaría hacer:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <label class="relative cursor-pointer group">
+      <input type="radio" name="tipo_sesion" value="colaboracion_5_fotos" class="peer hidden" checked />
+      
+      <div class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] transition-all duration-300
+                  peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)]">
+        
+        <div class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/20 bg-primary/5 transition-all duration-300
+                    peer-checked:border-primary peer-checked:bg-primary peer-checked:text-black">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               class="text-primary/60 peer-checked:text-black transition-all duration-500 peer-checked:rotate-90">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="14.31" y1="8" x2="20.05" y2="17.94"/>
+            <line x1="9.69" y1="8" x2="21.17" y2="8"/>
+            <line x1="7.38" y1="12" x2="13.12" y2="2.06"/>
+            <line x1="9.69" y1="16" x2="3.95" y2="6.06"/>
+            <line x1="14.31" y1="16" x2="2.83" y2="16"/>
+            <line x1="16.62" y1="12" x2="10.88" y2="21.94"/>
+          </svg>
+        </div>
+
+        <div class="ml-4">
+          <span class="block text-sm font-medium text-slate-400 peer-checked:text-white transition-colors">Experiencia colaborativa (0€)</span>
+          <span class="block text-[11px] text-slate-500 uppercase tracking-tight">Máximo 5 fotos</span>
+        </div>
+      </div>
+    </label>
+
+    <label class="relative cursor-pointer group">
+      <input type="radio" name="tipo_sesion" value="sesion_completa" class="peer hidden" />
+      
+      <div class="flex items-center p-4 rounded-xl border border-white/10 bg-[#121212] transition-all duration-300
+                  peer-checked:border-primary/60 peer-checked:bg-primary/5 peer-checked:shadow-[0_0_20px_rgba(208,187,149,0.05)]">
+        
+        <div class="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/20 bg-primary/5 transition-all duration-300
+                    peer-checked:border-primary peer-checked:bg-primary peer-checked:text-black">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               class="text-primary/60 peer-checked:text-black transition-all duration-500 peer-checked:rotate-90">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="14.31" y1="8" x2="20.05" y2="17.94"/>
+            <line x1="9.69" y1="8" x2="21.17" y2="8"/>
+            <line x1="7.38" y1="12" x2="13.12" y2="2.06"/>
+            <line x1="9.69" y1="16" x2="3.95" y2="6.06"/>
+            <line x1="14.31" y1="16" x2="2.83" y2="16"/>
+            <line x1="16.62" y1="12" x2="10.88" y2="21.94"/>
+          </svg>
+        </div>
+
+        <div class="ml-4">
+          <span class="block text-sm font-medium text-slate-400 peer-checked:text-white transition-colors">Experiencia completa</span>
+          <span class="block text-[11px] text-slate-500 uppercase tracking-tight">Más fotos y variedad</span>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+
               <textarea
                 name="mensaje"
                 placeholder="Dime qué tienes en mente para tu sesión y te responderé lo antes posible."
