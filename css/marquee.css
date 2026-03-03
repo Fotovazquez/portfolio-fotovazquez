@@ -1,0 +1,68 @@
+/* 1. Definición de la animación infinita */
+@keyframes marquee-perfecto {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Movemos exactamente la mitad para que el bucle sea invisible */
+    transform: translateX(-50%);
+  }
+}
+
+/* 2. Contenedor que mueve las fotos */
+.marquee-area {
+  display: flex;
+  /* Usamos gap fijo en px para evitar errores de redondeo de los navegadores */
+  gap: 16px;
+  width: max-content;
+  animation: marquee-perfecto 70s linear infinite;
+  /* Fuerza al navegador a usar la tarjeta gráfica para suavidad total */
+  will-change: transform;
+}
+
+/* 3. Pausa solo al tocar las fotos */
+.marquee-area:hover {
+  animation-play-state: paused;
+}
+
+/* 4. Estilo de las imágenes (Fotovazquez Style) */
+.photo-item {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  flex-shrink: 0; /* Evita que las fotos se compriman */
+  filter: grayscale(100%);
+  border-radius: 4px;
+  transition: all 0.6s ease-in-out;
+  /* Eliminamos bordes que puedan causar líneas blancas */
+  border: none;
+  outline: none;
+  /* Mejora el renderizado en movimiento */
+  backface-visibility: hidden;
+}
+
+/* 5. Efecto al poner el ratón sobre una foto */
+.photo-item:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* 6. Gradientes laterales corregidos (Sin líneas blancas) */
+.vignette-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Tamaño del viñeteado */
+  z-index: 20;
+  pointer-events: none;
+}
+
+.vignette-left {
+  left: -1px; /* Solapamiento de 1px para sellar fugas de luz */
+  background: linear-gradient(to right, #131313 10%, rgba(19, 19, 19, 0) 100%);
+}
+
+.vignette-right {
+  right: -1px;
+  background: linear-gradient(to left, #131313 10%, rgba(19, 19, 19, 0) 100%);
+}
