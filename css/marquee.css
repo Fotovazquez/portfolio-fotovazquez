@@ -66,3 +66,11 @@
   right: -1px;
   background: linear-gradient(to left, #131313 10%, rgba(19, 19, 19, 0) 100%);
 }
+
+.photo-item {
+  /* Bloquea que el usuario pueda "arrastrar" la foto */
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* Bloquea el menú en iPhone/Android */
+  pointer-events: auto;
+}
