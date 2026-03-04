@@ -206,23 +206,25 @@
         <div
           class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 md:gap-16 items-center">
           <div class="relative flex justify-center w-full group/sello">
-            <div class="relative overflow-hidden rounded-xl">
+            <div
+              class="relative overflow-hidden rounded-xl group-hover/sello:opacity-100"
+              oncontextmenu="return false;">
               <img
                 src="img/ad_without_ia.webp"
                 alt="Sello de compromiso ético: Contenido sin imágenes con IA"
-                class="w-full h-auto max-w-[120px] md:max-w-[250px] object-contain transition-transform duration-700 md:group-hover/sello:scale-105"
+                class="w-full h-auto max-w-[120px] md:max-w-[250px] object-contain transition-transform duration-800 md:group-hover/sello:scale-104 hover/sello:opacity-40"
                 width="250"
                 height="360" />
 
               <div
-                class="hidden md:flex absolute inset-0 bg-black/70 items-center justify-center p-4 opacity-0 group-hover/sello:opacity-100 transition-opacity duration-500 backdrop-blur-md pointer-events-none">
+                class="hidden md:flex absolute inset-0 items-center justify-center p-4 opacity-0 group-hover/sello:opacity-100 transition-opacity duration-500 backdrop-blur-md pointer-events-none">
                 <p
                   class="text-white text-xs uppercase tracking-[0.2em] text-center leading-relaxed font-light">
-                  Compromiso ético:<br />
+                  Compromiso ético<br /><br />
                   <span class="text-primary font-bold"
                     >100% Fotografías Reales</span
                   ><br />
-                  sin procesos generativos.
+                  sin procesos generativos
                 </p>
               </div>
             </div>
@@ -470,7 +472,9 @@
             </div>
           </a>
 
-          <div class="md:flex justify-start pl-8 order-1 md:order-2">
+          <div
+            class="md:flex justify-start pl-8 order-1 md:order-2"
+            oncontextmenu="return false;">
             <img
               src="img/Caricatura_Juan_Vazquez.png"
               class="w-full h-auto max-w-[150px] md:max-w-[280px]"
