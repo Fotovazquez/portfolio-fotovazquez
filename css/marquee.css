@@ -21,8 +21,17 @@
 }
 
 /* 3. Pausa solo al tocar las fotos */
-.marquee-area:hover {
-  animation-play-state: paused;
+/* Por defecto, no pausamos la animación. */
+.marquee-area {
+  animation-play-state: running;
+}
+
+/* Solo aplicamos la pausa al pasar el ratón (:hover) en pantallas grandes (min-width: 768px).
+   Puedes ajustar el valor de 768px si tu breakpoint para móviles es diferente. */
+@media (min-width: 768px) {
+  .marquee-area:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* 4. Estilo de las imágenes (Fotovazquez Style) */
