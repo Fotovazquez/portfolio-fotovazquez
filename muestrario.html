@@ -2,15 +2,17 @@
 <html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotovazquez | Muestrario</title>
     <meta name="author" content="Juan Vázquez (Fotovazquez)" />
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/png" href="img/icon.png" />
     <script src="js/main.js" defer></script>
     <script src="js/selection.js" defer></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
+      rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -24,56 +26,78 @@
     </script>
 
     <style>
-      body { background-color: #131313; color: white; }
+      body {
+        background-color: #131313;
+        color: white;
+      }
       .animate-fade-in {
         animation: fadeIn 0.6s ease-out both;
       }
       @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       /* Prevenir selección de imágenes */
-      img { -webkit-user-drag: none; user-select: none; }
+      img {
+        -webkit-user-drag: none;
+        user-select: none;
+      }
     </style>
   </head>
 
   <body class="selection:bg-primary selection:text-black font-sans">
-    
-   <nav class="px-8 py-4 flex justify-between items-center max-w-7xl mx-auto">
-  <div class="text-xl font-bold tracking-tighter text-primary">
-    <a href="/" class="flex items-center gap-2">
-      <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
-      <span>FOTOVAZQUEZ</span>
-    </a>
-  </div>
-</nav>
+    <nav class="px-8 py-4 flex justify-between items-center max-w-7xl mx-auto">
+      <div class="text-xl font-bold tracking-tighter text-primary">
+        <a href="/" class="flex items-center gap-2">
+          <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
+          <span>FOTOVAZQUEZ</span>
+        </a>
+      </div>
+    </nav>
 
-<header class="max-w-6xl mx-auto px-8 pt-2 pb-12 text-left md:text-left">
-  <h1 class="font-light leading-tight">
-    <span class="text-lg block md:hidden">
-      Muestrario <span class="font-bold text-primary">| Selecciona tus fotos</span>
-    </span>
-    
-    <span class="text-3xl hidden md:block">
-      Selección de fotos <span class="font-bold text-primary">| Muestrario</span>
-    </span>
-  </h1>
+    <header class="max-w-6xl mx-auto px-8 pt-2 pb-12 text-left md:text-left">
+      <h1 class="font-light leading-tight">
+        <span class="text-lg block md:hidden">
+          Muestrario
+          <span class="font-bold text-primary">| Selecciona tus fotos</span>
+        </span>
 
-  <div class="text-slate-400 mt-4 max-w-7xl leading-relaxed text-sm md:text-base">
-    <p>
-      <strong>¡Tus <span id="total-fotos" class="font-bold text-primary">...</span> fotos ya están listas!</strong>
-    </p>
-    <p class="mt-4">
-      Cada foto tiene una referencia única, puedes seleccionar las fotos que más te gusten y enviarme la lista por email, WhatsApp o el método que prefieras. 
-      Recuerda que si se trata de una colaboración TFP puedes seleccionar hasta <strong>5 fotos</strong> como máximo.
-    </p>
-  </div>
-</header>
+        <span class="text-3xl hidden md:block">
+          Selección de fotos
+          <span class="font-bold text-primary">| Muestrario</span>
+        </span>
+      </h1>
+
+      <div
+        class="text-slate-400 mt-4 max-w-7xl leading-relaxed text-sm md:text-base">
+        <p>
+          <strong
+            >¡Tus
+            <span id="total-fotos" class="font-bold text-primary">...</span>
+            fotos ya están listas!</strong
+          >
+        </p>
+        <p class="mt-4">
+          Cada foto tiene una referencia única, puedes seleccionar las fotos que
+          más te gusten y enviarme la lista por email, WhatsApp o el método que
+          prefieras. Recuerda que si se trata de una colaboración TFP puedes
+          seleccionar hasta <strong>5 fotos</strong> como máximo.
+        </p>
+      </div>
+    </header>
     <main class="max-w-7xl mx-auto px-8 pb- 0">
-      <div id="seleccion-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16 items-end justify-items-center">
-        </div>
+      <div
+        id="seleccion-grid"
+        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16 items-end justify-items-center"
+        oncontextmenu="return false;"></div>
     </main>
-<!--
+    <!--
 <div class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-4 z-50">
     <div class="max-w-xl mx-auto flex flex-col gap-3">
       <span id="contador-fotos" class="text-primary font-bold text-xs tracking-widest uppercase">
@@ -99,48 +123,73 @@
 
     </div>
 </div>-->
-<div class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-white/10 p-3 pb-6 sm:p-4 z-50">
-    <div class="max-w-xl mx-auto flex flex-col gap-2">
-        
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-white/10 p-3 pb-6 sm:p-4 z-50">
+      <div class="max-w-xl mx-auto flex flex-col gap-2">
         <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                <span id="contador-fotos" class="text-primary font-bold text-[12px] uppercase tracking-wider">
-                    0 seleccionadas
-                </span>
-            </div>
-            
-            <button onclick="toggleFiltroSeleccionadas(this)" id="btn-filtro" 
-                class="flex items-center justify-center gap-1.5 w-36 text-[9px] font-bold border border-white/20 py-2 rounded-lg text-slate-400 uppercase tracking-wide hover:border-primary transition-all shrink-0">
-                <span id="btn-filtro-icono" class="opacity-70 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
-                </span>
-                <span id="btn-filtro-texto">Ver seleccionadas</span>
-            </button>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span
+              id="contador-fotos"
+              class="text-primary font-bold text-[12px] uppercase tracking-wider">
+              0 seleccionadas
+            </span>
+          </div>
+
+          <button
+            onclick="toggleFiltroSeleccionadas(this)"
+            id="btn-filtro"
+            class="flex items-center justify-center gap-1.5 w-36 text-[9px] font-bold border border-white/20 py-2 rounded-lg text-slate-400 uppercase tracking-wide hover:border-primary transition-all shrink-0">
+            <span id="btn-filtro-icono" class="opacity-70 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </span>
+            <span id="btn-filtro-texto">Ver seleccionadas</span>
+          </button>
         </div>
 
         <div class="flex gap-1.5">
-            <input type="text" readonly id="lista-seleccion" placeholder="Seleccionadas..." 
-                   class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-primary focus:outline-none text-[12px] cursor-default min-w-0">
-            
-            <button onclick="copiarLista()" class="bg-primary text-black font-bold w-36 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[10px] tracking-widest shadow-lg flex items-center justify-center shrink-0">
-                Copiar lista
-            </button>
+          <input
+            type="text"
+            readonly
+            id="lista-seleccion"
+            placeholder="Seleccionadas..."
+            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-primary focus:outline-none text-[12px] cursor-default min-w-0" />
+
+          <button
+            onclick="copiarLista()"
+            class="bg-primary text-black font-bold w-36 py-2 rounded-lg hover:bg-white transition-colors uppercase text-[10px] tracking-widest shadow-lg flex items-center justify-center shrink-0">
+            Copiar lista
+          </button>
         </div>
-
+      </div>
     </div>
-</div>
 
-
-
-<footer class="text-center py-14 mt-10 border-t border-white/5 tracking-wide opacity-50 mb-24 sm:mb-20">
-  <p class="max-w-6xl mx-auto text-[11px] text-slate-300 font-medium tracking-[0.2em] py-12 px-8">
-      <strong>Nota</strong>: Las fotos de esta galería son muestras en baja resolución con calidad reducida y marca de agua. Las fotos que elijas pasarán por un proceso de post-producción detallado donde alcanzarán la máxima calidad.
-    </p>
-    <p class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+    <footer
+      class="text-center py-14 mt-10 border-t border-white/5 tracking-wide opacity-50 mb-24 sm:mb-20">
+      <p
+        class="max-w-6xl mx-auto text-[11px] text-slate-300 font-medium tracking-[0.2em] py-12 px-8">
+        <strong>Nota</strong>: Las fotos de esta galería son muestras en baja
+        resolución con calidad reducida y marca de agua. Las fotos que elijas
+        pasarán por un proceso de post-producción detallado donde alcanzarán la
+        máxima calidad.
+      </p>
+      <p
+        class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
         &copy; 2026 FOTOVAZQUEZ
-    </p>
-</footer>
-
+      </p>
+    </footer>
   </body>
 </html>
