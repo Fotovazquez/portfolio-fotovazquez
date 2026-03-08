@@ -170,3 +170,24 @@ body {
   opacity: 1 !important;
   color: #d0bb95 !important;
 }
+
+/*TELEGRAM*/
+.telegram-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #131313; /* Fondo oscuro  */
+    color: #D0BB95; /* Dorado primario */
+    border: 1px solid rgba(208, 187, 149, 0.3);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    backdrop-filter: blur(10px);
+}
+

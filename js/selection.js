@@ -1,6 +1,6 @@
 /**
- * FOTOVAZQUEZ - seleccion.js
- * Lógica para la galería de selección con contador dinámico, marca de agua y filtros
+ * FOTOVAZQUEZ - selection.js
+ * Lógica para la galería de selección (MUESTRARIO) con contador dinámico, marca de agua y filtros
  */
 
 document.addEventListener("DOMContentLoaded", () => {

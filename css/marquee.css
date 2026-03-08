@@ -27,7 +27,7 @@
 }
 
 /* Solo aplicamos la pausa al pasar el ratón (:hover) en pantallas grandes (min-width: 768px).
-   Puedes ajustar el valor de 768px si tu breakpoint para móviles es diferente. */
+    */
 @media (min-width: 768px) {
   .marquee-area:hover {
     animation-play-state: paused;
@@ -56,7 +56,7 @@
   transform: scale(1.02);
 }
 
-/* 6. Gradientes laterales corregidos (Sin líneas blancas) */
+/* 6. Gradientes laterales (Sin líneas blancas) */
 .vignette-layer {
   position: absolute;
   top: 0;
