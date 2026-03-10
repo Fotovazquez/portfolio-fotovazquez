@@ -22,19 +22,13 @@
             "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
         },
         {
-            "name": "Formato cine",
-            "short_name": "Formato cine",
-            "description": "Ver portfolio de estética cinematográfica",
-            "url": "/cine",
-            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
-        },
-        {
-            "name": "Blanco y negro",
-            "short_name": "Blanco y negro",
-            "description": "Ver portfolio de blanco y negro",
-            "url": "/blanco-y-negro",
+            "name": "Sobre el autor",
+            "short_name": "Sobre el autor",
+            "description": "Conoce al autor",
+            "url": "/autor",
             "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
         }
+
     ],
     "icons": [
         {
