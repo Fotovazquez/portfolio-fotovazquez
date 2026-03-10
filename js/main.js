@@ -90,76 +90,83 @@ let deferredPrompt;
     const installSVG = installCard?.querySelector('#install-svg');
     const installCTA = installCard?.querySelector('#install-cta');
 
-    // 1. Detección de estado inicial
+    // Estado inicial: Oculto para evitar el flash
+    if (installSection) installSection.classList.add('hidden');
+
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
-    async function initPWA() {
-        // Si ya estamos dentro de la App, la eliminamos del código para que no ocupe espacio
+    async function checkInstallation() {
+        // 1. Si ya estamos dentro de la PWA
         if (isStandalone) {
             if (installSection) installSection.remove();
             return;
         }
 
-        // Comprobación silenciosa: ¿Está ya instalada en Windows/Android?
+        // 2. Detección silenciosa (Android/Windows)
         if ('getInstalledRelatedApps' in navigator) {
-            const relatedApps = await navigator.getInstalledRelatedApps();
-            if (relatedApps.length > 0) {
-                if (installSection) installSection.remove();
-                return;
+            try {
+                const relatedApps = await navigator.getInstalledRelatedApps();
+                if (relatedApps && relatedApps.length > 0) {
+                    // Si ya está instalada, borramos la sección para siempre
+                    if (installSection) installSection.remove();
+                    return;
+                }
+            } catch (err) {
+                console.log("Android bloqueó la detección silenciosa. Esperando prompt normal...");
             }
         }
 
-        // Si llegamos aquí, la app NO está instalada. Preparamos la interfaz:
+        // 3. Caso especial iOS (Safari)
         if (isIOS) {
-            // Configuración específica para Safari
-            if (installSection) installSection.classList.remove('hidden');
-            if (installSVG) {
-                installSVG.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a2 2 0 012 2v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"></path>`;
-                installSVG.classList.remove('animate-pulse');
-            }
-            if (installCTA) {
-                installCTA.innerHTML = `Pulsa <span class="text-primary font-normal"><strong>Compartir (↑)</strong></span><br><span class="text-gray-400 italic">y "Añadir a pantalla de inicio"</span>`;
-            }
+            showIOSInstructions();
         }
     }
 
-    initPWA();
+    function showIOSInstructions() {
+        if (installSection) installSection.classList.remove('hidden');
+        if (installSVG) {
+            installSVG.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a2 2 0 012 2v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"></path>`;
+            installSVG.classList.remove('animate-pulse');
+        }
+        if (installCTA) {
+            installCTA.innerHTML = `Pulsa <span class="text-primary font-normal"><strong>Compartir (↑)</strong></span><br><span class="text-gray-400 italic">y "Añadir a pantalla de inicio"</span>`;
+        }
+    }
 
-    // 2. Evento para Chrome/Edge/Windows/Android
+    // Evento clave para Chrome/Edge/Android
     window.addEventListener('beforeinstallprompt', (e) => {
-        // Evitar que el navegador muestre su propio banner feo
         e.preventDefault();
         deferredPrompt = e;
-        
-        // Ahora que sabemos que es instalable, mostramos tu sección premium
-        if (installSection) {
-            installSection.classList.remove('hidden');
-        }
+        // Si el navegador lanza esto, es que NO está instalada. La mostramos.
+        if (installSection) installSection.classList.remove('hidden');
     });
 
-    // 3. Lógica del click en la tarjeta
     if (installCard) {
         installCard.addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    if (installSection) {
-                        installSection.style.opacity = '0';
-                        setTimeout(() => installSection.remove(), 500);
-                    }
-                }
+                if (outcome === 'accepted') hideSmoothly();
                 deferredPrompt = null;
             } else if (isIOS) {
-                alert("En iPhone, usa el botón 'Compartir' de Safari y selecciona 'Añadir a pantalla de inicio'. ✨");
+                alert("Usa el menú compartir de Safari para instalar. ✨");
             }
         });
     }
 
-    // Ocultar si se instala desde la barra del navegador
     window.addEventListener('appinstalled', () => {
-        if (installSection) installSection.remove();
+        hideSmoothly();
         deferredPrompt = null;
     });
+
+    function hideSmoothly() {
+        if (installSection) {
+            installSection.style.transition = 'opacity 0.4s ease';
+            installSection.style.opacity = '0';
+            setTimeout(() => installSection.remove(), 450);
+        }
+    }
+
+    checkInstallation();
 });
