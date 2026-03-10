@@ -1,3 +1,12 @@
+// --- 0. REGISTRO DEL SERVICE WORKER (Necesario para PWA) ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registrado', reg))
+      .catch(err => console.warn('Error al registrar SW', err));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // --- 1. LÓGICA DE LA GALERÍA (SimpleLightbox) ---
   const selectorGaleria = ".category-card, .gallery a, .galeria-seleccion a";
@@ -37,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if ($errorMsg) $errorMsg.classList.add("hidden");
 
-      // Selectores seguros
       const nombre = $form.querySelector('input[name="nombre"]')?.value.trim();
       const email = $form.querySelector('input[name="email"]')?.value.trim();
       const mensaje = $form.querySelector('textarea[name="mensaje"]')?.value.trim();
@@ -46,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // VALIDACIÓN
       if (!nombre || !email || !mensaje || !emailRegex.test(email) || !privacidad) {
         if ($errorMsg) {
           if (!privacidad) {
@@ -83,37 +90,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-}); 
 
-//PWA
-let deferredPrompt;
+  // --- 3. LÓGICA DE INSTALACIÓN PWA ---
+  let deferredPrompt;
   const installCard = document.getElementById('install-card');
 
+  // Escuchar el evento de instalación (solo Android/PC)
   window.addEventListener('beforeinstallprompt', (e) => {
-    // Evita que el navegador muestre su propio aviso automático
     e.preventDefault();
-    // Guarda el evento para dispararlo cuando queramos
     deferredPrompt = e;
-    // Muestra la tarjeta (por defecto está oculta con 'hidden')
-    installCard.classList.remove('hidden');
-  });
-
-  installCard.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      // Muestra el cuadro de diálogo de instalación
-      deferredPrompt.prompt();
-      // Espera a ver qué responde el usuario
-      const { outcome } = await deferredPrompt.userChoice;
-      console.log(`Usuario respondió: ${outcome}`);
-      // Limpiamos la variable, ya no se puede usar más
-      deferredPrompt = null;
-      // Ocultamos la tarjeta tras la instalación
-      installCard.classList.add('hidden');
+    // Mostrar la tarjeta si existe en el HTML
+    if (installCard) {
+      installCard.classList.remove('hidden');
     }
   });
 
-  // Ocultar si ya está instalada la App
+  if (installCard) {
+    installCard.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`Usuario respondió: ${outcome}`);
+        deferredPrompt = null;
+        installCard.classList.add('hidden');
+      }
+    });
+  }
+
+  // Ocultar si la app ya se ha instalado
   window.addEventListener('appinstalled', () => {
-    installCard.classList.add('hidden');
+    if (installCard) installCard.classList.add('hidden');
     deferredPrompt = null;
   });
+});
