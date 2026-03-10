@@ -83,38 +83,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 3. LÓGICA DE INSTALACIÓN PWA (Android e iOS) ---
+  // --- 3. LÓGICA DE INSTALACIÓN PWA (Universal) ---
   let deferredPrompt;
+  const installSection = document.getElementById('install-app-section');
   const installCard = document.getElementById('install-card');
-  const installSVG = installCard?.querySelector('svg');
-  const installCTA = installCard?.querySelector('h2');
+  const installSVG = installCard?.querySelector('#install-svg');
+  const installCTA = installCard?.querySelector('#install-cta');
 
-  // Detectar si es iOS
+  // Detectar estado
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  // Detectar si ya está instalada (Standalone)
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
-  // A. COMPORTAMIENTO PARA IPHONE
+  /**
+   * FUNCIÓN PARA OCULTAR SI YA ESTÁ INSTALADO
+   */
+  if (isStandalone && installSection) {
+    installSection.classList.add('hidden');
+    return; // Si ya es la app, no ejecutamos el resto de la lógica
+  }
+
+  // A. COMPORTAMIENTO PARA IPHONE (Safari no soporta beforeinstallprompt)
   if (isIOS && !isStandalone && installCard) {
     // Mostramos la tarjeta en iPhone
     installCard.classList.remove('hidden');
     
-    // Cambiamos el icono al de "Compartir" de Apple (cuadrado con flecha)
+    // Cambiamos el icono al de "Compartir" de Apple
     if (installSVG) {
       installSVG.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a2 2 0 012 2v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"></path>`;
+      installSVG.classList.remove('animate-pulse'); // En iOS es una guía, no un botón de acción inmediata
     }
     
-    // Cambiamos el texto para instrucciones de iOS
+    // Instrucciones específicas para Safari
     if (installCTA) {
-      installCTA.innerHTML = `Pulsa <span class="text-primary font-normal"><strong>Compartir (↑)</strong></span><br><span class="text-gray-400">y elige "Añadir a pantalla de inicio"</span>`;
+      installCTA.innerHTML = `Pulsa <span class="text-primary font-normal"><strong>Compartir (↑)</strong></span><br><span class="text-gray-400 italic">y "Añadir a pantalla de inicio"</span>`;
     }
   }
 
-  // B. COMPORTAMIENTO PARA ANDROID / CHROME
+  // B. COMPORTAMIENTO PARA ANDROID / CHROME / EDGE / WINDOWS
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Solo mostramos la tarjeta si no estamos ya en modo App
+    
+    // Mostramos la tarjeta si tenemos el prompt listo y no estamos en modo standalone
     if (installCard && !isStandalone) {
       installCard.classList.remove('hidden');
     }
@@ -124,25 +134,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (installCard) {
     installCard.addEventListener('click', async () => {
       if (deferredPrompt) {
-        // Disparar instalador nativo de Android/Chrome
+        // Disparar instalador nativo (Chrome/Android/Windows/Linux)
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
+        
         if (outcome === 'accepted') {
-          installCard.classList.add('hidden');
+          installSection.style.opacity = '0';
+          setTimeout(() => installSection.classList.add('hidden'), 500);
         }
         deferredPrompt = null;
       } else if (isIOS) {
-        // Feedback visual simple para iPhone al hacer clic
-        alert("Para instalar: pulsa el botón 'Compartir' de Safari y luego 'Añadir a pantalla de inicio' ✨");
+        // Recordatorio visual para usuarios de iPhone
+        alert("¡Es muy fácil! Pulsa el botón 'Compartir' de tu navegador Safari (el icono del cuadrado con la flecha) y selecciona 'Añadir a pantalla de inicio' para instalar la App de Fotovazquez. ✨");
       }
     });
   }
 
-  // Ocultar si se instala con éxito
+  // Ocultar definitivamente si se instala con éxito
   window.addEventListener('appinstalled', () => {
-    if (installCard) installCard.classList.add('hidden');
+    if (installSection) installSection.classList.add('hidden');
     deferredPrompt = null;
   });
 
 });
-

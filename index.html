@@ -665,25 +665,24 @@
       </div>
     </section>
 
-    <!--PWA-->
-<section id="install-app-section" class="md:hidden pt-4 pb-12 px-6">
-  
-  <div id="install-card" class="block group relative cursor-pointer hidden"> 
+    <!--PWA
+
+
+<section id="install-app-section" class="pt-4 pb-12 px-6">
+  <div id="install-card" class="block group relative cursor-pointer max-w-md mx-auto transition-all duration-500"> 
     
     <div class="relative flex flex-col items-center justify-center rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#1c1c1c] to-[#0d0d0d] py-12 px-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 group-active:scale-[0.97]">
       
       <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-60 group-hover:animate-[shine_1s_ease-in-out]"></div>
       <div class="absolute inset-0 border border-primary/0 rounded-2xl transition-all duration-700 group-hover:border-primary/20 group-hover:shadow-[inset_0_0_25px_rgba(208,187,149,0.03)]"></div>
-      <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl opacity-60"></div>
-      <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl opacity-50"></div>
       
       <div class="text-center relative z-10 flex flex-col items-center">
         
-        <p class="text-[14px] uppercase tracking-[0.30em] text-primary font-semibold">
+        <p class="text-[15px] uppercase tracking-[0.30em] text-primary font-semibold">
           <strong>Fotovazquez App</strong>
         </p>
         
-        <p class="mt-2 text-[12px] tracking-[0.10em] text-gray-400 font-medium max-w-[250px] mx-auto">
+        <p class="mt-2 text-[12px] tracking-[0.10em] text-gray-400 font-medium max-w-[250px] mx-auto leading-relaxed">
           Accede a todo el contenido en tu dispositivo a pantalla completa
         </p>
 
@@ -695,13 +694,92 @@
         
         <div class="mb-6 w-16 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mx-auto"></div>
         
-        <h2 id="install-cta" class="text-[11px] uppercase tracking-[0.25em] text-gray-300 font-light leading-relaxed">
+        <h2 id="install-cta" class="text-[11px] uppercase tracking-[0.25em] text-gray-300 font-light leading-relaxed mb-8">
           <span class="text-primary font-normal"><strong>instala</strong></span> la APP<br>
           <span class="text-gray-400">y navega sin distracciones</span>
         </h2>
+
+        <div class="flex flex-col items-center gap-4">
+          <div class="flex items-center gap-5 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+            <img src="img/android-icon.png" alt="Android" class="w-8 h-8 object-contain grayscale group-hover:grayscale-0 transition-all">
+            <img src="img/windows-icon.png" alt="Windows" class="w-8 h-8 object-contain grayscale group-hover:grayscale-0 transition-all">
+            <img src="img/mac-icon.png" alt="Mac" class="w-8 h-8 object-contain grayscale group-hover:grayscale-0 transition-all">
+            <img src="img/linux-icon.png" alt="Linux" class="w-8 h-8 object-contain grayscale group-hover:grayscale-0 transition-all">
+          </div>
+
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D0BB95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="text-[9px] uppercase tracking-[0.2em] text-gray-400 font-medium">Sistemas Compatibles</span>
+          </div>
+        </div>
         
       </div>
     </div>
+  </div>
+</section>-->
+
+<section id="install-app-section" class="relative pt-16 pb-20 px-6 overflow-hidden">
+  
+  <div class="absolute top-1/2 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+  <div class="absolute top-1/2 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+    
+    <div class="hidden md:flex flex-col gap-12 text-right order-2 md:order-1">
+      <div class="group">
+        <h3 class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold mb-2">Velocidad</h3>
+        <p class="text-gray-500 text-[13px] leading-relaxed max-w-[150px] ml-auto">Carga instantánea de galerías sin esperas de navegador</p>
+      </div>
+      <div class="group">
+        <h3 class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold mb-2">Inmersión</h3>
+        <p class="text-gray-500 text-[13px] leading-relaxed max-w-[150px] ml-auto">Visualización a pantalla completa, sin barras ni distracciones</p>
+      </div>
+    </div>
+
+    <div id="install-card" class="block group relative cursor-pointer w-full max-w-[380px] order-1 md:order-2"> 
+      <div class="relative flex flex-col items-center justify-center rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#1c1c1c] to-[#0d0d0d] py-12 px-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 group-active:scale-[0.97]">
+        
+        <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-60 group-hover:animate-[shine_1s_ease-in-out]"></div>
+        
+        <div class="text-center relative z-10 flex flex-col items-center">
+          <p class="text-[15px] uppercase tracking-[0.30em] text-primary font-semibold"><strong>Fotovazquez App</strong></p>
+          
+          <div class="mt-10 mb-8 flex items-center justify-center w-16 h-16 rounded-full border border-primary/20 bg-primary/5 shadow-[0_0_30px_rgba(208,187,149,0.1)] transition-transform duration-500 group-hover:scale-110">
+            <svg id="install-svg" class="w-8 h-8 text-primary animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 4v16m8-8l-8 8-8-8"></path>
+            </svg>
+          </div>
+          
+          <h2 id="install-cta" class="text-[11px] uppercase tracking-[0.25em] text-gray-300 font-light leading-relaxed mb-8">
+            <span class="text-primary font-normal"><strong>instala</strong></span> la APP en tu dispositivo
+          </h2>
+
+          <div class="flex items-center gap-4 mb-4 opacity-50 duration-500 group-hover:opacity-100">
+            <img src="img/android-icon.png" alt="Android" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all">
+            <img src="img/mac-icon.png" alt="Mac" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all">
+            <img src="img/windows-icon.png" alt="Windows" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all">            
+            <img src="img/linux-icon.png" alt="Linux" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all">
+          </div>
+          
+          <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D0BB95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Sistemas compatibles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden md:flex flex-col gap-12 text-left order-3">
+      <div class="group">
+        <h3 class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold mb-2">Acceso Directo</h3>
+        <p class="text-gray-500 text-[13px] leading-relaxed max-w-[150px]">Elimina la fricción de abrir el navegador y teclear la URL en tu dispositivo</p>
+      </div>
+      <div class="group">
+        <h3 class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold mb-2">Smart caché</h3>
+        <p class="text-gray-500 text-[13px] leading-relaxed max-w-[150px]">Las secciones que ya has visitado cargan al instante, incluso con mala conexión</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -784,8 +862,8 @@
       <div class="text-center relative z-10">
 
 
-        <p class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-medium">
-          Gratitud y Colaboración
+        <p class="text-[15px] uppercase tracking-[0.30em] text-primary font-semibold">
+          <strong>gratitud y colaboración</strong>
         </p>
         
         <div class="mt-5 mb-5 w-12 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto"></div>
