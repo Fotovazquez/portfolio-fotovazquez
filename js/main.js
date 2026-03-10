@@ -1,4 +1,4 @@
-// --- 0. REGISTRO DEL SERVICE WORKER (Necesario para PWA) ---
+// --- 0. REGISTRO DEL SERVICE WORKER ---
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
@@ -8,6 +8,7 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  
   // --- 1. LÓGICA DE LA GALERÍA (SimpleLightbox) ---
   const selectorGaleria = ".category-card, .gallery a, .galeria-seleccion a";
   const existeGaleria = document.querySelector(selectorGaleria);
@@ -43,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if ($form && $button) {
     $form.addEventListener("submit", function (event) {
       event.preventDefault();
-
       if ($errorMsg) $errorMsg.classList.add("hidden");
 
       const nombre = $form.querySelector('input[name="nombre"]')?.value.trim();
@@ -51,18 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const mensaje = $form.querySelector('textarea[name="mensaje"]')?.value.trim();
       const $check = $form.querySelector('input[name="privacidad"]');
       const privacidad = $check ? $check.checked : false;
-
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!nombre || !email || !mensaje || !emailRegex.test(email) || !privacidad) {
         if ($errorMsg) {
-          if (!privacidad) {
-            $errorMsg.innerText = "Debes aceptar la política de privacidad para continuar.";
-          } else if (!emailRegex.test(email) && email) {
-            $errorMsg.innerText = "Por favor, introduce un email válido.";
-          } else {
-            $errorMsg.innerText = "Por favor, rellena todos los campos.";
-          }
+          if (!privacidad) { $errorMsg.innerText = "Debes aceptar la política de privacidad."; }
+          else if (!emailRegex.test(email) && email) { $errorMsg.innerText = "Email no válido."; }
+          else { $errorMsg.innerText = "Rellena todos los campos."; }
           $errorMsg.classList.remove("hidden");
         }
         return;
@@ -77,49 +72,76 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { 'Accept': 'application/json' }
       })
       .then(response => {
-        if (response.ok) {
-          window.location.href = "/gracias";
-        } else {
-          throw new Error();
-        }
+        if (response.ok) { window.location.href = "/gracias"; }
+        else { throw new Error(); }
       })
       .catch(() => {
-        alert("¡Oops! Hubo un problema al enviar tu mensaje.");
+        alert("¡Oops! Error al enviar.");
         $button.innerText = "Enviar Mensaje";
         $button.disabled = false;
       });
     });
   }
 
-  // --- 3. LÓGICA DE INSTALACIÓN PWA ---
+  // --- 3. LÓGICA DE INSTALACIÓN PWA (Android e iOS) ---
   let deferredPrompt;
   const installCard = document.getElementById('install-card');
+  const installSVG = installCard?.querySelector('svg');
+  const installCTA = installCard?.querySelector('h2');
 
-  // Escuchar el evento de instalación (solo Android/PC)
+  // Detectar si es iOS
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  // Detectar si ya está instalada (Standalone)
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+  // A. COMPORTAMIENTO PARA IPHONE
+  if (isIOS && !isStandalone && installCard) {
+    // Mostramos la tarjeta en iPhone
+    installCard.classList.remove('hidden');
+    
+    // Cambiamos el icono al de "Compartir" de Apple (cuadrado con flecha)
+    if (installSVG) {
+      installSVG.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a2 2 0 012 2v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"></path>`;
+    }
+    
+    // Cambiamos el texto para instrucciones de iOS
+    if (installCTA) {
+      installCTA.innerHTML = `Pulsa <span class="text-primary font-normal"><strong>Compartir (↑)</strong></span><br><span class="text-gray-400">y elige "Añadir a pantalla de inicio"</span>`;
+    }
+  }
+
+  // B. COMPORTAMIENTO PARA ANDROID / CHROME
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Mostrar la tarjeta si existe en el HTML
-    if (installCard) {
+    // Solo mostramos la tarjeta si no estamos ya en modo App
+    if (installCard && !isStandalone) {
       installCard.classList.remove('hidden');
     }
   });
 
+  // C. ACCIÓN AL PULSAR LA TARJETA
   if (installCard) {
     installCard.addEventListener('click', async () => {
       if (deferredPrompt) {
+        // Disparar instalador nativo de Android/Chrome
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        console.log(`Usuario respondió: ${outcome}`);
+        if (outcome === 'accepted') {
+          installCard.classList.add('hidden');
+        }
         deferredPrompt = null;
-        installCard.classList.add('hidden');
+      } else if (isIOS) {
+        // Feedback visual simple para iPhone al hacer clic
+        alert("Para instalar: pulsa el botón 'Compartir' de Safari y luego 'Añadir a pantalla de inicio' ✨");
       }
     });
   }
 
-  // Ocultar si la app ya se ha instalado
+  // Ocultar si se instala con éxito
   window.addEventListener('appinstalled', () => {
     if (installCard) installCard.classList.add('hidden');
     deferredPrompt = null;
   });
+
 });
