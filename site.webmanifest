@@ -6,45 +6,45 @@
     "display": "standalone",
     "background_color": "#131313",
     "theme_color": "#D0BB95",
+    "id": "com.fotovazquez.app",
     "shortcuts": [
         {
             "name": "Retratos",
             "short_name": "Retratos",
             "description": "Ver portfolio de retratos profesionales",
             "url": "/retrato",
-            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+            "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
         },
         {
             "name": "Edición Profesional",
             "short_name": "Edición",
             "description": "Descubre el proceso de edición antes y después",
             "url": "/edicion-profesional",
-            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+            "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
         },
         {
             "name": "Sobre el autor",
             "short_name": "Sobre el autor",
             "description": "Conoce al autor",
             "url": "/autor",
-            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+            "icons": [{ "src": "img/icon-192.png", "sizes": "192x192" }]
         }
-
     ],
     "icons": [
         {
-            "src": "/img/icon-192.png",
+            "src": "img/icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/img/icon-512.png",
+            "src": "img/icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/img/icon-192.png",
+            "src": "img/icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "maskable"
