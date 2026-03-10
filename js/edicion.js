@@ -84,4 +84,3 @@ document.querySelectorAll('a[href^="#revelado-"]').forEach(anchor => {
     });
 });
 
-//*FOTOVAZQUEZ.COM*//

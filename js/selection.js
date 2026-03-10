@@ -283,4 +283,3 @@ function mostrarNotificacion(mensaje, tipo = "success") {
     }, 3500);
 }
 
-//*FOTOVAZQUEZ.COM*//

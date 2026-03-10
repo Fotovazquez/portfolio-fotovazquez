@@ -146,4 +146,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-//*FOTOVAZQUEZ.COM*//

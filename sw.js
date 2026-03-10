@@ -22,4 +22,3 @@ self.addEventListener('fetch', event => {
   );
 });
 
-//*FOTOVAZQUEZ.COM*//
