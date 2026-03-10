@@ -282,3 +282,5 @@ function mostrarNotificacion(mensaje, tipo = "success") {
         setTimeout(() => toast.remove(), 500);
     }, 3500);
 }
+
+//*FOTOVAZQUEZ.COM*//
