@@ -1,11 +1,41 @@
 {
     "name": "Fotovazquez | Portfolio",
     "short_name": "Fotovazquez",
-    "description": "Fotografía profesional y edición artística en Sevilla.",
+    "description": "Fotografía profesional y edición artística en Sevilla por Juan Vázquez.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#131313",
     "theme_color": "#D0BB95",
+    "shortcuts": [
+        {
+            "name": "Retratos",
+            "short_name": "Retratos",
+            "description": "Ver portfolio de retratos profesionales",
+            "url": "/retrato",
+            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Edición Profesional",
+            "short_name": "Edición",
+            "description": "Descubre el proceso de edición antes y después",
+            "url": "/edicion-profesional",
+            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Formato cine",
+            "short_name": "Formato cine",
+            "description": "Ver portfolio de estética cinematográfica",
+            "url": "/cine",
+            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Blanco y negro",
+            "short_name": "Blanco y negro",
+            "description": "Ver portfolio de blanco y negro",
+            "url": "/blanco-y-negro",
+            "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }]
+        }
+    ],
     "icons": [
         {
             "src": "/img/icon-192.png",
