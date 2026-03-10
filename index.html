@@ -41,7 +41,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <meta name="theme-color" content="#D0BB95">
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
       rel="stylesheet" />
@@ -764,6 +764,31 @@
   </div>
 </section>
 
+<!--PWA-->
+<section id="install-app-section" class="md:hidden pt-4 pb-12 px-6">
+  <div id="install-card" class="block group relative cursor-pointer hidden"> 
+    <div class="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] py-10 px-8 shadow-2xl transition-all duration-500 group-active:scale-[0.98]">
+      
+      <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40 group-hover:animate-[shine_1s_ease-in-out]"></div>
+      <div class="absolute inset-0 border border-primary/0 rounded-xl transition-all duration-700 group-hover:border-primary/30 group-hover:shadow-[inset_0_0_20px_rgba(208,187,149,0.05)]"></div>
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+      
+      <div class="text-center relative z-10">
+        <p class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-medium">
+          Fotovazquez App
+        </p>
+        <div class="mt-5 mb-5 w-12 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto"></div>
+        <h2 class="text-[11px] uppercase tracking-[0.25em] text-gray-400 font-light leading-loose">
+          Pulsa aquí para <span class="text-primary font-normal">instalar</span><br>
+          <span class="text-gray-400">y navegar sin distracciones</span>
+        </h2>
+      </div>
+
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl -ml-12 -mb-12"></div>
+    </div>
+  </div>
+</section>
+
 <!-- GEO CARD -->
 <section class="max-w-4xl mx-auto px-6 mb-12" itemscope itemtype="https://schema.org/LocalBusiness">
   <meta itemprop="name" content="Fotovazquez">
@@ -822,6 +847,7 @@
     <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-20 group-hover:animate-[shine_1.5s_ease-in-out]"></div>
   </div>
 </section>
+
 
 <!-- PIE PARA MOVILES -->
 <div class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">

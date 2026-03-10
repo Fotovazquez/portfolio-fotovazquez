@@ -84,3 +84,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 }); 
+
+//PWA
+let deferredPrompt;
+  const installCard = document.getElementById('install-card');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Evita que el navegador muestre su propio aviso automático
+    e.preventDefault();
+    // Guarda el evento para dispararlo cuando queramos
+    deferredPrompt = e;
+    // Muestra la tarjeta (por defecto está oculta con 'hidden')
+    installCard.classList.remove('hidden');
+  });
+
+  installCard.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      // Muestra el cuadro de diálogo de instalación
+      deferredPrompt.prompt();
+      // Espera a ver qué responde el usuario
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`Usuario respondió: ${outcome}`);
+      // Limpiamos la variable, ya no se puede usar más
+      deferredPrompt = null;
+      // Ocultamos la tarjeta tras la instalación
+      installCard.classList.add('hidden');
+    }
+  });
+
+  // Ocultar si ya está instalada la App
+  window.addEventListener('appinstalled', () => {
+    installCard.classList.add('hidden');
+    deferredPrompt = null;
+  });
