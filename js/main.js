@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!nombre) return window.mostrarNotificacion("Por favor, escribe tu nombre.", "error");
       if (!email || !emailRegex.test(email)) return window.mostrarNotificacion("El Email no es válido.", "error");
       if (!mensaje) return window.mostrarNotificacion("Por favor, escribe tu propuesta.", "error");
-      if (!privacidad) return window.mostrarNotificacion("Debes aceptar la política privacidad.", "error");
+      if (!privacidad) return window.mostrarNotificacion("Debes aceptar la política de privacidad.", "error");
 
       $button.innerText = "Enviando...";
       $button.disabled = true;
