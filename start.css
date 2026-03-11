@@ -1,4 +1,4 @@
-/* 1. Contenedor principal del Loader */
+/* 1. Contenedor principal del loader */
 #cine-loader {
   position: fixed;
   inset: 0;
@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #131313; /* El negro exacto de tu marca */
-  /* Transición suave de salida: 0.8s con una curva 'ease-in-out' para elegancia */
+  background-color: #131313; 
+  /* Transición suave de salida: 0.8s con una curva 'ease-in-out' */
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
               visibility 0.8s;
   visibility: visible;
@@ -32,12 +32,11 @@
 }
 
 .animate-spin {
-  /* He bajado un poco la velocidad (1.4s) para que no parezca nervioso, 
-     sino una carga fluida de cine */
+  /* la velocidad (1.4s) para que no parezca nervioso, es carga fluida */
   animation: spin-cinema 1.4s linear infinite;
 }
 
-/* 4. Animación de pulsación para el texto "Cargando Experiencia" */
+/* 4. Animación de pulsación para el texto "Cargando Portfolio" */
 .animate-pulse {
   animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
