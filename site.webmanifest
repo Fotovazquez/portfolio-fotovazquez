@@ -5,7 +5,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#131313",
-    "theme_color": "#D0BB95",
+    "theme_color": "#131313",
     "id": "com.fotovazquez.app",
     "prefer_related_applications": true,
     "related_applications": [
