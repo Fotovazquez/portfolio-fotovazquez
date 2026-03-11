@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
-    <script src="js/start.js"></script>
+
     <script src="js/main.js"></script>
     <!--.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -145,7 +145,7 @@
   </head>
 
   <body class="selection:bg-primary selection:text-black">
-<!--CARGA INICIAL SUAVE-->
+<!--CARGA INICIAL-->
 <div id="cine-loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#131313] transition-opacity duration-700">
   <div class="flex flex-col items-center">
     <div class="relative w-20 h-20">
@@ -166,7 +166,7 @@
     if (sessionStorage.getItem('firstLoadDone')) {
       if (loaderElement) loaderElement.style.display = 'none';
     } else {
-      // Si es la primera vez, usamos el código que SÍ te funcionó
+      // Si es la primera vez:
       window.addEventListener('load', function() {
         setTimeout(() => {
           if (loaderElement) {
