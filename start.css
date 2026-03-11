@@ -1,0 +1,57 @@
+/* 1. Contenedor principal del Loader */
+#cine-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #131313; /* El negro exacto de tu marca */
+  /* Transición suave de salida: 0.8s con una curva 'ease-in-out' para elegancia */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 0.8s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 2. Clase de salida (activada por JS) */
+#cine-loader.fade-out {
+  opacity: 0 !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 3. Animación de rotación del Spinner */
+@keyframes spin-cinema {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  /* He bajado un poco la velocidad (1.4s) para que no parezca nervioso, 
+     sino una carga fluida de cine */
+  animation: spin-cinema 1.4s linear infinite;
+}
+
+/* 4. Animación de pulsación para el texto "Cargando Experiencia" */
+.animate-pulse {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* 5. Optimización para móviles (evita saltos de scroll) */
+body:has(#cine-loader:not(.fade-out)) {
+  overflow: hidden;
+}
