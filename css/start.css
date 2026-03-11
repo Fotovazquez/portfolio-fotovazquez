@@ -1,61 +1,37 @@
-/* 1. Contenedor principal del loader */
 #cine-loader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999; /* Máxima prioridad */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #131313; 
-  /* Transición suave de salida: 0.8s con una curva 'ease-in-out' */
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              visibility 0.8s;
-  visibility: visible;
-  opacity: 1;
+  background-color: #131313;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s;
+  /* Evitamos que el usuario toque nada mientras carga */
+  pointer-events: all; 
 }
 
-/* 2. Clase de salida (activada por JS) */
 #cine-loader.fade-out {
   opacity: 0 !important;
-  visibility: hidden;
-  pointer-events: none;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
-/* 3. Animación de rotación del Spinner */
-@keyframes spin-cinema {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Animaciones simples para máxima compatibilidad móvil */
+@keyframes spin-premium {
+  to { transform: rotate(360deg); }
 }
 
-.animate-spin {
-  /* la velocidad (1.4s) para que no parezca nervioso, es carga fluida */
-  animation: spin-cinema 1.4s linear infinite;
+.animate-spin-slow {
+  animation: spin-premium 2s linear infinite;
 }
 
-/* 4. Animación de pulsación para el texto "Cargando Portfolio" */
-.animate-pulse {
-  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+@keyframes pulse-premium {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
 }
 
-@keyframes pulse-soft {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
+.animate-pulse-slow {
+  animation: pulse-premium 3s ease-in-out infinite;
 }
-
-/* 5. Optimización para móviles (evita saltos de scroll) */
-body:has(#cine-loader:not(.fade-out)) {
-  overflow: hidden;
-}
-
-
-
-
-

@@ -162,29 +162,36 @@
 
 <!-- script carga inicial-->
 <script>
-  // Ejecución inmediata
-  (function() {
-    const loaderElement = document.getElementById('cine-loader');
-    
-    // Si ya ha entrado antes en esta sesión, lo borramos ANTES de que cargue la web
-    if (sessionStorage.getItem('firstLoadDone')) {
-      if (loaderElement) loaderElement.style.display = 'none';
-    } else {
-      // Si es la primera vez:
-      window.addEventListener('load', function() {
-        setTimeout(() => {
-          if (loaderElement) {
-            loaderElement.classList.add('fade-out');
-            sessionStorage.setItem('firstLoadDone', 'true');
-            
-            setTimeout(() => {
-              loaderElement.style.display = 'none';
-            }, 700);
-          }
-        }, 1000);
-      });
+(function() {
+  const loader = document.getElementById('cine-loader');
+  
+  // Función para forzar la desaparición
+  function removeLoader() {
+    if (loader && !loader.classList.contains('fade-out')) {
+      loader.classList.add('fade-out');
+      sessionStorage.setItem('firstLoadDone', 'true');
+      
+      // Limpieza total tras la animación
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
     }
-  })();
+  }
+
+  // 1. SI YA EXISTE SESIÓN: No mostramos nada
+  if (sessionStorage.getItem('firstLoadDone')) {
+    if (loader) loader.style.display = 'none';
+  } else {
+    // 2. PRIMERA VEZ: Esperamos al evento load
+    window.addEventListener('load', function() {
+      setTimeout(removeLoader, 500);
+    });
+
+    // 3. PLAN DE RESCATE (Para móviles lentos o errores):
+    // Si a los 4 segundos sigue el loader, lo quitamos sí o sí
+    setTimeout(removeLoader, 4000);
+  }
+})();
 </script>
 
 
