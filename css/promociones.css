@@ -1,0 +1,48 @@
+/* Clase esencial para el loader */
+.fade-out {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.8s ease-in-out !important;
+}
+
+/* Transición suave para el desenfoque del main */
+main {
+  transition: filter 0.6s ease;
+}
+
+/* Hover sutil para el botón de cerrar */
+#fv-promo-close:hover {
+  background: rgba(208, 187, 149, 0.2) !important;
+  color: #D0BB95 !important;
+  border-color: #D0BB95 !important;
+}
+
+/* --- ADAPTACIÓN MÓVIL BANNER --- */
+@media (max-width: 640px) {
+    #banner-card {
+        width: 88% !important; /* Un poco más ancho en móviles muy pequeños */
+    }
+    
+    #banner-cerrar {
+        width: 40px !important; /* Botón más grande para el dedo */
+        height: 40px !important;
+        top: 15px !important;
+        right: 15px !important;
+        font-size: 16px !important;
+        background: rgba(0,0,0,0.8) !important; /* Más contraste */
+    }
+
+    /* Ajuste de los textos en móvil */
+    #banner-card h2 {
+        font-size: 12px !important;
+        letter-spacing: 1px !important;
+    }
+    
+    #banner-card p {
+        font-size: 11px !important;
+    }
+    
+    #banner-card div {
+        padding: 15px !important; /* Menos relleno para ganar espacio de imagen */
+    }
+}

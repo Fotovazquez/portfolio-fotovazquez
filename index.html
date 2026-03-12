@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="js/promociones.js"></script>
     <!--.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -17,6 +18,7 @@
 
     <link rel="canonical" href="https://www.fotovazquez.com/" />
     <link rel="stylesheet" href="css/start.css" />
+    <link rel="stylesheet" href="css/promociones.css" />
     <link rel="stylesheet" href="css/marquee.css" />
     <title>Fotovazquez | Portfolio</title>
 
@@ -142,10 +144,15 @@
     }
   }
     </style>
-  </head>
 
-  <body class="selection:bg-primary selection:text-black">
+
+
+
+</head>
+
+<body class="selection:bg-primary selection:text-black">
 <!--CARGA INICIAL-->
+
 <div id="cine-loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#131313] transition-opacity duration-700">
   <div class="flex flex-col items-center">
     <div class="relative w-20 h-20">
@@ -157,7 +164,7 @@
     </p>
   </div>
 </div>
-<!-- script carga inicial-->
+<!-- script carga inicial START-->
 <script>
 (function() {
   const loader = document.getElementById('cine-loader');
@@ -190,6 +197,23 @@
   }
 })();
 </script>
+
+<!--PROMOCIONES-->
+<div id="banner-flotante" style="display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center;">
+    <div id="banner-bg" style="position: absolute; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);"></div>
+    
+    <div id="banner-card" style="position: relative; max-width: 420px; width: 85%; background: #1a1a1a; border: 1px solid #D0BB95; border-radius: 8px; overflow: hidden; transform: scale(0.8); opacity: 0; transition: all 0.5s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.8);">
+        
+        <button id="banner-cerrar" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; border: 1px solid rgba(208,187,149,0.5); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 10;">✕</button>
+        
+        <img src="promociones/sesion_flamenca_1.jpg" style="width: 100%; height: auto; display: block;">
+        
+        <div style="padding: 20px; text-align: center;">
+            <h2 style="color: #D0BB95; font-family: sans-serif; letter-spacing: 2px; font-size: 14px; margin: 0 0 10px 0;">EDICIÓN ESPECIAL</h2>
+            <p style="color: #ccc; font-family: sans-serif; font-size: 12px; margin: 0;">Reserva tu sesión flamenca 2026</p>
+        </div>
+    </div>
+</div>
 
 
 
