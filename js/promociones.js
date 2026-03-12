@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Desenfoque manual del contenido
         const main = document.querySelector('main');
-        if (main) main.style.filter = 'blur(5px)';
+        if (main) main.style.filter = 'blur(4px)';
 
         // Mostramos el contenedor
         banner.style.display = 'flex';
