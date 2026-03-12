@@ -1,4 +1,4 @@
-/* Clase esencial para el loader - NO TOCAR */
+/* Clase para el loader */
 .fade-out {
   opacity: 0 !important;
   pointer-events: none !important;
@@ -17,7 +17,7 @@ main {
   border-color: #D0BB95 !important;
 }
 
-/* --- ADAPTACIÓN MÓVIL BANNER (Tus reglas originales) --- */
+/* --- ADAPTACIÓN MÓVIL BANNER --- */
 @media (max-width: 640px) {
     #banner-card {
         width: 88% !important;
@@ -46,11 +46,11 @@ main {
     }
 }
 
-/* --- NUEVA REGLA DE REDIMENSIÓN SIN RECORTE --- */
-/* Si la pantalla es baja (portátiles o móvil horizontal), encogemos el ancho para que el alto quepa */
+/* --- NUEVA REGLA DE REDIMENSIÓN NO RECORTE --- */
+/* Si la pantalla es baja (portátiles o móvil horizontal), encojo  el ancho para que el alto quepa */
 @media (max-height: 700px) {
     #banner-card {
-        max-width: 320px !important; /* Estrechamos el card para que la imagen se haga pequeña y quepa el texto */
+        max-width: 320px !important; /* Estrecho el card para que la imagen se haga pequeña y quepa el texto */
     }
     #banner-card h2 { font-size: 14px !important; }
     #banner-card p { font-size: 13px !important; }
@@ -58,6 +58,6 @@ main {
 
 @media (max-height: 500px) {
     #banner-card {
-        max-width: 250px !important; /* Redimensión agresiva para pantallas muy bajas */
+        max-width: 250px !important; /* Redimensión agresiva para pantallas muy peques */
     }
 }
