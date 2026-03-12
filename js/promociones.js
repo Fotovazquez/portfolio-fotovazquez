@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const banner = document.getElementById('banner-flotante');
     const card = document.getElementById('banner-card');
     const btnCerrar = document.getElementById('banner-cerrar');
+    const btnPicar = document.getElementById('promociones');
     const bg = document.getElementById('banner-bg');
     const loader = document.getElementById('cine-loader');
 
@@ -58,5 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Eventos de cierre
     if (btnCerrar) btnCerrar.onclick = cerrarTodo;
+    if (btnPicar) btnPicar.onclick = cerrarTodo;
     if (bg) bg.onclick = cerrarTodo;
 });
