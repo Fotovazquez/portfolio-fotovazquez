@@ -188,7 +188,7 @@
   } else {
     // 2. PRIMERA VEZ: Esperamos al evento load
     window.addEventListener('load', function() {
-      setTimeout(removeLoader, 500);
+      setTimeout(removeLoader, 950);
     });
 
     // 3. PLAN DE RESCATE (Para móviles lentos o errores):
@@ -200,7 +200,7 @@
 
 <!--PROMOCIONES-->
 <div id="banner-flotante" style="display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center;">
-    <div id="banner-bg" style="position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);"></div>
+    <div id="banner-bg" style="position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"></div>
     
     <div id="banner-card" style="position: relative; max-width: 420px; width: 85%; background: #1a1a1a; border: 1px solid #D0BB95; border-radius: 8px; overflow: hidden; transform: scale(0.8); opacity: 0; transition: all 0.5s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.8);">
         

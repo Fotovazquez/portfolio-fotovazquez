@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // Solo intentamos lanzarlo si no se ha visto antes
             if (!sessionStorage.getItem('fvBannerVisto')) {
-                setTimeout(lanzarBanner, 1000); 
+                setTimeout(lanzarBanner, 500); 
             }
         }
     }, 100);
