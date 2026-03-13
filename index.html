@@ -244,6 +244,28 @@
   <a href="/modelos" class="hover:text-primary transition-colors">Modelos</a>
   <a href="#colaboraciones" class="hover:text-primary transition-colors">Colaboraciones y contacto</a>
 
+  <a href="/promos" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group" 
+   aria-label="Ver promociones">
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="22" 
+    height="22" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    class="transition-all duration-300 group-hover:scale-110"
+  >
+    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+    <polyline points="11 3 11 11 14 8 17 11 17 3"/>
+  </svg>
+</a>
+
   <a href="https://instagram.com/fotovazquez" 
      target="_blank" 
      rel="noopener noreferrer" 
@@ -282,11 +304,16 @@
 </div>
 
 <!-- BOTONES SUPERIORES EN MOVILES -->
-<div class="md:hidden flex flex-col items-end gap-1.5 text-[10px] uppercase tracking-wider font-bold flex-shrink-0">
-  <a
-    href="#contacto"
+<div class="md:hidden grid grid-cols-1 justify-items-stretch gap-1.5 text-[10px] uppercase tracking-wider font-bold flex-shrink-0 w-max ml-auto">
+  
+  <a href="#contacto"
     class="px-4 h-7 flex items-center justify-center text-center border border-primary/40 rounded-lg bg-primary text-black active:scale-95 transition-all">
     Pide tu sesión
+  </a>
+
+  <a href="/promos"
+    class="px-4 h-7 flex items-center justify-center text-center border border-primary/40 rounded-lg bg-primary text-black active:scale-95 transition-all">
+    Promociones
   </a>
 
 </div>
