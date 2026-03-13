@@ -61,3 +61,16 @@ main {
         max-width: 250px !important; /* Redimensión agresiva para pantallas muy peques */
     }
 }
+
+/*PROMOCIONES*/
+        .promo-image-fix {
+          overflow: visible !important; /* No cortar la imagen */
+          height: auto !important;     /* Permitir que el contenedor crezca verticalmente */
+          display: block !important;    /* Asegurar que se comporte como bloque */
+        }
+        
+        /* Aseguramos que la imagen dentro también fluya correctamente */
+        .promo-image-fix img {
+          display: block !important;
+          height: auto !important; /* Clave para el redimensionado proporcional */
+        }
