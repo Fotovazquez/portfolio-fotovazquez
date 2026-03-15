@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Orden de ejecución js-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/retrato.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/start.css" />
+      <script src="js/main.js defer"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/promociones.css" />
+    <link rel="stylesheet" href="css/marquee.css" />
+
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
 
-    <script src="js/main.js"></script>
+
     <script src="js/promociones.js"></script>
     <!--.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +28,7 @@
       content="z5Xe7qpadYv1TjwfBDNwNnrV-KXHYOUKMuc3oDcH7CY" />
 
     <link rel="canonical" href="https://www.fotovazquez.com/" />
-    <link rel="stylesheet" href="css/start.css" />
-    <link rel="stylesheet" href="css/promociones.css" />
-    <link rel="stylesheet" href="css/marquee.css" />
+  
     <title>Fotovazquez | Portfolio</title>
 
     <meta
@@ -55,7 +64,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
       rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
       tailwind.config = {
         theme: {
@@ -372,7 +381,7 @@
         <div class="card-img-container">
           <picture>
             <source srcset="img/retrato.webp" type="image/webp" />
-            <img src="img/retrato.jpg" alt="Retrato" loading="eager" />
+            <img src="img/retrato.jpg" fetchpriority="high" alt="Retrato" loading="eager" />
           </picture>
         </div>
         <div
