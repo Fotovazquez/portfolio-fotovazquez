@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@import "./edicion.css";
+@import "./start.css";
+@import "./marquee.css";
+@import "./promociones.css";
+
 @theme {
   --color-primary: #D0BB95;
   --color-bg-dark: #131313;
