@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #D0BB95;
+  --color-bg-dark: #131313;
+  --font-sans: "Comfortaa", sans-serif;
+}
+
+/* --- CSS ANTIGUO RECUPERADO --- */
+
+body {
+  background-color: #131313;
+  color: white;
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+}
+
+/* ANIMACIONES */
+@keyframes pulse-gold {
+  0% { background-color: rgba(208, 187, 149, 0.05); }
+  50% { background-color: rgba(208, 187, 149, 0.12); }
+  100% { background-color: rgba(208, 187, 149, 0.05); }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* LÓGICA DE CARGA */
+.skeleton, .img-loading-effect {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
+.img-loading-effect { aspect-ratio: 21 / 9; }
+
+.img-loading-effect::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(208, 187, 149, 0.08), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* MASONRY */
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+@media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+@media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* MARCOS Y EFECTOS */
+.frame, .masonry-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.frame { border-radius: 4px; }
+.masonry-item { border-radius: 1rem; }
+
+.masonry-item img, .galeria-cine img {
+  width: 100%;
+  display: block;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.masonry-item img.loaded, .galeria-cine img.loaded { opacity: 1 !important; }
+
+.masonry-item:hover, .frame:hover {
+  border-color: rgba(208, 187, 149, 0.6);
+  box-shadow: 0 0 20px rgba(208, 187, 149, 0.15);
+  z-index: 10;
+}
+
+.masonry-item:hover img.loaded, .frame:hover img.loaded { transform: scale(1.05); }
+
+/* SIMPLELIGHTBOX */
+.sl-overlay { background: rgba(0, 0, 0, 0.9) !important; backdrop-filter: blur(7px); }
+.sl-wrapper .sl-navigation button, .sl-wrapper .sl-close { color: #cfcfcf !important; transition: opacity 0.3s ease !important; }
+.sl-wrapper .sl-counter { color: #cfcfcf !important; top: 30px; font-family: "Comfortaa", sans-serif; }
+
+/* TELEGRAM */
+.telegram-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #131313;
+    color: #D0BB95;
+    border: 1px solid rgba(208, 187, 149, 0.3);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    backdrop-filter: blur(10px);
+}
