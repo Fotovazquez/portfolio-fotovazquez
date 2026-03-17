@@ -136,7 +136,7 @@ async function ejecutarCargaSeleccion() {
     document.body.innerHTML = `
         <div class="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#131313]">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D0BB95" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg>
-            <p class="text-slate-300 text-center tracking-widest uppercase text-xs">Este muestrario aún no contiene ninguna foto.<br/><a href="mailto:contacto@fotovazquez.com" class="hover:text-primary transition-colors">Contacta con Juan</a> o espera un poco más a que suba el contenido.</p><p class="text-slate-300 text-center tracking-widest uppercase text-xs">
+            <p class="text-slate-300 text-center tracking-widest uppercase text-xs">Este muestrario aún no contiene ninguna foto.<br/><a href="mailto:contacto@fotovazquez.com" class="hover:text-primary transition-colors">Contacta con Juan</a> o espera a que suba el contenido.</p><p class="text-slate-300 text-center tracking-widest uppercase text-xs">
             <a
           href="https://www.fotovazquez.com"
           class="inline-block px-8 py-2 border border-primary text-primary text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-black transition-all duration-500 rounded-full font-bold">
