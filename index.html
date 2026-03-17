@@ -247,7 +247,7 @@
             // Limpieza total tras la animación
             setTimeout(() => {
               loader.style.display = "none";
-            }, 800);
+            }, 1800);
           }
         }
 
@@ -257,7 +257,7 @@
         } else {
           // 2. PRIMERA VEZ: Esperamos al evento load
           window.addEventListener("load", function () {
-            setTimeout(removeLoader, 950);
+            setTimeout(removeLoader, 1000);
           });
 
           // 3. PLAN DE RESCATE (Para móviles lentos o errores):
@@ -277,7 +277,7 @@
         z-index: 99999;
         padding: 20px 20px;
         box-sizing: border-box;
-        display: flex;
+      
         align-items: center;
         justify-content: center;
       ">
