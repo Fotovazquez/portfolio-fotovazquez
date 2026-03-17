@@ -61,4 +61,19 @@ document.addEventListener("DOMContentLoaded", function() {
     if (btnCerrar) btnCerrar.onclick = cerrarTodo;
     if (btnPicar) btnPicar.onclick = cerrarTodo;
     if (bg) bg.onclick = cerrarTodo;
+
+    // Selección automática de sesión completa desde promos
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sesion') === 'completa') {
+        const radio = document.querySelector('input[name="tipo_sesion"][value="sesion_completa"]');
+        if (radio) {
+            radio.checked = true;
+        }
+        const contacto = document.getElementById('contacto');
+        if (contacto) {
+            setTimeout(() => {
+                contacto.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+    }
 });
