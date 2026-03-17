@@ -133,58 +133,10 @@ async function ejecutarCargaSeleccion() {
   }
 
   if (i === 1) {
-    grid.innerHTML = `
-            <div class="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#131313]">
+    document.body.innerHTML = `
+        <div class="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#131313]">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D0BB95" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg>
-                <p class="text-slate-500 text-center tracking-widest uppercase text-xs">Este muestrario aún no tiene fotos.<br/><a href="mailto:contacto@fotovazquez.com" class="hover:text-primary transition-colors"
-                  >Contacta con Juan</a>.</p>
-
-<a
-              href="https://t.me/fotovazquez"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="relative inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
-              aria-label="Contactar por Telegram">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="transition-all duration-300 group-hover:scale-110">
-                <path d="m22 2-7 20-4-9-9-4Z"></path>
-                <path d="M22 2 11 13"></path>
-              </svg>
-              <div
-                class="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-32 p-3 bg-bg-dark border border-white/10 rounded-xl shadow-2xl opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-500 ease-out z-50 pointer-events-none">
-                <div
-                  class="absolute top-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-bg-dark border-l border-t border-white/10 rotate-45"></div>
-
-                <div
-                  class="p-1.5 rounded-lg aspect-square flex items-center justify-center overflow-hidden">
-                  <img
-                    src="img/qr-telegram-fotovazquez.png"
-                    alt="QR Telegram"
-                    class="w-full h-full object-contain" />
-                </div>
-
-                <p
-                  class="text-[10px] text-center text-primary uppercase mt-1 opacity-90 tracking-tight">
-                  Avísame en telegram
-                </p>
-              </div>
-            </a>
-
-            <p class="text-slate-300 text-center tracking-widest uppercase text-xs">
-            <a
-          href="https://www.fotovazquez.com"
-          class="inline-block px-8 py-2 border border-primary text-primary text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-black transition-all duration-500 rounded-full font-bold">
-          Volver al inicio
-        </a></p>
+            <p class="text-slate-500 text-center tracking-widest uppercase text-xs">Este muestrario aún no tiene fotos.<br/><a href="mailto:contacto@fotovazquez.com" class="hover:text-primary transition-colors">Contacta con Juan</a> o espera un poco más a que suba el contenido.</p>
         </div>`;
   }
 }
