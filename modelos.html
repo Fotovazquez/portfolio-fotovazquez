@@ -5,48 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotovazquez | Mis modelos</title>
 
-    <meta
-      name="description"
-      content="Mis mejores modelos. El talento y la esencia que hay detrás de cada fotografía. Conoce a las personas que dan vida a mi trabajo." />
-    <meta
-      name="keywords"
-      content="fotógrafo Sevilla, retratos Sevilla, sesiones de fotos, Fotovazquez, fotografía profesional, colaboraciones fotografía, colaboraciones Sevilla, boudoir sevilla, fotógrafo boudoir Sevilla, fotógrafo de retrato Sevilla, fotógrafos de Sevilla, fotografo profesional Sevilla, sesiones de fotos Sevilla, colaboración de fotos Sevilla" />
-    <meta name="author" content="Juan Vázquez (Fotovazquez)" />
-    <meta name="robots" content="index, follow" />
-
-    <meta property="og:title" content="Fotovazquez | Mis modelos" />
-    <meta
-      property="og:description"
-      content="Sesiones profesionales de fotografía en Sevilla. Reserva tu sesión colaborativa." />
-    <meta property="og:image" content="img/og-image.jpg" />
-    <meta property="og:url" content="https://www.fotovazquez.com" />
-
-    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css">
+    <meta
+      name="description"
+      content="Conoce a los modelos que dan vida al trabajo de Fotovazquez en Sevilla. Colaboraciones TFP con talento real." />
+    <meta name="author" content="Juan Vázquez (Fotovazquez)" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.fotovazquez.com/modelos" />
 
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Fotovazquez | Modelos y colaboraciones en Sevilla" />
+    <meta
+      property="og:description"
+      content="Conoce a los modelos que dan vida al trabajo de Fotovazquez en Sevilla. Colaboraciones TFP con talento real." />
+    <meta
+      property="og:image"
+      content="https://www.fotovazquez.com/img/og-image-web.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.fotovazquez.com/modelos" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Fotovazquez | Modelos y colaboraciones en Sevilla" />
+    <meta
+      name="twitter:description"
+      content="Conoce a los modelos que dan vida al trabajo de Fotovazquez en Sevilla. Colaboraciones TFP con talento real." />
+    <meta
+      name="twitter:image"
+      content="https://www.fotovazquez.com/img/og-image-web.jpg" />
+
+    <link rel="icon" type="image/png" href="img/icon.png" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Fotovazquez",
-        "image": "https://www.fotovazquez.com/img/Juan_Vazquez.jpg",
-        "url": "https://www.fotovazquez.com",
-        "description": "Fotógrafo profesional en Sevilla especializado en retratos, sesiones de estudio y fotografía en exterior.",
+        "name": "Fotovazquez | Modelos",
+        "image": "https://www.fotovazquez.com/img/og-image-web.jpg",
+        "url": "https://www.fotovazquez.com/modelos",
+        "description": "Fotógrafo profesional en Sevilla especializado en retratos, sesiones de estudio y fotografía en exterior. Colaboraciones TFP con modelos.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Sevilla",
           "addressRegion": "Andalucía",
           "addressCountry": "ES"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "37.3891",
+          "longitude": "-5.9845"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Sevilla",
+            "sameAs": "https://www.wikidata.org/wiki/Q8717"
+          }
+        ],
         "priceRange": "€€",
-        "areaServed": "Sevilla",
         "email": "contacto@fotovazquez.com",
-        "sameAs": ["https://www.instagram.com/fotovazquez"]
+        "sameAs": [
+          "https://www.instagram.com/fotovazquez",
+          "https://www.fotovazquez.com"
+        ],
+        "knowsAbout": [
+          "Colaboraciones TFP en Sevilla",
+          "Fotografía de retrato con modelos",
+          "Sesiones colaborativas en Sevilla",
+          "Fotografía de moda en Sevilla"
+        ],
+        "founder": {
+          "@type": "Person",
+          "@id": "https://www.fotovazquez.com/autor#person",
+          "name": "Juan Vázquez Fernández",
+          "jobTitle": "Fotógrafo Profesional",
+          "sameAs": [
+            "https://www.instagram.com/fotovazquez",
+            "https://www.fotovazquez.com/autor"
+          ]
+        }
       }
     </script>
 
@@ -56,43 +103,55 @@
         color: white;
         font-family: "Comfortaa", sans-serif;
       }
-
       .model-card img {
         width: 100%;
-        aspect-ratio: 1 / 1; /* Hace que las fotos sean cuadradas y más pequeñas */
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         border-radius: 1rem;
         border: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 0.5s ease;
       }
-
       .model-card:hover img {
         transform: scale(1.05);
         border-color: #d0bb95;
       }
     </style>
   </head>
-   <body class="selection:bg-primary selection:text-black bg-bg-dark text-white font-sans">
-    <nav aria-label="Navegación principal" class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+  <body
+    class="selection:bg-primary selection:text-black bg-bg-dark text-white font-sans">
+    <nav
+      aria-label="Navegación principal"
+      class="p-8 flex justify-between items-center max-w-7xl mx-auto">
       <span class="text-xl font-bold tracking-tighter text-primary">
         <a href="/" class="flex items-center gap-2">
-          <img src="img/icon.png" alt="Logo Fotovazquez" class="w-8 h-8 object-contain" />
+          <img
+            src="img/icon.png"
+            alt="Logo Fotovazquez"
+            class="w-8 h-8 object-contain" />
           <span>FOTOVAZQUEZ</span>
         </a>
       </span>
-      <a href="/#portfolio" aria-label="Volver al portfolio" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
-        <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
+      <a
+        href="/#portfolio"
+        aria-label="Volver al portfolio"
+        class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+        <span class="text-xl group-hover:-translate-x-1 transition-transform"
+          >←</span
+        >
         <span>Volver</span>
-        
       </a>
     </nav>
 
-    <header aria-label="Galería lifestyle de Fotovazquez" class="max-w-7xl mx-auto px-8 py-12">
+    <header
+      aria-label="Galería lifestyle de Fotovazquez"
+      class="max-w-7xl mx-auto px-8 py-12">
       <h1 class="text-3xl font-light">
         Mis increíbles <span class="font-bold text-primary">modelos</span>
       </h1>
       <p class="text-slate-400 mt-4 max-w-xl">
-        El talento y la esencia detrás de cada fotografía, no se quejan, no ponen pegas y trabajan fantásticamente. Conoce a las personas que dan vida a mi trabajo en Sevilla.
+        El talento y la esencia detrás de cada fotografía, no se quejan, no
+        ponen pegas y trabajan fantásticamente. Conoce a las personas que dan
+        vida a mi trabajo en Sevilla.
       </p>
     </header>
 
@@ -494,53 +553,106 @@
 
     <div class="max-w-7xl mx-auto px-8">
       <div class="mt-3 pt-5 pb-5 flex justify-end">
-        <a href="/#portfolio" aria-label="Volver al portfolio de Fotovazquez" class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
-          <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
+        <a
+          href="/#portfolio"
+          aria-label="Volver al portfolio de Fotovazquez"
+          class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+          <span class="text-xl group-hover:-translate-x-1 transition-transform"
+            >←</span
+          >
           <span>Volver</span>
-          
         </a>
       </div>
     </div>
 
     <!-- PIE PARA MOVILES -->
-    <div class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+    <div
+      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
       <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
         Sígueme en redes
       </p>
       <div class="flex items-center gap-8">
-        <a href="https://instagram.com/fotovazquez" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group" aria-label="Instagram de Juan Vázquez">
-          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300 group-hover:scale-110">
+        <a
+          href="https://instagram.com/fotovazquez"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
+          aria-label="Instagram de Juan Vázquez">
+          <div
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-all duration-300 group-hover:scale-110">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </div>
-          <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">Instagram</span>
+          <span
+            class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity"
+            >Instagram</span
+          >
         </a>
-        <a href="https://t.me/fotovazquez" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group" aria-label="Contactar por Telegram">
-          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300 group-hover:scale-110">
+        <a
+          href="https://t.me/fotovazquez"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
+          aria-label="Contactar por Telegram">
+          <div
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-all duration-300 group-hover:scale-110">
               <path d="m22 2-7 20-4-9-9-4Z"></path>
               <path d="M22 2 11 13"></path>
             </svg>
           </div>
-          <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">Telegram</span>
+          <span
+            class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity"
+            >Telegram</span
+          >
         </a>
       </div>
     </div>
 
-    <footer aria-label="Pie de página" class="text-center py-6 border-t border-white/5 tracking-wide">
+    <footer
+      aria-label="Pie de página"
+      class="text-center py-6 border-t border-white/5 tracking-wide">
       <div class="max-w-7xl mx-auto flex flex-col gap-2">
-        <p class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+        <p
+          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
           &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
         </p>
-        <div class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
-          <a href="/condiciones" class="hover:text-primary transition-colors">Condiciones</a>
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
+          <a href="/condiciones" class="hover:text-primary transition-colors"
+            >Condiciones</a
+          >
           <span class="text-white/5">|</span>
-          <a href="/autor" class="hover:text-primary transition-colors">Sobre el autor</a>
+          <a href="/autor" class="hover:text-primary transition-colors"
+            >Sobre el autor</a
+          >
           <span class="text-white/5">|</span>
-          <a href="/legal" class="hover:text-primary transition-colors">Legal y Privacidad</a>
+          <a href="/legal" class="hover:text-primary transition-colors"
+            >Legal y Privacidad</a
+          >
         </div>
       </div>
     </footer>
