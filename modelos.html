@@ -18,7 +18,7 @@
     <meta
       property="og:description"
       content="Sesiones profesionales de fotografía en Sevilla. Reserva tu sesión colaborativa." />
-    <meta property="og:image" content="img/Juan_Vazquez.jpg" />
+    <meta property="og:image" content="img/og-image.jpg" />
     <meta property="og:url" content="https://www.fotovazquez.com" />
 
     <link rel="icon" type="image/png" href="img/icon.png" />
@@ -72,35 +72,27 @@
       }
     </style>
   </head>
-  <body class="selection:bg-primary selection:text-black">
-    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
-      <a
-        href="/#modelos"
-        aria-label="Volver al portfolio de Fotovazquez"
-        class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
-        <span class="text-xl group-hover:-translate-x-1 transition-transform"
-          >←</span
-        >
-        <span>Volver</span>
-      </a>
-      <h1
-        class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
-        <a
-          href="/"
-          class="flex items-center gap-2 text-xl font-bold tracking-tighter text-primary">
-          <img src="img/icon.png" alt="Logo" class="w-8 h-8 object-contain" />
-          FOTOVAZQUEZ
+   <body class="selection:bg-primary selection:text-black bg-bg-dark text-white font-sans">
+    <nav aria-label="Navegación principal" class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+      <span class="text-xl font-bold tracking-tighter text-primary">
+        <a href="/" class="flex items-center gap-2">
+          <img src="img/icon.png" alt="Logo Fotovazquez" class="w-8 h-8 object-contain" />
+          <span>FOTOVAZQUEZ</span>
         </a>
-      </h1>
+      </span>
+      <a href="/#portfolio" aria-label="Volver al portfolio" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+        <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
+        <span>Volver</span>
+        
+      </a>
     </nav>
 
-    <header class="max-w-7xl mx-auto px-8 py-12">
-      <h2 class="text-3xl font-light">
-        Mis mejores <span class="font-bold text-primary">Modelos</span>
-      </h2>
+    <header aria-label="Galería lifestyle de Fotovazquez" class="max-w-7xl mx-auto px-8 py-12">
+      <h1 class="text-3xl font-light">
+        Mis increíbles <span class="font-bold text-primary">modelos</span>
+      </h1>
       <p class="text-slate-400 mt-4 max-w-xl">
-        El talento y la esencia detrás de cada fotografía. Conoce a las personas
-        que dan vida a mi trabajo.
+        El talento y la esencia detrás de cada fotografía, no se quejan, no ponen pegas y trabajan fantásticamente. Conoce a las personas que dan vida a mi trabajo en Sevilla.
       </p>
     </header>
 
@@ -501,73 +493,54 @@
     </main>
 
     <div class="max-w-7xl mx-auto px-8">
-      <div class="mt-3 pt-5 pb-5">
-        <a
-          href="/"
-          aria-label="Volver al portfolio de Fotovazquez"
-          class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
-          <span class="text-xl group-hover:-translate-x-1 transition-transform"
-            >←</span
-          >
+      <div class="mt-3 pt-5 pb-5 flex justify-end">
+        <a href="/#portfolio" aria-label="Volver al portfolio de Fotovazquez" class="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors group">
+          <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
           <span>Volver</span>
+          
         </a>
       </div>
     </div>
 
-    <div
-      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+    <!-- PIE PARA MOVILES -->
+    <div class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
       <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
         Sígueme en redes
       </p>
-
-      <a
-        href="https://instagram.com/fotovazquez"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-white/5 transition-all duration-300 group"
-        aria-label="Instagram de Juan Vázquez">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="transition-all duration-300 group-hover:scale-110">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
+      <div class="flex items-center gap-8">
+        <a href="https://instagram.com/fotovazquez" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group" aria-label="Instagram de Juan Vázquez">
+          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300 group-hover:scale-110">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">Instagram</span>
+        </a>
+        <a href="https://t.me/fotovazquez" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group" aria-label="Contactar por Telegram">
+          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300 group-hover:scale-110">
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+              <path d="M22 2 11 13"></path>
+            </svg>
+          </div>
+          <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">Telegram</span>
+        </a>
+      </div>
     </div>
 
-    <footer class="text-center py-6 border-t border-white/5 tracking-wide">
+    <footer aria-label="Pie de página" class="text-center py-6 border-t border-white/5 tracking-wide">
       <div class="max-w-7xl mx-auto flex flex-col gap-2">
-        <p
-          class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
+        <p class="text-[11px] text-slate-500 font-medium uppercase tracking-[0.2em]">
           &copy; 2026 <span class="text-primary/80">FOTOVAZQUEZ</span>
         </p>
-
-        <div
-          class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
-          <a href="/condiciones" class="hover:text-primary transition-colors"
-            >Condiciones</a
-          >
-
+        <div class="flex flex-wrap justify-center items-center gap-x-3 text-xs text-slate-600">
+          <a href="/condiciones" class="hover:text-primary transition-colors">Condiciones</a>
           <span class="text-white/5">|</span>
-
-          <a href="/autor" class="hover:text-primary transition-colors"
-            >Sobre el autor</a
-          >
-
+          <a href="/autor" class="hover:text-primary transition-colors">Sobre el autor</a>
           <span class="text-white/5">|</span>
-
-          <a href="/legal" class="hover:text-primary transition-colors"
-            >Legal y Privacidad</a
-          >
+          <a href="/legal" class="hover:text-primary transition-colors">Legal y Privacidad</a>
         </div>
       </div>
     </footer>
