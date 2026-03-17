@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (contacto) {
             setTimeout(() => {
                 contacto.scrollIntoView({ behavior: 'smooth' });
-            }, 300);
+            }, 800);
         }
     }
 });
