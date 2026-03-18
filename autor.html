@@ -19,8 +19,8 @@
       content="Trayectoria, premios y visión personal de la fotografía." />
     <meta property="og:url" content="https://www.fotovazquez.com/autor" />
 
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css" />
+
     <style>
       body {
         background-color: #131313;
@@ -301,9 +301,264 @@
         </div>
       </section>
 
+      <!--INFOGRAFIA-->
+
+      <style>
+        :root {
+          --f-primary: #d0bb95; /* El dorado de tu marca */
+          --f-bg-card: rgba(255, 255, 255, 0.03); /* El fondo de tus premios */
+          --f-text-bio: #94a3b8; /* Slate-400 (el color de tu texto biográfico) */
+          --f-font: "Comfortaa", sans-serif;
+        }
+
+        .metodo-container {
+          background-color: var(--f-bg-card);
+          font-family: var(--f-font);
+          max-width: 650px;
+          margin: 40px auto;
+          padding: 40px 30px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 24px;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+
+        .metodo-header {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .metodo-header h2 {
+          color: white;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          margin: 0;
+        }
+
+        .metodo-list {
+          position: relative;
+        }
+
+        /* Línea vertical que une los pasos */
+        .metodo-list::before {
+          content: "";
+          position: absolute;
+          left: 25px;
+          top: 10px;
+          bottom: 10px;
+          width: 2px;
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(208, 187, 149, 0.2) 15%,
+            rgba(208, 187, 149, 0.2) 85%,
+            transparent
+          );
+        }
+
+        .paso-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          margin-bottom: 35px;
+          position: relative;
+        }
+
+        .paso-icon {
+          width: 50px;
+          height: 50px;
+          background: rgba(208, 187, 149, 0.1);
+          border: 1px solid rgba(208, 187, 149, 0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          z-index: 2;
+          color: var(--f-primary);
+        }
+
+        .paso-content {
+          padding-top: 4px;
+        }
+
+        .paso-title {
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 8px;
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .paso-text {
+          font-size: 17px;
+          color: var(--f-text-bio);
+          line-height: 1.8;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .paso-icon svg {
+          width: 22px;
+          height: 22px;
+        }
+      </style>
+
+      <div class="metodo-container">
+        <div class="metodo-header">
+          <h2>MI HOJA DE RUTA</h2>
+          <p
+            class="text-center text-[11px] uppercase tracking-[0.4em] text-primary/80 mb-8 font-medium text-center">
+            así me organizo
+          </p>
+        </div>
+
+        <div class="metodo-list">
+          <div class="paso-item">
+            <div class="paso-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="paso-content">
+              <h4 class="paso-title">01. El primer contacto</h4>
+              <p class="paso-text">
+                Aquí comienza nuestra conversación, en ella acordaremos las
+                principales pautas y expondremos las ideas iniciales. Para
+                generar confianza y compromiso entre las partes te facilitaré un
+                documento sobre el cual se sentarán las bases de la sesión y que
+                ambas partes firmarán.
+              </p>
+            </div>
+          </div>
+
+          <div class="paso-item">
+            <div class="paso-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                <line x1="9" y1="18" x2="15" y2="18"></line>
+                <line x1="10" y1="22" x2="14" y2="22"></line>
+              </svg>
+            </div>
+            <div class="paso-content">
+              <h4 class="paso-title">02. Briefing Creativo</h4>
+              <p class="paso-text">
+                ¿Tienes alguna idea o has visto algo que te ha gustado? ¿Buscas
+                algo novedoso, coneptual o algo más tradicional? pues vamos a
+                por ello. Concretamos el lugar de las fotos en Sevilla o las
+                afueras, el estilismo y los principales conceptos con los que
+                vamos a <s>trabajar</s> jugar.
+              </p>
+            </div>
+          </div>
+
+          <div class="paso-item">
+            <div class="paso-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+            <div class="paso-content">
+              <h4 class="paso-title">03. La sesión</h4>
+              <p class="paso-text">
+                Llegó el gran día, puntualidad y ganas de hacer fotos serás las
+                premisas más importantes, tirarse al suelo, buscar encuadres,
+                posar, caminar... (o no) y sobre todo pasarlo bien.
+              </p>
+            </div>
+          </div>
+
+          <div class="paso-item">
+            <div class="paso-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-palette-icon lucide-palette">
+                <path
+                  d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="paso-content">
+              <h4 class="paso-title">04. Selección y revelado</h4>
+              <p class="paso-text">
+                En esta fase seguramente me hayas visto disparar cientos de
+                veces, pero en es aquí cuando comienza mi proceso revelado con
+                el cuidado del color y la selección minuciosa de los mejores
+                encuadres. Aquí es cuando tendremos que trabajar la paciencia,
+                ya que es un proceso costoso que require de bastante tiempo y
+                esfuerzo delante del ordenador.
+              </p>
+            </div>
+          </div>
+
+          <div class="paso-item">
+            <div class="paso-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="paso-content">
+              <h4 class="paso-title">05. Entrega</h4>
+              <p class="paso-text">
+                Recibirás un muestrario online privado donde aparecerá mi
+                selección de fotos editadas, pero serán pequeñas muestras para
+                que las veas y puedas elegir con cuales te quedas. En cuanto me
+                digas cuales son tus favoritas se habilitará en la nube una
+                galería, también privada, donde tendrás acceso a la descarga de
+                las fotos editadas que has elegido con la máxima calidad y sin
+                marcas de agua durante no menos de 1 mes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--RECONOCIMIENTOS-->
       <section class="animate-[fadeIn_1s_ease-out]">
-        <h2 class="text-primary text-xs uppercase tracking-[0.5em] mb-4">
+        <h2 class="text-primary py-6 text-xs uppercase tracking-[0.5em] mb-4">
           Reconocimientos
         </h2>
 
@@ -565,9 +820,15 @@
               ¿Haces sesiones especiales?
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed font-light">
-              Sí, según la época del año suelo hacer sesiones especiales con un número determinado de fotos y tiempo, normalmente suelen ser por Navidad, Feria de Abril, etc. y se anuncian en la sección de <a
+              Sí, según la época del año suelo hacer sesiones especiales con un
+              número determinado de fotos y tiempo, normalmente suelen ser por
+              Navidad, Feria de Abril, etc. y se anuncian en la sección de
+              <a
                 href="/promos"
-                class="text-primary hover:underline underline-offset-4 transition-all">Promociones</a>. 
+                class="text-primary hover:underline underline-offset-4 transition-all"
+                >Promociones</a
+              >.
+            </p>
           </div>
 
           <div class="award-card p-5 rounded-xl">
@@ -592,72 +853,76 @@
       </p>
     </main>
 
-<!-- PIE PARA MOVILES -->
-<div class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
-  <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
-    Sígueme en redes
-  </p>
+    <!-- PIE PARA MOVILES -->
+    <div
+      class="md:hidden flex flex-col items-center justify-center py-6 border-t border-white/5">
+      <p class="text-slate-500 text-xs uppercase tracking-[0.3em] mb-6">
+        Sígueme en redes
+      </p>
 
-<div class="flex items-center gap-8">
-  <a href="https://instagram.com/fotovazquez"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
-    aria-label="Instagram de Juan Vázquez">
-    
-    <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.2" 
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="transition-all duration-300 group-hover:scale-110">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-      </svg>
+      <div class="flex items-center gap-8">
+        <a
+          href="https://instagram.com/fotovazquez"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
+          aria-label="Instagram de Juan Vázquez">
+          <div
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-all duration-300 group-hover:scale-110">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+
+          <span
+            class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">
+            Instagram
+          </span>
+        </a>
+
+        <a
+          href="https://t.me/fotovazquez"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
+          aria-label="Contactar por Telegram">
+          <div
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-all duration-300 group-hover:scale-110">
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+              <path d="M22 2 11 13"></path>
+            </svg>
+          </div>
+
+          <span
+            class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">
+            Telegram
+          </span>
+        </a>
+      </div>
     </div>
-    
-    <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">
-      Instagram
-    </span>
-  </a>
-
-  <a href="https://t.me/fotovazquez"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-all duration-300 group"
-    aria-label="Contactar por Telegram">
-    
-    <div class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-white/5 transition-all duration-300">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="transition-all duration-300 group-hover:scale-110">
-        <path d="m22 2-7 20-4-9-9-4Z"></path>
-        <path d="M22 2 11 13"></path>
-      </svg>
-    </div>
-
-    <span class="text-[9px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity">
-      Telegram
-    </span>
-  </a>
-</div>
-
-</div>
 
     <footer class="text-center py-6 border-t border-white/5 tracking-wide">
       <div class="max-w-7xl mx-auto flex flex-col gap-2">
