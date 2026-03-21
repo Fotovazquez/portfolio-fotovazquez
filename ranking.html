@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #131313;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    padding: 60px 24px 80px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .section-title span {
+    color: #D0BB95;
+    font-weight: 700;
+  }
+
+  .section-sub {
+    font-size: 13px;
+    color: #555;
+    max-width: 420px;
+    margin: 16px auto 0;
+    line-height: 1.7;
+  }
+
+  .section-sub strong { color: #D0BB95; }
+
+  .podio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 780px;
+    margin: 0 auto 48px;
+    align-items: end;
+  }
+
+  .podio .card:nth-child(1) { order: 2; }
+  .podio .card:nth-child(2) { order: 1; }
+  .podio .card:nth-child(3) { order: 3; }
+
+  .grid-resto {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(208,187,149,0.3);
+  }
+
+  .card.podio-card { border-color: rgba(208,187,149,0.2); }
+
+  .card.rank-1 {
+    border-color: rgba(208,187,149,0.5);
+    box-shadow: 0 0 30px rgba(208,187,149,0.08);
+  }
+
+  .card.rank-1:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 0 1px rgba(208,187,149,0.6), 0 0 40px rgba(208,187,149,0.15);
+  }
+
+  .card-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card.podio-card .card-img { height: 320px; }
+  .card.rank-1 .card-img { height: 380px; }
+  .card.small .card-img { height: 160px; }
+
+  .card-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+    padding: 20px 14px 14px;
+  }
+
+  .card.small .card-overlay { padding: 14px 10px 10px; }
+
+  .rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(19,19,19,0.85);
+    border: 1px solid rgba(208,187,149,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #D0BB95;
+    backdrop-filter: blur(4px);
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .card.rank-1 .rank-badge,
+  .card.rank-2 .rank-badge,
+  .card.rank-3 .rank-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    top: 10px;
+    left: 10px;
+  }
+
+  /* MEDALLA SVG */
+  .medalla {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7));
+  }
+
+  .card-likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .heart-icon {
+    width: 12px;
+    height: 12px;
+    fill: #D0BB95;
+    flex-shrink: 0;
+  }
+
+  .likes-count {
+    font-size: 11px;
+    font-weight: 700;
+    color: #D0BB95;
+    letter-spacing: 0.05em;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .card.small .likes-count { font-size: 10px; }
+
+  .card-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .card.small .card-name { font-size: 11px; }
+
+  .card-ig {
+    font-size: 10px;
+    color: rgba(208,187,149,0.6);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .card-ig:hover { color: #D0BB95; }
+  .card.small .card-ig { font-size: 9px; }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(208,187,149,0.2);
+    margin: 32px auto;
+  }
+
+  .resto-label {
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 20px;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 52px;
+    padding: 32px 24px;
+    border: 1px solid rgba(208,187,149,0.1);
+    border-radius: 16px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(208,187,149,0.03);
+  }
+
+  .cta-title {
+    font-size: 15px;
+    font-weight: 300;
+    color: #aaa;
+    margin-bottom: 8px;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .cta-title strong { color: white; font-weight: 700; }
+
+  .cta-sub {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 2;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 1px solid rgba(208,187,149,0.4);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #D0BB95;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  .cta-btn:hover { background: #D0BB95; color: #131313; }
+
+  @media (max-width: 640px) {
+    .podio { grid-template-columns: 1fr; max-width: 280px; }
+    .podio .card { order: unset !important; }
+    .card.rank-1 .card-img { height: 300px; }
+    .card.podio-card .card-img { height: 260px; }
+    .grid-resto { grid-template-columns: repeat(3, 1fr); }
+    .card.small .card-img { height: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="section-header">
+  <p class="section-label">Instagram · Fotovazquez</p>
+  <h2 class="section-title">Top 3 <span>más queridas</span></h2>
+  <p class="section-sub">Las fotos que más corazones se han ganado.</p>
+</div>
+
+<div class="podio">
+
+  <!-- #1 ORO -->
+  <div class="card podio-card rank-1">
+    <svg class="medalla" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="22" r="12" fill="#B8860B" stroke="#FFD700" stroke-width="1.5"/>
+      <circle cx="18" cy="22" r="9" fill="#DAA520"/>
+      <text x="18" y="26.5" text-anchor="middle" font-size="10" font-weight="700" fill="#7a4f00" font-family="Comfortaa,sans-serif">1</text>
+      <rect x="15" y="4" width="6" height="10" rx="1" fill="#FFD700"/>
+      <rect x="13" y="2" width="10" height="4" rx="1" fill="#B8860B"/>
+    </svg>
+    <img class="card-img" src="img/ranking-1.webp" alt="Top 1" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">196 likes</span>
+      </div>
+      <p class="card-name">M. José Carretero</p>
+      <a class="card-ig" href="#">@mariajosecrrcds</a>
+    </div>
+  </div>
+
+  <!-- #2 PLATA -->
+  <div class="card podio-card rank-2">
+    <svg class="medalla" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="22" r="12" fill="#808080" stroke="#C0C0C0" stroke-width="1.5"/>
+      <circle cx="18" cy="22" r="9" fill="#A8A8A8"/>
+      <text x="18" y="26.5" text-anchor="middle" font-size="10" font-weight="700" fill="#3a3a3a" font-family="Comfortaa,sans-serif">2</text>
+      <rect x="15" y="4" width="6" height="10" rx="1" fill="#C0C0C0"/>
+      <rect x="13" y="2" width="10" height="4" rx="1" fill="#808080"/>
+    </svg>
+    <img class="card-img" src="img/ranking-2.webp" alt="Top 2" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">166 likes</span>
+      </div>
+      <p class="card-name">M. José Carretero</p>
+      <a class="card-ig" href="#">@mariajosecrrcds</a>
+    </div>
+  </div>
+
+  <!-- #3 BRONCE -->
+  <div class="card podio-card rank-3">
+    <svg class="medalla" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="22" r="12" fill="#8B4513" stroke="#CD7F32" stroke-width="1.5"/>
+      <circle cx="18" cy="22" r="9" fill="#CD7F32"/>
+      <text x="18" y="26.5" text-anchor="middle" font-size="10" font-weight="700" fill="#3a1a00" font-family="Comfortaa,sans-serif">3</text>
+      <rect x="15" y="4" width="6" height="10" rx="1" fill="#CD7F32"/>
+      <rect x="13" y="2" width="10" height="4" rx="1" fill="#8B4513"/>
+    </svg>
+    <img class="card-img" src="img/ranking-3.webp" alt="Top 3" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">154 likes</span>
+      </div>
+      <p class="card-name">Celia Pérez</p>
+      <a class="card-ig" href="#">@ohceliamaria</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+<p class="resto-label">Posiciones 4 — 10</p>
+
+<div class="grid-resto">
+  <div class="card small">
+    <div class="rank-badge">4</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv4/200/160" alt="Top 4" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">1.654</span>
+      </div>
+      <p class="card-name">Gloria G.</p>
+      <a class="card-ig" href="#">@gloriagavv</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">5</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv5/200/160" alt="Top 5" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">1.432</span>
+      </div>
+      <p class="card-name">Anne Mette</p>
+      <a class="card-ig" href="#">@amoj_98</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">6</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv6/200/160" alt="Top 6" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">1.287</span>
+      </div>
+      <p class="card-name">Ángeles C.</p>
+      <a class="card-ig" href="#">@angelescespedes1988</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">7</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv7/200/160" alt="Top 7" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">1.104</span>
+      </div>
+      <p class="card-name">Serafín J.</p>
+      <a class="card-ig" href="#">@serafinjimenezz</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">8</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv8/200/160" alt="Top 8" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">987</span>
+      </div>
+      <p class="card-name">Bianca S.</p>
+      <a class="card-ig" href="#">@marinasacee</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">9</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv9/200/160" alt="Top 9" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">843</span>
+      </div>
+      <p class="card-name">Celia P.</p>
+      <a class="card-ig" href="#">@ohceliamaria</a>
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="rank-badge">10</div>
+    <img class="card-img" src="https://picsum.photos/seed/fv10/200/160" alt="Top 10" />
+    <div class="card-overlay">
+      <div class="card-likes">
+        <svg class="heart-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="likes-count">701</span>
+      </div>
+      <p class="card-name">Sanaida V.</p>
+      <a class="card-ig" href="#">@sanaidavicario</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="cta-title"><strong>¿Quieres estar en este ranking?</strong></p>
+  <p class="cta-sub">Estas son las fotos que más han conectado con la gente. La próxima podría ser la tuya.</p>
+  <a class="cta-btn" href="#contacto">Reserva tu sesión</a>
+</div>
+
+</body>
+</html>
