@@ -2980,7 +2980,7 @@ html {
   font-family: "Comfortaa", sans-serif;
 }
 .ranking-title span {
-  color: #D0BB95;
+  color: #d0bb95;
   font-weight: 700;
 }
 .ranking-sub {
@@ -2992,7 +2992,7 @@ html {
   font-family: "Comfortaa", sans-serif;
 }
 .ranking-sub strong {
-  color: #D0BB95;
+  color: #d0bb95;
 }
 .ranking-podio {
   display: flex;
@@ -3066,7 +3066,7 @@ html {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+  background: linear-gradient( to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100% );
   padding: 20px 14px 14px;
 }
 .ranking-small .ranking-overlay {
@@ -3095,7 +3095,7 @@ html {
   justify-content: center;
   font-size: 11px;
   font-weight: 700;
-  color: #D0BB95;
+  color: #d0bb95;
   backdrop-filter: blur(4px);
   font-family: "Comfortaa", sans-serif;
   z-index: 10;
@@ -3109,13 +3109,13 @@ html {
 .ranking-heart {
   width: 18px;
   height: 18px;
-  fill: #D0BB95;
+  fill: #d0bb95;
   flex-shrink: 0;
 }
 .ranking-likes-count {
   font-size: 14px;
   font-weight: 800;
-  color: #D0BB95;
+  color: #d0bb95;
   letter-spacing: 0.045em;
   font-family: "Comfortaa", sans-serif;
 }
@@ -3148,7 +3148,7 @@ html {
   font-family: "Comfortaa", sans-serif;
 }
 .ranking-ig:hover {
-  color: #D0BB95;
+  color: #d0bb95;
 }
 .ranking-small .ranking-ig {
   font-size: 9px;
@@ -3173,7 +3173,7 @@ html {
   padding: 40px 24px;
   border: 1px solid rgba(208, 187, 149, 0.15);
   border-radius: 16px;
-  max-width: 500px;
+  max-width: 520px;
   margin: 40px auto 0;
   background: rgba(208, 187, 149, 0.03);
   text-align: center;
@@ -3200,14 +3200,13 @@ html {
   border-bottom-color: rgba(208, 187, 149, 0.4);
 }
 .ranking-cta-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   color: #aaa;
   margin-bottom: 18px;
   font-family: "Comfortaa", sans-serif;
 }
 .ranking-cta-title strong {
-  color: rgb(243, 243, 243);
   font-weight: 600;
 }
 .ranking-cta-sub {
@@ -3222,18 +3221,18 @@ html {
   padding: 10px 28px;
   border: 1px solid rgba(208, 187, 149, 0.4);
   border-radius: 50px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #D0BB95;
+  color: #d0bb95;
   text-decoration: none;
   transition: all 0.3s ease;
   background: transparent;
   font-family: "Comfortaa", sans-serif;
 }
 .ranking-cta-btn:hover {
-  background: #D0BB95;
+  background: #d0bb95;
   color: #131313;
 }
 @media (max-width: 768px) {

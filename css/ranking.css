@@ -304,7 +304,7 @@
   padding: 40px 24px;
   border: 1px solid rgba(208, 187, 149, 0.15); /* Un poco más visible */
   border-radius: 16px;
-  max-width: 500px;
+  max-width: 520px;
   margin: 40px auto 0; /* Separación controlada respecto al grid */
   background: rgba(208, 187, 149, 0.03);
   text-align: center;
@@ -337,7 +337,7 @@
 }
 
 .ranking-cta-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   color: #aaa;
   margin-bottom: 18px;
@@ -345,7 +345,7 @@
 }
 
 .ranking-cta-title strong {
-  color: rgb(243, 243, 243);
+  /*color: rgb(243, 243, 243);*/
   font-weight: 600;
 }
 
@@ -362,7 +362,7 @@
   padding: 10px 28px;
   border: 1px solid rgba(208, 187, 149, 0.4);
   border-radius: 50px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
