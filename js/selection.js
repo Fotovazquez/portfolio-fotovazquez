@@ -285,6 +285,22 @@ function mostrarNotificacion(mensaje, tipo = "success") {
   }, 3500);
 }
 
+//Desbloqueo anti bots
+function desbloquearMuestrario() {
+  const portero = document.getElementById("portero-muestrario");
+  const contenido = document.getElementById("contenido-muestrario");
+
+  // Animación simple de salida
+  portero.style.opacity = "0";
+  portero.style.transition = "opacity 0.5s ease";
+
+  setTimeout(() => {
+    portero.classList.add("hidden"); // Oculta el portero
+    contenido.classList.remove("hidden"); // Muestra lass fotos
+    window.scrollTo(0, 0); // Asegura que empiece arriba
+  }, 500);
+}
+
 /*
 
 - Lee el parámetro `?id=` de la URL
