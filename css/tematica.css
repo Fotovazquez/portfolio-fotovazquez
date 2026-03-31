@@ -1,0 +1,299 @@
+body {
+      background-color: #131313;
+      font-family: 'Comfortaa', sans-serif;
+    }
+
+    /* ════════════════════════════════════════════
+        BENTO MANTILLA
+        ┌──────────────────────┬───────────┐  28vw
+        │   apaisada (main)    │  vert-der │
+        ├───────────┬──────────┤           │
+        │ cuadrada  │ cuadrada │           │  18vw
+        └───────────┴──────────┴───────────┘
+    ════════════════════════════════════════════ */
+    .bento-mantilla {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 28vw 18vw;
+      grid-template-areas:
+        "main  main  main  main  vder  vder"
+        "sq1   sq1   sq2   sq2   vder  vder";
+    }
+    .bento-mantilla .cell-main { grid-area: main; }
+    .bento-mantilla .cell-vder { grid-area: vder; }
+    .bento-mantilla .cell-sq1  { grid-area: sq1;  }
+    .bento-mantilla .cell-sq2  { grid-area: sq2;  }
+
+    /* ════════════════════════════════════════════
+        BENTO FLAMENCA (ESTRUCTURA VERTICAL ESPEJO)
+        vizq y vizq2 ocupan toda la altura lateral.
+        En el centro/derecha: main -> sq1/sq2 -> sq3/sq4 -> main2
+    ════════════════════════════════════════════ */
+    .bento-flamenca {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 23vw 22vw 22vw 23vw;
+      grid-template-areas:
+        "vizq  vizq  main  main  main  main"
+        "vizq  vizq  sq1   sq1   sq2   sq2"
+        "vizq2 vizq2 sq3   sq3   sq4   sq4"
+        "vizq2 vizq2 main2 main2 main2 main2";
+    }
+    .bento-flamenca .cell-vizq  { grid-area: vizq; }
+    .bento-flamenca .cell-main  { grid-area: main; }
+    .bento-flamenca .cell-sq1   { grid-area: sq1;  }
+    .bento-flamenca .cell-sq2   { grid-area: sq2;  }
+    
+    /* Áreas del espejo e inferior */
+    .bento-flamenca .cell-sq3   { grid-area: sq3;  }
+    .bento-flamenca .cell-sq4   { grid-area: sq4;  }
+    .bento-flamenca .cell-vizq2 { grid-area: vizq2; }
+    .bento-flamenca .cell-main2 { grid-area: main2; }
+
+    /* Tope en pantallas muy grandes */
+    @media (min-width: 1280px) {
+      .bento-mantilla { grid-template-rows: 360px 230px; }
+      .bento-flamenca { grid-template-rows: 295px 280px 280px 295px; }
+    }
+
+    /* ════════════════════════════════════════════
+        CELDA BASE
+    ════════════════════════════════════════════ */
+    .bento-cell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background-color: #1c1c1c;
+    }
+
+    .bento-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .bento-cell:hover img {
+      transform: scale(1.055);
+    }
+
+    .cell-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem 1rem 0.9rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .cell-label span {
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #D0BB95;
+    }
+
+    /* ════════════════════════════════════════════
+        RESPONSIVE — móvil 2 columnas
+    ════════════════════════════════════════════ */
+    @media (max-width: 767px) {
+      .bento-mantilla,
+      .bento-flamenca {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: unset;
+        grid-template-areas: unset;
+      }
+      .bento-mantilla .cell-main,
+      .bento-flamenca .cell-main,
+      .bento-flamenca .cell-main2 {
+        grid-column: span 2;
+        grid-area: unset;
+        aspect-ratio: 4 / 3;
+      }
+      .bento-mantilla .cell-vder,
+      .bento-mantilla .cell-sq1,
+      .bento-mantilla .cell-sq2,
+      .bento-flamenca .cell-vizq,
+      .bento-flamenca .cell-vizq2,
+      .bento-flamenca .cell-sq1,
+      .bento-flamenca .cell-sq2,
+      .bento-flamenca .cell-sq3,
+      .bento-flamenca .cell-sq4 {
+        grid-area: unset;
+        grid-column: span 1;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    /* ════════════════════════════════════════════
+        CABECERA DE SECCIÓN
+    ════════════════════════════════════════════ */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(208,187,149,0.3), transparent);
+    }
+
+    /* ════════════════════════════════════════════
+        BENTO MANTILLA (MODO ESPEJO - DERECHA)
+        ┌──────────────────────┬───────────┐  28vw (main)
+        │   apaisada (main)    │  vert-der │
+        ├───────────┬──────────┤           │
+        │ cuadrada1 │ cuadrada2│           │  18vw (sq1/sq2)
+        ├───────────┼──────────┼───────────┤
+        │ cuadrada3 │ cuadrada4│ vert-der2 │  18vw (sq3/sq4)
+        ├───────────┴──────────┤           │
+        │   apaisada (main2)   │           │  28vw (main2)
+        └──────────────────────┴───────────┘
+    ════════════════════════════════════════════ */
+    .bento-mantilla {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      /* Duplicamos filas manteniendo proporciones */
+      grid-template-rows: 28vw 18vw 18vw 28vw; 
+      grid-template-areas:
+        "main  main  main  main  vder  vder"
+        "sq1   sq1   sq2   sq2   vder  vder"
+        "sq3   sq3   sq4   sq4   vder2 vder2"
+        "main2 main2 main2 main2 vder2 vder2";
+    }
+    /* Celdas Bloque Superior */
+    .bento-mantilla .cell-main { grid-area: main; }
+    .bento-mantilla .cell-vder { grid-area: vder; }
+    .bento-mantilla .cell-sq1  { grid-area: sq1;  }
+    .bento-mantilla .cell-sq2  { grid-area: sq2;  }
+    
+    /* Celdas Bloque Inferior (Espejo) */
+    .bento-mantilla .cell-sq3   { grid-area: sq3;  }
+    .bento-mantilla .cell-sq4   { grid-area: sq4;  }
+    .bento-mantilla .cell-vder2 { grid-area: vder2; }
+    .bento-mantilla .cell-main2 { grid-area: main2; }
+
+    /* ════════════════════════════════════════════
+        BENTO FLAMENCA (ESTRUCTURA VERTICAL ESPEJO)
+    ════════════════════════════════════════════ */
+    .bento-flamenca {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 23vw 22vw 22vw 23vw;
+      grid-template-areas:
+        "vizq  vizq  main  main  main  main"
+        "vizq  vizq  sq1   sq1   sq2   sq2"
+        "vizq2 vizq2 sq3   sq3   sq4   sq4"
+        "vizq2 vizq2 main2 main2 main2 main2";
+    }
+    .bento-flamenca .cell-vizq  { grid-area: vizq; }
+    .bento-flamenca .cell-main  { grid-area: main; }
+    .bento-flamenca .cell-sq1   { grid-area: sq1;  }
+    .bento-flamenca .cell-sq2   { grid-area: sq2;  }
+    .bento-flamenca .cell-sq3   { grid-area: sq3;  }
+    .bento-flamenca .cell-sq4   { grid-area: sq4;  }
+    .bento-flamenca .cell-vizq2 { grid-area: vizq2; }
+    .bento-flamenca .cell-main2 { grid-area: main2; }
+
+    /* Tope en pantallas muy grandes */
+    @media (min-width: 1280px) {
+      /* Ajustamos alturas fijas para Mantilla espejo */
+      .bento-mantilla { grid-template-rows: 360px 230px 230px 360px; }
+      .bento-flamenca { grid-template-rows: 295px 280px 280px 295px; }
+    }
+
+    /* ════════════════════════════════════════════
+        CELDA BASE
+    ════════════════════════════════════════════ */
+    .bento-cell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background-color: #1c1c1c;
+    }
+
+    .bento-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .bento-cell:hover img {
+      transform: scale(1.055);
+    }
+
+    .cell-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem 1rem 0.9rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .cell-label span {
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #D0BB95;
+    }
+
+    /* ════════════════════════════════════════════
+        RESPONSIVE — móvil 2 columnas
+    ════════════════════════════════════════════ */
+    @media (max-width: 767px) {
+      .bento-mantilla,
+      .bento-flamenca {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: unset;
+        grid-template-areas: unset;
+      }
+      .bento-mantilla .cell-main,
+      .bento-mantilla .cell-main2,
+      .bento-flamenca .cell-main,
+      .bento-flamenca .cell-main2 {
+        grid-column: span 2;
+        grid-area: unset;
+        aspect-ratio: 4 / 3;
+      }
+      .bento-mantilla .cell-vder,
+      .bento-mantilla .cell-vder2,
+      .bento-mantilla .cell-sq1,
+      .bento-mantilla .cell-sq2,
+      .bento-mantilla .cell-sq3,
+      .bento-mantilla .cell-sq4,
+      .bento-flamenca .cell-vizq,
+      .bento-flamenca .cell-vizq2,
+      .bento-flamenca .cell-sq1,
+      .bento-flamenca .cell-sq2,
+      .bento-flamenca .cell-sq3,
+      .bento-flamenca .cell-sq4 {
+        grid-area: unset;
+        grid-column: span 1;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    /* ════════════════════════════════════════════
+        CABECERA DE SECCIÓN
+    ════════════════════════════════════════════ */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(208,187,149,0.3), transparent);
+    }
