@@ -17,8 +17,28 @@ export default async function handler(req, res) {
     // Tienes que registrarte en rapidapi.com, escoger una API de IG gratuita y poner sus datos aquí:
     
     // API EJEMPLO (debes cambiar al endpoint de tu API gratuita de RapidAPI tras crear la cuenta)
-    const RAPID_API_KEY = process.env.RAPIDAPI_KEY; // Guárdalo en las Environment Variables de Vercel (https://vercel.com/docs/concepts/projects/environment-variables)
-    const url = 'https://instagram-scraper21.p.rapidapi.com/api/v1/full-posts?username=fotovazquez&limit=30';
+    // API de RapidAPI (instagram-scraper21)
+    const RAPID_API_KEY = process.env.RAPIDAPI_KEY; 
+
+    // MODIFICAR LÍMITE: Intentamos pedir 100, pero ten en cuenta que las APIs gratuitas suelen capar y devolver 12 o 30 fotos por llamada por seguridad de Instagram.
+    const url = 'https://instagram-scraper21.p.rapidapi.com/api/v1/full-posts?username=fotovazquez&limit=100';
+
+    // ==========================================
+    // DICCIONARIO MANUAL DE COLABORACIONES (FOTOVAZQUEZ)
+    // ==========================================
+    // Permite forzar el Nombre y el Handle (Cuenta) de una foto que no lo detectó sola.
+    // Tienes que poner el ID de la foto (o parte de su texto) como clave.
+    const colaboradoresManuales = {
+      // Ejemplo: 
+      // "ID_O_CODIGO_DE_LA_FOTO": {
+      //   name: "María Fernández",
+      //   handle: "@maria_design"
+      // },
+      "default_sin_arroba": {
+        name: "Proyecto Fotovazquez",
+        handle: "@fotovazquez"
+      }
+    };
     
     // Si no hay key configurada, rompemos para caer al fallback
     if (!RAPID_API_KEY) {
@@ -64,17 +84,34 @@ export default async function handler(req, res) {
 
     // 3. Obtener el Top 10 y darle formato para nuestro Frontend
     const top10 = sortedPosts.slice(0, 10).map(post => {
-      // Extrae mención de cliente si existe @usuario en el texto
+      // 1. Extraemos la mención dinámica del texto
       const mentionMatch = post.caption ? post.caption.match(/@([\w.-]+)/) : null;
-      let mention = mentionMatch ? mentionMatch[1] : 'fotovazquez';
+      let detectedHandle = mentionMatch ? `@${mentionMatch[1]}` : null;
       
+      // 2. Buscamos si la hemos anulado manualmente en el Diccionario (por ID de post)
+      const forcedCollab = colaboradoresManuales[post.id];
+
+      // 3. Variables finales
+      let finalHandle = '@fotovazquez'; // si no hay nada, el tuyo
+      let finalName = 'Fotografía Autor';
+
+      if (forcedCollab) {
+        // Prioridad 1: Configuración Manual arriba
+        finalHandle = forcedCollab.handle;
+        finalName = forcedCollab.name;
+      } else if (detectedHandle) {
+        // Prioridad 2: La primera cuenta @mencionada en tu texto
+        finalHandle = detectedHandle;
+        finalName = detectedHandle.replace('@', ''); // Nombre simulado
+      }
+
       return {
         id: post.id,
         link: post.link,
         image_url: post.image_url,
         likes: post.likes,
-        instagram_handle: `@${mention}`,
-        name: 'Cliente' 
+        instagram_handle: finalHandle,
+        name: finalName 
       };
     });
 
