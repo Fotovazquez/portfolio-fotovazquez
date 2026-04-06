@@ -1164,8 +1164,13 @@
             class="text-[12px] text-primary/70 uppercase tracking-[0.4em] mb-3 text-center py-6">Las que más corazones han conquistado según Instagram</p>          
         </div>
 
-        <!-- PODIO -->
-        <div class="ranking-podio">
+        <!-- CONTENEDOR DINÁMICO (Oculto por defecto) -->
+        <div id="top10-dynamic" style="display: none;"></div>
+
+        <!-- ENVOLTORIO DEL FALLBACK (Estático actual) -->
+        <div id="top10-static">
+          <!-- PODIO -->
+          <div class="ranking-podio">
 
           <!-- #1 ORO -->
           <div class="ranking-card ranking-podio-card ranking-rank-1">
@@ -1349,6 +1354,7 @@ angelescespedes1988</a>
           </div>
 
         </div>
+        </div> <!-- Fin de envoltura static -->
 
         <!-- CTA -->
         <div class="ranking-cta" aria-label="Llamada a la acción del ranking">
@@ -1950,5 +1956,123 @@ angelescespedes1988</a>
         </div>
       </div>
     </footer>
+
+    <!-- Lógica del Top 10 Dinámico -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const initDynamicTop10 = async () => {
+          try {
+            // 1. Obtener los datos oxigenados desde Vercel Serverless (cacheado a 48h)
+            const response = await fetch('/api/top10');
+            if (!response.ok) throw new Error('Network response was not ok');
+            
+            const data = await response.json();
+            if (!data.success || !data.top10 || data.top10.length < 10) {
+              throw new Error('Datos inválidos o insuficientes');
+            }
+
+            const top10 = data.top10;
+
+            // 2. Pre-cargar imágenes para evitar FOUC
+            await preloadImages(top10.map(p => p.image_url));
+
+            // 3. Generar el DOM dinámico
+            renderDynamicTop10(top10);
+
+            // 4. Mostrar el dinámico y ocultar el estático (Fallback)
+            document.getElementById('top10-static').style.display = 'none';
+            document.getElementById('top10-dynamic').style.display = 'block';
+
+          } catch (error) {
+            console.warn("No se pudo cargar el Top 10 dinámico. Se muestra el Fallback.", error);
+          }
+        };
+
+        const preloadImages = (urls) => {
+          return Promise.all(urls.map(url => {
+            return new Promise((resolve) => {
+              const img = new Image();
+              img.src = url;
+              img.onload = resolve;
+              img.onerror = resolve; // Continue even if one fails
+            });
+          }));
+        };
+
+        const getMedalSVG = (rank) => {
+          const colors = {
+            1: { fill: '#B8860B', stroke: '#FFD700', fill2: '#DAA520', text: '#7a4f00', textVal: '1' },
+            2: { fill: '#808080', stroke: '#C0C0C0', fill2: '#A8A8A8', text: '#3a3a3a', textVal: '2' },
+            3: { fill: '#8B4513', stroke: '#CD7F32', fill2: '#CD7F32', text: '#3a1a00', textVal: '3' }
+          };
+          const c = colors[rank];
+          return `
+            <svg class="ranking-medalla" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="22" r="12" fill="${c.fill}" stroke="${c.stroke}" stroke-width="1.5"/>
+              <circle cx="18" cy="22" r="9" fill="${c.fill2}"/>
+              <text x="18" y="26.5" text-anchor="middle" font-size="10" font-weight="700" fill="${c.text}" font-family="Comfortaa,sans-serif">${c.textVal}</text>
+              <rect x="15" y="4" width="6" height="10" rx="1" fill="${c.stroke}"/>
+              <rect x="13" y="2" width="10" height="4" rx="1" fill="${c.fill}"/>
+            </svg>
+          `;
+        };
+
+        const getHeartSVG = () => `<svg class="ranking-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+
+        const renderDynamicTop10 = (posts) => {
+          const dynamicContainer = document.getElementById('top10-dynamic');
+          
+          let podioHTML = `<div class="ranking-podio">`;
+          for (let i = 0; i < 3; i++) {
+              const p = posts[i];
+              podioHTML += `
+                <div class="ranking-card ranking-podio-card ranking-rank-${i+1}">
+                  ${getMedalSVG(i+1)}
+                  <a href="${p.link}" target="_blank" rel="noopener noreferrer">
+                    <img class="ranking-card-img" src="${p.image_url}" alt="Top ${i+1} Instagram" loading="lazy" oncontextmenu="return false;" draggable="false" />
+                  </a>
+                  <div class="ranking-overlay">
+                    <div class="ranking-likes">
+                      ${getHeartSVG()}
+                      <span class="ranking-likes-count">${p.likes} likes</span>
+                    </div>
+                    <p class="ranking-name">${p.name}</p>
+                    <p class="ranking-name">${p.instagram_handle}</p>
+                    <a class="ranking-ig" href="https://www.instagram.com/${p.instagram_handle.replace('@', '')}/" target="_blank" rel="noopener noreferrer">${p.instagram_handle}</a>
+                  </div>
+                </div>
+              `;
+          }
+          podioHTML += `</div>`;
+
+          let gridHTML = `<div class="ranking-grid-resto">`;
+          for (let i = 3; i < 10; i++) {
+              const p = posts[i];
+              gridHTML += `
+                <div class="ranking-card ranking-small">
+                  <div class="ranking-badge">${i+1}</div>
+                  <a href="${p.link}" target="_blank" rel="noopener noreferrer">
+                    <img class="ranking-card-img" src="${p.image_url}" alt="Top ${i+1} Instagram" loading="lazy" oncontextmenu="return false;" />
+                  </a>
+                  <div class="ranking-overlay">
+                    <div class="ranking-likes">
+                      ${getHeartSVG()}
+                      <span class="ranking-likes-count">${p.likes}</span>
+                    </div>
+                    <p class="ranking-name">${p.name}</p>
+                    <a class="ranking-ig" href="https://www.instagram.com/${p.instagram_handle.replace('@', '')}/" target="_blank" rel="noopener noreferrer">${p.instagram_handle}</a>
+                  </div>
+                </div>
+              `;
+          }
+          gridHTML += `</div>`;
+
+          dynamicContainer.innerHTML = podioHTML + gridHTML;
+        };
+
+        // Inicializar
+        initDynamicTop10();
+      });
+    </script>
   </body>
 </html>
