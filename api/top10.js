@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     // Y lo pegas aquí abajo siguiendo este mismo formato exacto:
     const colaboradoresManuales = {
       // 1. Quita las barras dobles de abajo para activar este ejemplo
-       "DFxX3Y7t8wA": {
+       "DWn0W4vjB-X": {
          name: "Lucía Martín",
          handle: "@luucia.maartiin"
        },
