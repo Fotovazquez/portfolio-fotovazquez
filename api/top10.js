@@ -47,6 +47,10 @@ export default async function handler(req, res) {
       "DVq7hZmDZas": {
         name: "Gisela Marín",
         handle: "@giselamarinaguilar"
+      },
+            "DWmQupsDV5S": {
+         name: "Lucía Martín",
+         handle: "@luucia.maartiin"
       }
     };
     
