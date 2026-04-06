@@ -39,9 +39,14 @@ export default async function handler(req, res) {
        },
       
       // 2. Puedes añadir todas las que quieras poniéndoles una coma al final
-      "CODIGO_DE_TU_FOTO_AQUI": {
-        name: "Proyecto Fotovazquez",
-        handle: "@fotovazquez"
+      "DVq7hZmDZas": {
+        name: "Gisela Marín",
+        handle: "@giselamarinaguilar"
+      },
+
+      "DVq7hZmDZas": {
+        name: "Gisela Marín",
+        handle: "@giselamarinaguilar"
       }
     };
     
