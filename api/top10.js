@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // Para que funcione de forma gratuita de la forma más robusta posible,
-    // usamos una API gratuita de RapidAPI de scraping de Instagram.
+    // usamos una API gratuita de RapidAPI de scraping de Instagram de https://rapidapi.com/
     // La mayoría ofrecen un plan "Basic" gratis de 50-100 request/mes que, a 1 req cada 48h (15/mes), sobra.
     // Ej: API "Instagram Scraper API" by "social-api" o similares.
     // Tienes que registrarte en rapidapi.com, escoger una API de IG gratuita y poner sus datos aquí:
