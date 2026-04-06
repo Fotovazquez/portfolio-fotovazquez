@@ -26,15 +26,20 @@ export default async function handler(req, res) {
     // ==========================================
     // DICCIONARIO MANUAL DE COLABORACIONES (FOTOVAZQUEZ)
     // ==========================================
-    // Permite forzar el Nombre y el Handle (Cuenta) de una foto que no lo detectó sola.
-    // Tienes que poner el ID de la foto (o parte de su texto) como clave.
+    // ESTA ES LA FORMA DE PONER TUS COLABORADORES MANUALMENTE:
+    // Solo tienes que ir a la foto en tu Instagram, por ejemplo:
+    // https://www.instagram.com/p/DFxX3Y7t8wA/
+    // Copias el código, que en ese caso es "DFxX3Y7t8wA"
+    // Y lo pegas aquí abajo siguiendo este mismo formato exacto:
     const colaboradoresManuales = {
-      // Ejemplo: 
-      // "ID_O_CODIGO_DE_LA_FOTO": {
-      //   name: "María Fernández",
-      //   handle: "@maria_design"
-      // },
-      "default_sin_arroba": {
+      // 1. Quita las barras dobles de abajo para activar este ejemplo
+       "DFxX3Y7t8wA": {
+         name: "Lucía Martín",
+         handle: "@luucia.maartiin"
+       },
+      
+      // 2. Puedes añadir todas las que quieras poniéndoles una coma al final
+      "CODIGO_DE_TU_FOTO_AQUI": {
         name: "Proyecto Fotovazquez",
         handle: "@fotovazquez"
       }
@@ -69,6 +74,7 @@ export default async function handler(req, res) {
       
       return {
         id: item.id || item.pk,
+        code: item.code, // guardamos el corto del enlace para fácil uso
         link: linkUrl,
         image_url: item.image_versions2?.candidates?.[0]?.url,
         likes: item.like_count || 0,
@@ -88,8 +94,8 @@ export default async function handler(req, res) {
       const mentionMatch = post.caption ? post.caption.match(/@([\w.-]+)/) : null;
       let detectedHandle = mentionMatch ? `@${mentionMatch[1]}` : null;
       
-      // 2. Buscamos si la hemos anulado manualmente en el Diccionario (por ID de post)
-      const forcedCollab = colaboradoresManuales[post.id];
+      // 2. Buscamos si la hemos anulado manualmente en el Diccionario (por ID o Codigo del enlace)
+      const forcedCollab = colaboradoresManuales[post.id] || colaboradoresManuales[post.code];
 
       // 3. Variables finales
       let finalHandle = '@fotovazquez'; // si no hay nada, el tuyo
