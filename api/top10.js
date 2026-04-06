@@ -34,7 +34,8 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      throw new Error('Error al obtener datos de la API de Instagram');
+      const errText = await response.text();
+      throw new Error('Error al obtener datos de la API de Instagram: ' + response.status + ' ' + errText);
     }
 
     const data = await response.json();
@@ -88,7 +89,8 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true, top10 });
     
   } catch (error) {
-    console.error('Error fetching Top10:', error);
-    return res.status(500).json({ success: false, error: 'Failed to fetch Data' });
+    // Extra debugging para saber qué falló en Vercel
+    const errorMsg = error instanceof Error ? error.message : String(error);
+    return res.status(500).json({ success: false, error: 'Failed to fetch Data', detail: errorMsg });
   }
 }
