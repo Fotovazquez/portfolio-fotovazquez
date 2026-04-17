@@ -1,0 +1,357 @@
+:root {
+  --primary: #d0bb95;
+  --bg-dark: #131313;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(208, 187, 149, 0.2);
+  --text-slate: #94a3b8;
+  --text-light: #e2e8f0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.main-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 40px;
+}
+
+.brand-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cv-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  margin-bottom: 15px;
+  background: var(--card-bg);
+}
+
+.brand-profile h1 {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.brand-profile h1 span {
+  color: var(--primary);
+}
+
+.sub-brand {
+  font-size: 0.65rem;
+  color: var(--primary);
+  font-weight: 400;
+  margin: 5px 0 0 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-slate);
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: var(--primary);
+}
+
+.contact-item i {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+}
+
+/* Sections */
+.section-title {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  margin: 60px 0 30px 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Cards */
+.award-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.award-card:hover {
+  border-color: rgba(208, 187, 149, 0.4);
+  transform: translateY(-2px);
+}
+
+.award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.award-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.date {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.award-org {
+  color: var(--text-slate);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+/* Lists and Content in Cards */
+.award-description {
+  color: var(--text-slate);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.award-description p {
+  margin: 0 0 10px 0;
+}
+
+.award-description p:last-child {
+  margin-bottom: 0;
+}
+
+.award-description strong {
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+/* Minimalist and elegant list style */
+.award-description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.award-description ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.award-description ul li:last-child {
+  margin-bottom: 0;
+}
+
+.award-description ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+/* FAQs */
+.faq-item {
+  background: var(--card-bg);
+  border-left: 2px solid var(--primary);
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 0 12px 12px 0;
+  transition: background 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-item h4 {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.faq-item p {
+  color: var(--text-slate);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.faq-item strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary);
+  color: var(--bg-dark);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background-color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.download-btn i {
+  width: 18px;
+  height: 18px;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: var(--bg-dark);
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--text-light);
+  transform: translateY(-3px);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .brand-profile {
+    align-items: center;
+  }
+
+  .award-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* Print */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  #scrollTopBtn,
+  #downloadPdfBtn {
+    display: none !important;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .award-card,
+  .faq-item {
+    border: 1px solid #ddd;
+    background: none;
+    break-inside: avoid;
+  }
+  .award-header h3,
+  .brand-profile h1 {
+    color: black;
+  }
+  .contact-item,
+  .award-description,
+  .faq-item p {
+    color: #333;
+  }
+  .section-title {
+    color: #555;
+  }
+}
