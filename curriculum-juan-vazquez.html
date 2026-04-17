@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV | Juan Vázquez Fernández</title>
+    <title>Juan Vázquez Fernández | Curriculum</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
@@ -135,23 +135,7 @@
       </section>
 
       <section class="page-break">
-        <h2 class="section-title">Formación Académica e Idiomas</h2>
-        <!--
-        <div class="award-card">
-          <div class="award-header">
-            <h3>Cursos</h3>
-            <span class="date">2003 — Actualidad</span>
-          </div>
-          <p class="award-org"></p>
-          <div class="award-description">
-            <ul>
-              <li>Revelado Digital por Adobe</li>
-              <li>Creación y diseño web</li>
-              <li>Prevención de Riesgos Laborales</li>
-            </ul>
-          </div>
-        </div>--->
-
+        <h2 class="section-title">Formación Académica e Idiomas</h2>       
         <div class="award-card">
           <div class="award-header">
             <h3>Administración y Gestión de Sistemas Informáticos</h3>
@@ -212,6 +196,10 @@
           <p>Actual fotógrafo oficial de Miss Grand Sevilla 2025/2026.</p>
         </div>
       </section>
+
+      <footer style="text-align: center; color: var(--text-slate); font-size: 0.75rem; margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+        <p>Curriculum actualizado a abril de 2026</p>
+      </footer>
     </main>
 
     <button
@@ -247,7 +235,7 @@
             margin: [0.4, 0.4, 0.4, 0.4],
             filename: "CV_Juan_Vazquez.pdf",
             image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: "#131313" },
             jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
             pagebreak: { mode: "css", before: ".page-break" },
           };
