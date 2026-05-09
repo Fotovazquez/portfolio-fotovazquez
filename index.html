@@ -1754,11 +1754,17 @@ angelescespedes1988</a>
       <section class="max-w-4xl mx-auto px-6 mb-12">
         <div
           class="relative group overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-r from-[#1a1a1a] to-[#0f0f0f] p-8 md:p-10 shadow-2xl">
-          <div
-            class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl transition-all duration-700 group-hover:bg-primary/10"></div>
+          
+          <div class="absolute top-0 left-0 w-full md:w-2/3 h-full z-0 opacity-20 transition-opacity duration-700 group-hover:opacity-30 pointer-events-none" 
+               style="-webkit-mask-image: radial-gradient(circle at top left, black 0%, transparent 80%); mask-image: radial-gradient(circle at top left, black 0%, transparent 80%);">
+            <img src="img/map.webp" alt="Mapa" class="w-full h-full object-cover select-none mix-blend-screen" draggable="false" />
+          </div>
 
           <div
-            class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+            class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl transition-all duration-700 group-hover:bg-primary/10 z-0"></div>
+
+          <div
+            class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8 drop-shadow-[0_0_15px_rgba(0,0,0,1)]">
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-4">
                 <span class="w-8 h-[1px] bg-primary/30"></span>
